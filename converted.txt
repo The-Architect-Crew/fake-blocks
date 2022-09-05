@@ -1,0 +1,64 @@
+NOT CONVERTED:
+3d_armor
+3d_armor_sfinv
+areas
+atm
+bucket
+carts
+craftguide
+craig_server
+creative
+debug
+dye
+email
+fancy_vend
+give_initial_stuff
+home_gui
+homedecor_3d_extras - replaces existing nodes with models (not needed)
+homedecor_seating - just adds sofas (only benches (misc.lua) imported)
+mapfix
+mapserver
+markers
+player_api
+ranks
+replacer
+report
+sban
+screwdriver
+sfinv
+sfinv_buttons
+shields
+skinsdb
+travelnet
+unifieddyes
+wieldview
+worldedit
+worldedit_commands
+worldedit_gui
+
+CONVERTED:
+nyancat
+flowers
+basic_materials
+itemframes
+building_blocks
+beds
+stairs
+arrow_signs
+gloopblocks
+bitchange
+fake_fire
+locked_sign
+more_chests
+currency
+streets
+moreblocks
+moreores
+vessels
+wool
+colouredstonebricks
+columnia
+farming
+darkage
+doors - fully functionable because im too lazy to siphon out the code
+other homedecor mods
