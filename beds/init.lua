@@ -31,7 +31,7 @@ function beds.register_bed(name, def)
 		paramtype2 = "facedir",
 		is_ground_content = false,
 		stack_max = 1,
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, bed = 1},
+		groups = {not_in_creative_inventory = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, bed = 1},
 		sounds = def.sounds or default.node_sound_wood_defaults(),
 		node_box = {
 			type = "fixed",
@@ -145,7 +145,7 @@ function beds.register_bed(name, def)
 		paramtype2 = "facedir",
 		is_ground_content = false,
 		pointable = false,
-		groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, bed = 2,
+		groups = {not_in_creative_inventory = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3, bed = 2,
 				not_in_creative_inventory = 1},
 		sounds = def.sounds or default.node_sound_wood_defaults(),
 		drop = name .. "_bottom",

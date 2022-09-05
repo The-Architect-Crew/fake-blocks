@@ -18,7 +18,7 @@ minetest.register_node("gloopblocks:rainbow_block_diagonal", {
 	description = S("Diagonal Rainbow Block"),
 	tiles = {"gloopblocks_rainbow_block.png"},
 	is_ground_content = true,
-	groups = {cracky=3},
+	groups = {not_in_creative_inventory = 1, cracky=3},
 	sounds = default.node_sound_defaults(),
 })
 minetest.register_alias("gloopblocks:rainbow_block", "gloopblocks:rainbow_block_diagonal")
@@ -33,7 +33,7 @@ minetest.register_node("gloopblocks:rainbow_block_horizontal", {
 	paramtype = "light",
 	light_source = default.LIGHT_MAX,
 	paramtype2 = "facedir",
-	groups = {cracky = 2},
+	groups = {not_in_creative_inventory = 1, cracky = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_defaults(),
 })
@@ -43,21 +43,21 @@ minetest.register_node("gloopblocks:evil_block", {
 	tiles = {"gloopblocks_evil_block.png"},
 	light_source = 5,
 	is_ground_content = true,
-	groups = {cracky=2},
+	groups = {not_in_creative_inventory = 1, cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("gloopblocks:basalt", {
 	description = S("Basalt"),
 	tiles = {"gloopblocks_basalt.png"},
-	groups = {cracky=2},
+	groups = {not_in_creative_inventory = 1, cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("gloopblocks:pumice", {
 	description = S("Pumice"),
 	tiles = {"gloopblocks_pumice.png"},
-	groups = {cracky=3},
+	groups = {not_in_creative_inventory = 1, cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -65,7 +65,7 @@ minetest.register_node("gloopblocks:pumice", {
 minetest.register_node("gloopblocks:pavement", {
 	description = S("Pavement"),
 	tiles = {"gloopblocks_pavement.png"},
-	groups = {cracky=3, oddly_breakable_by_hand=3},
+	groups = {not_in_creative_inventory = 1, cracky=3, oddly_breakable_by_hand=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -82,7 +82,7 @@ minetest.register_node("gloopblocks:oerkki_block", {
 		"gloopblocks_oerkkiblock_sides.png",
 		"gloopblocks_oerkkiblock_front.png"
 	},
-	groups = {cracky=3, oddly_breakable_by_hand=3},
+	groups = {not_in_creative_inventory = 1, cracky=3, oddly_breakable_by_hand=3},
 	sounds = default.node_sound_stone_defaults(),
 	selection_box = {
 		type = "fixed",
@@ -104,14 +104,14 @@ minetest.register_node("gloopblocks:oerkki_block", {
 minetest.register_node("gloopblocks:stone_brick_mossy", {
 	description = S("Mossy Stone Brick"),
 	tiles = {"gloopblocks_stone_brick_mossy.png"},
-	groups = {cracky=3, stone=1},
+	groups = {not_in_creative_inventory = 1, cracky=3, stone=1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("gloopblocks:stone_mossy", {
 	description = S("Mossy Stone"),
 	tiles = {"gloopblocks_stone_mossy.png"},
-	groups = {cracky=3, stone=1},
+	groups = {not_in_creative_inventory = 1, cracky=3, stone=1},
 	sounds = default.node_sound_stone_defaults(),
 	drop = "default:mossycobble"
 })
@@ -119,14 +119,14 @@ minetest.register_node("gloopblocks:stone_mossy", {
 minetest.register_node("gloopblocks:cobble_road", {
 	description = S("Cobblestone Road Bed"),
 	tiles = {"gloopblocks_cobble_road.png"},
-	groups = {cracky=3, stone=1},
+	groups = {not_in_creative_inventory = 1, cracky=3, stone=1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("gloopblocks:cobble_road_mossy", {
 	description = S("Mossy Cobblestone Road Bed"),
 	tiles = {"gloopblocks_cobble_road_mossy.png"},
-	groups = {cracky=3, stone=1},
+	groups = {not_in_creative_inventory = 1, cracky=3, stone=1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -136,7 +136,7 @@ minetest.register_node("gloopblocks:scaffolding", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	tiles = {"gloopblocks_scaffold.png"},
-	groups = {choppy=3, oddly_breakable_by_hand=3},
+	groups = {not_in_creative_inventory = 1, choppy=3, oddly_breakable_by_hand=3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -159,7 +159,7 @@ if not minetest.get_modpath("usesdirt") then
 	minetest.register_node(":usesdirt:dirt_brick", {
 		tiles = { dirt_brick_tex },
 		description = "Dirt Brick",
-		groups = {snappy=2,choppy=1,oddly_breakable_by_hand=2},
+		groups = {not_in_creative_inventory = 1, snappy=2,choppy=1,oddly_breakable_by_hand=2},
 	})
 
 	minetest.register_node(":usesdirt:dirt_brick_ladder", {
@@ -179,7 +179,7 @@ if not minetest.get_modpath("usesdirt") then
 			--wall_bottom = = <default>
 			--wall_side = = <default>
 		},
-		groups = {cracky=3, stone=2},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		legacy_wallmounted = true,
 	})
 	minetest.register_craft({
@@ -197,7 +197,7 @@ if not minetest.get_modpath("usesdirt") then
 		inventory_image = "default_fence_overlay.png^("..dirt_brick_tex..")^default_fence_overlay.png^[makealpha:255,126,126",
 		wield_image = "default_fence_overlay.png^("..dirt_brick_tex..")^default_fence_overlay.png^[makealpha:255,126,126",
 		material = "usesdirt:dirt_brick",
-		groups = {cracky=3, stone=2},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		sounds = default.node_sound_stone_defaults(),
 		check_for_pole = true
 	})]]
@@ -238,7 +238,7 @@ if not minetest.get_modpath("usesdirt") then
 			--wall_bottom = = <default>
 			--wall_side = = <default>
 		},
-		groups = {snappy=2,choppy=2,oddly_breakable_by_hand=3},
+		groups = {not_in_creative_inventory = 1, snappy=2,choppy=2,oddly_breakable_by_hand=3},
 		legacy_wallmounted = true,
 	})
 	minetest.register_craft({
@@ -256,7 +256,7 @@ if not minetest.get_modpath("usesdirt") then
 		inventory_image = "default_fence_overlay.png^default_dirt.png^default_fence_overlay.png^[makealpha:255,126,126",
 		wield_image = "default_fence_overlay.png^default_dirt.png^default_fence_overlay.png^[makealpha:255,126,126",
 		material = "default:dirt",
-		groups = {snappy=2,choppy=1,oddly_breakable_by_hand=3},
+		groups = {not_in_creative_inventory = 1, snappy=2,choppy=1,oddly_breakable_by_hand=3},
 		sounds = default.node_sound_dirt_defaults(),
 		check_for_pole = true
 	})]]
@@ -267,7 +267,7 @@ if not minetest.get_modpath("usesdirt") then
 		tiles = { dirt_cobble_tex },
 		description = "Dirt Cobble Stone",
 		is_ground_content = true,
-		groups = {cracky=3, stone=2},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 	})
 	minetest.register_craft({
 		output = '"usesdirt:dirt_cobble_stone" 3',
@@ -295,7 +295,7 @@ if not minetest.get_modpath("usesdirt") then
 			--wall_bottom = = <default>
 			--wall_side = = <default>
 		},
-		groups = {cracky=3, stone=2},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		legacy_wallmounted = true,
 	})
 	minetest.register_craft({
@@ -313,7 +313,7 @@ if not minetest.get_modpath("usesdirt") then
 		inventory_image = "default_fence_overlay.png^("..dirt_cobble_tex..")^default_fence_overlay.png^[makealpha:255,126,126",
 		wield_image = "default_fence_overlay.png^("..dirt_cobble_tex..")^default_fence_overlay.png^[makealpha:255,126,126",
 		material = "usesdirt:dirt_cobble_stone",
-		groups = {cracky=3, stone=2},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		sounds = default.node_sound_stone_defaults(),
 		check_for_pole = true
 	})]]
@@ -324,7 +324,7 @@ if not minetest.get_modpath("usesdirt") then
 		tiles = { dirt_stone_tex },
 		description = "Dirt Stone",
 		is_ground_content = true,
-		groups = {cracky=3, stone=2},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 	})
 
 	minetest.register_node(":usesdirt:dirt_stone_ladder", {
@@ -344,7 +344,7 @@ if not minetest.get_modpath("usesdirt") then
 			--wall_bottom = = <default>
 			--wall_side = = <default>
 		},
-		groups = {cracky=3, stone=2},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		legacy_wallmounted = true,
 	})
 	minetest.register_craft({
@@ -362,7 +362,7 @@ if not minetest.get_modpath("usesdirt") then
 		inventory_image = "default_fence_overlay.png^("..dirt_stone_tex..")^default_fence_overlay.png^[makealpha:255,126,126",
 		wield_image = "default_fence_overlay.png^("..dirt_stone_tex..")^default_fence_overlay.png^[makealpha:255,126,126",
 		material = "usesdirt:dirt_stone",
-		groups = {cracky=3, stone=2},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		sounds = default.node_sound_stone_defaults(),
 		check_for_pole = true
 	})]]
@@ -402,7 +402,7 @@ if minetest.get_modpath("moreblocks") then
 			"gloopblocks_oerkkiblock_sides.png",
 			"gloopblocks_oerkkiblock_front.png"
 		},
-		groups = {cracky=2, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=2, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
@@ -410,7 +410,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "stone_brick_mossy", "gloopblocks:stone_brick_mossy", {
 		description = S("Mossy Stone Brick"),
 		tiles = {"gloopblocks_stone_brick_mossy.png"},
-		groups = {cracky=1, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=1, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
@@ -418,7 +418,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "stone_mossy", "gloopblocks:stone_mossy", {
 		description = S("Mossy Stone"),
 		tiles = {"gloopblocks_stone_mossy.png"},
-		groups = {cracky=1, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=1, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
@@ -426,7 +426,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "cobble_road", "gloopblocks:cobble_road", {
 		description = S("Cobblestone Roadbed"),
 		tiles = {"gloopblocks_cobble_road.png"},
-		groups = {cracky=3, stone=1, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=1, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
@@ -434,7 +434,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "cobble_road_mossy", "gloopblocks:cobble_road_mossy", {
 		description = S("Mossy Cobblestone Roadbed"),
 		tiles = {"gloopblocks_cobble_road_mossy.png"},
-		groups = {cracky=3, stone=1, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=3, stone=1, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
@@ -442,7 +442,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "pavement", "gloopblocks:pavement", {
 		description = S("Pavement"),
 		tiles = {"gloopblocks_pavement.png"},
-		groups = {cracky=2, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=2, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
@@ -450,7 +450,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "rainbow_block", "gloopblocks:rainbow_block", {
 		description = S("Rainbow Block"),
 		tiles = {"gloopblocks_rainbow_block.png"},
-		groups = {cracky=3, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=3, not_in_creative_inventory=1},
 		sounds = default.node_sound_defaults(),
 		sunlight_propagates = true,
 	})
@@ -458,7 +458,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "evil_block", "gloopblocks:evil_block", {
 		description = S("Evil Block"),
 		tiles = {"gloopblocks_evil_block.png"},
-		groups = {cracky=3, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=3, not_in_creative_inventory=1},
 		sounds = default.node_sound_defaults(),
 		light_source = 5,
 		sunlight_propagates = true,
@@ -467,7 +467,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "basalt", "gloopblocks:basalt", {
 		description = S("Basalt"),
 		tiles = {"gloopblocks_basalt.png"},
-		groups = {cracky=2, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=2, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
@@ -475,7 +475,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "pumice", "gloopblocks:pumice", {
 		description = S("Pumice"),
 		tiles = {"gloopblocks_pumice.png"},
-		groups = {cracky=3, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=3, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
 	})
@@ -483,7 +483,7 @@ if minetest.get_modpath("moreblocks") then
 	stairsplus:register_all("gloopblocks", "gravel", "default:gravel", {
 		description = S("Gravel"),
 		tiles = {"default_gravel.png"},
-		groups = {crumbly = 2, falling_node = 1, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, crumbly = 2, falling_node = 1, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = false,
 	})
@@ -492,7 +492,7 @@ if minetest.get_modpath("moreblocks") then
 		stairsplus:register_all("caverealms", "glow_crystal", "caverealms:glow_crystal", {
 			description = S("Glow Crystal"),
 			tiles = {"caverealms_glow_crystal.png"},
-			groups = {cracky=3, not_in_creative_inventory=1},
+			groups = {not_in_creative_inventory = 1, cracky=3, not_in_creative_inventory=1},
 			sounds = default.node_sound_glass_defaults(),
 			light_source = 12,
 			use_texture_alpha = true,
@@ -503,7 +503,7 @@ if minetest.get_modpath("moreblocks") then
 		stairsplus:register_all("caverealms", "glow_emerald", "caverealms:glow_emerald", {
 			description = S("Glow Emerald"),
 			tiles = {"caverealms_glow_emerald.png"},
-			groups = {cracky=3, not_in_creative_inventory=1},
+			groups = {not_in_creative_inventory = 1, cracky=3, not_in_creative_inventory=1},
 			sounds = default.node_sound_glass_defaults(),
 			light_source = 12,
 			use_texture_alpha = true,
@@ -514,7 +514,7 @@ if minetest.get_modpath("moreblocks") then
 		stairsplus:register_all("caverealms", "glow_mese", "caverealms:glow_mese", {
 			description = S("Glow Mese"),
 			tiles = {"caverealms_glow_mese.png"},
-			groups = {cracky=3, not_in_creative_inventory=1},
+			groups = {not_in_creative_inventory = 1, cracky=3, not_in_creative_inventory=1},
 			sounds = default.node_sound_glass_defaults(),
 			light_source = 12,
 			use_texture_alpha = true,
@@ -714,7 +714,7 @@ if minetest.setting_getbool("gloopblocks_lavacooling") ~= false then
 		tiles = {"default_obsidian.png"},
 		is_ground_content = true,
 		sounds = default.node_sound_stone_defaults(),
-		groups = {cracky=1, level=2, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=1, level=2, not_in_creative_inventory=1},
 		drop = "default:obsidian",
 		after_place_node = function(pos, placer, itemstack, pointed_thing)
 			minetest.add_node(pos, {name = "default:obsidian"})
@@ -724,7 +724,7 @@ if minetest.setting_getbool("gloopblocks_lavacooling") ~= false then
 	minetest.register_node("gloopblocks:basalt_cooled", {
 		description = S("Basalt"),
 		tiles = {"gloopblocks_basalt.png"},
-		groups = {cracky=2, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=2, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		drop = "gloopblocks:basalt",
 		after_place_node = function(pos, placer, itemstack, pointed_thing)
@@ -735,7 +735,7 @@ if minetest.setting_getbool("gloopblocks_lavacooling") ~= false then
 	minetest.register_node("gloopblocks:pumice_cooled", {
 		description = S("Pumice"),
 		tiles = {"gloopblocks_pumice.png"},
-		groups = {cracky=3, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=3, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 		drop = "gloopblocks:pumice",
 		after_place_node = function(pos, placer, itemstack, pointed_thing)
@@ -760,7 +760,7 @@ minetest.register_node("gloopblocks:fence_steel", {
 		type = "fixed",
 		fixed = {-1/7, -1/2, -1/7, 1/7, 1/2, 1/7},
 	},
-	groups = {choppy = 2, oddly_breakable_by_hand = 2 },
+	groups = {not_in_creative_inventory = 1, choppy = 2, oddly_breakable_by_hand = 2 },
 	sounds = default.node_sound_stone_defaults(),
 })
 

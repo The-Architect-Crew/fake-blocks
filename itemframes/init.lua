@@ -16,7 +16,7 @@ minetest.register_node("itemframes:frame",{
 	paramtype = "light",
 	paramtype2 = "facedir",
 	sunlight_propagates = true,
-	groups = {choppy = 2, dig_immediate = 2},
+	groups = {not_in_creative_inventory = 1, choppy = 2, dig_immediate = 2},
 	legacy_wallmounted = true,
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -39,6 +39,6 @@ minetest.register_node("itemframes:pedestal",{
 	--},
 	tiles = {"itemframes_pedestal.png"},
 	paramtype = "light",
-	groups = {cracky = 3},
+	groups = {not_in_creative_inventory = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })

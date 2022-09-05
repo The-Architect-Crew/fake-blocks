@@ -33,7 +33,7 @@ local function add_ore(modname, description, mineral_name, oredef)
 		minetest.register_node(modname .. ":mineral_" .. mineral_name, {
 			description = S("@1 Ore", S(description)),
 			tiles = {"default_stone.png^" .. modname .. "_mineral_" .. mineral_name .. ".png"},
-			groups = {cracky = 2},
+			groups = {not_in_creative_inventory = 1, cracky = 2},
 			sounds = default_stone_sounds,
 		})
 	end
@@ -43,7 +43,7 @@ local function add_ore(modname, description, mineral_name, oredef)
 		minetest.register_node(block_item, {
 			description = S("@1 Block", S(description)),
 			tiles = {img_base .. "_block.png"},
-			groups = {snappy = 1, bendy = 2, cracky = 1, melty = 2, level = 2},
+			groups = {not_in_creative_inventory = 1, snappy = 1, bendy = 2, cracky = 1, melty = 2, level = 2},
 			sounds = default_metal_sounds,
 		})
 		minetest.register_alias(mineral_name.."_block", block_item)

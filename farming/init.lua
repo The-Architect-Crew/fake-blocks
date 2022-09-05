@@ -24,7 +24,7 @@ farming.register_plant("farming:wheat", {
 	minlight = 13,
 	maxlight = default.LIGHT_MAX,
 	fertility = {"grassland"},
-	groups = {food_wheat = 1, flammable = 4},
+	groups = {not_in_creative_inventory = 1, food_wheat = 1, flammable = 4},
 	place_param2 = 3,
 })
 
@@ -38,7 +38,7 @@ farming.register_plant("farming:cotton", {
 	minlight = 13,
 	maxlight = default.LIGHT_MAX,
 	fertility = {"grassland", "desert"},
-	groups = {flammable = 4},
+	groups = {not_in_creative_inventory = 1, flammable = 4},
 })
 
 -- farming/nodes.lua
@@ -98,13 +98,13 @@ minetest.register_node("farming:straw", {
 	description = S("Straw"),
 	tiles = {"farming_straw.png"},
 	is_ground_content = false,
-	groups = {snappy=3, flammable=4, fall_damage_add_percent=-30},
+	groups = {not_in_creative_inventory = 1, snappy=3, flammable=4, fall_damage_add_percent=-30},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
 do
 	local recipe = "farming:straw"
-	local groups = {snappy = 3, flammable = 4}
+	local groups = {not_in_creative_inventory = 1, snappy = 3, flammable = 4}
 	local images = {"farming_straw.png"}
 	local sounds = default.node_sound_leaves_defaults()
 
@@ -131,7 +131,7 @@ minetest.register_node("farming:cotton_wild", {
 	sunlight_propagates = true,
 	walkable = false,
 	buildable_to = true,
-	groups = {snappy = 3, attached_node = 1, flammable = 4},
+	groups = {not_in_creative_inventory = 1, snappy = 3, attached_node = 1, flammable = 4},
 	drop = "farming:seed_cotton",
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {

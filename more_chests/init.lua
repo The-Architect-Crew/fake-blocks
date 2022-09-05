@@ -14,7 +14,7 @@ minetest.register_node("more_chests:cobble", {
 	tiles = {"default_cobble.png", "default_cobble.png", "default_cobble.png",
 		"default_cobble.png", "default_cobble.png", "cobblechest_front.png"},
 	paramtype2 = "facedir",
-	groups = {snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
+	groups = {not_in_creative_inventory = 1, snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
 	legacy_facedir_simple = true,
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -24,7 +24,7 @@ minetest.register_node("more_chests:dropbox", {
 	tiles = {"dropbox_top.png", "dropbox_top.png", "dropbox_side.png",
 		"dropbox_side.png", "dropbox_side.png", "dropbox_front.png"},
 	paramtype2 = "facedir",
-	groups = {snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
+	groups = {not_in_creative_inventory = 1, snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
 	legacy_facedir_simple = true,
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -36,7 +36,7 @@ minetest.register_node("more_chests:wifi", {
 		{name="wifi_front_animated.png", animation={type="vertical_frames",
 			aspect_w=16, aspect_h=16, length=2.0}}},
 	paramtype2 = "facedir",
-	groups = {snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
+	groups = {not_in_creative_inventory = 1, snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
 	legacy_facedir_simple = true,
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -46,7 +46,7 @@ minetest.register_node("more_chests:secret", {
 	tiles = {"secret_top.png", "secret_top.png", "secret_side.png",
 		"secret_side.png", "secret_side.png", "secret_front.png"},
 	paramtype2 = "facedir",
-	groups = {snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
+	groups = {not_in_creative_inventory = 1, snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
 	legacy_facedir_simple = true,
 	sounds = default.node_sound_wood_defaults(),
 })
@@ -56,7 +56,7 @@ minetest.register_node("more_chests:shared", {
 	tiles = {"shared_top.png", "shared_top.png", "shared_side.png",
 		"shared_side.png", "shared_side.png", "shared_front.png"},
 	paramtype2 = "facedir",
-	groups = {snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
+	groups = {not_in_creative_inventory = 1, snappy=2, choppy=2, oddly_breakable_by_hand=2, tubedevice = 1, tubedevice_receiver = 1},
 	legacy_facedir_simple = true,
 	sounds = default.node_sound_wood_defaults(),
 })

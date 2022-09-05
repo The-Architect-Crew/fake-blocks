@@ -33,7 +33,7 @@ minetest.register_node("streets:delineator", {
 	tiles = {"streets_delineator_top.png","streets_delineator.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
-	groups = {cracky=3, oddly_breakable_by_hand=2},
+	groups = {not_in_creative_inventory = 1, cracky=3, oddly_breakable_by_hand=2},
 	light_source = 8,
 	sunlight_propagates = true,
 	node_box = {
@@ -47,7 +47,7 @@ minetest.register_node("streets:delineator", {
 minetest.register_node(":streets:constructionfence_bottom",{
 	description = streets.S("Construction fence"),
 	tiles = {"streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_bottom.png","streets_fence_bottom.png"},
-	groups = {cracky = 2},
+	groups = {not_in_creative_inventory = 1, cracky = 2},
 	paramtype = "light",
 	inventory_image = "streets_fence_inv.png",
 	wield_image = "streets_fence_inv.png",
@@ -83,7 +83,7 @@ minetest.register_node(":streets:constructionfence_bottom",{
 minetest.register_node(":streets:constructionfence_top",{
 	description = streets.S("Construction fence"),
 	tiles = {"streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_top.png","streets_fence_top.png"},
-	groups = {cracky = 2, not_in_creative_inventory = 1},
+	groups = {not_in_creative_inventory = 1, cracky = 2, not_in_creative_inventory = 1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
@@ -109,13 +109,13 @@ minetest.register_node(":streets:constructionfence_top",{
 minetest.register_node("streets:manhole",{
 	description = streets.S("Simple manhole"),
 	tiles = {"streets_asphalt.png^streets_manhole.png","streets_asphalt.png"},
-	groups	= {cracky=1,level=2}
+	groups = {not_in_creative_inventory = 1,cracky=1,level=2}
 })
 
 minetest.register_node("streets:manhole_adv_closed",{
 	description = streets.S("Advanced manhole"),
 	tiles = {"streets_asphalt.png^streets_manhole_advanced.png","streets_asphalt.png"},
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	drawtype = "nodebox",
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -144,7 +144,7 @@ minetest.register_node("streets:manhole_adv_closed",{
 minetest.register_node("streets:manhole_adv_open",{
 	description = streets.S("Advanced manhole"),
 	tiles = {"streets_asphalt.png^streets_manhole_advanced.png","streets_asphalt.png"},
-	groups = {cracky=1,level=2,not_in_creative_inventory=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_creative_inventory=1},
 	drawtype = "nodebox",
 	paramtype = "light",
 	drop = "streets:manhole_adv_closed",
@@ -180,7 +180,7 @@ minetest.register_node("streets:manhole_adv_open",{
 minetest.register_node("streets:pole_top",{
 	description = streets.S("You cheater!"),
 	tiles = {"streets_pole.png"},
-	groups = {not_in_creative_inventory=1},
+	groups = {not_in_creative_inventory = 1, not_in_creative_inventory=1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
@@ -197,7 +197,7 @@ minetest.register_node("streets:pole_top",{
 minetest.register_node("streets:pole_bottom",{
 	description = streets.S("Pole"),
 	tiles = {"streets_pole.png"},
-	groups = {cracky=2},
+	groups = {not_in_creative_inventory = 1, cracky=2},
 	inventory_image = "streets_pole_inv.png",
 	wield_image = "streets_pole_inv.png",
 	paramtype = "light",
@@ -242,7 +242,7 @@ minetest.register_node("streets:bigpole", {
 	drawtype = "nodebox",
 	tiles = {"streets_pole.png"},
 	sunlight_propagates = true,
-	groups = {cracky = 1, level = 2, bigpole = 1},
+	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2, bigpole = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -260,7 +260,7 @@ minetest.register_node(":streets:bigpole_edge", {
 	drawtype = "nodebox",
 	tiles = {"streets_pole.png"},
 	sunlight_propagates = true,
-	groups = {cracky = 1, level = 2, bigpole = 1},
+	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2, bigpole = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -278,7 +278,7 @@ minetest.register_node("streets:bigpole_tjunction", {
 	drawtype = "nodebox",
 	tiles = {"streets_pole.png"},
 	sunlight_propagates = true,
-	groups = {cracky = 1, level = 2, bigpole = 1},
+	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2, bigpole = 1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -297,7 +297,7 @@ streets.workshop.register_sign  = function(nodename, desc, img)
 		tiles = {img},
 		inventory_image = img,
 		wield_image = img,
-		groups = {snappy = 1,attached_node = 1},
+		groups = {not_in_creative_inventory = 1, snappy = 1,attached_node = 1},
 		drawtype = "nodebox",
 		node_box = {
 			type = "wallmounted",
@@ -318,7 +318,7 @@ end
 minetest.register_node("streets:signworkshop",{
 	description = streets.S("Sign workshop"),
 	tiles = {"streets_signworkshop_top.png","streets_signworkshop_bottom.png","streets_signworkshop_side.png","streets_signworkshop_side.png","streets_signworkshop_side.png","streets_signworkshop_front.png"},
-	groups = {cracky = 1, level = 2},
+	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
 	paramtype2 = "facedir",
 })
 
@@ -335,7 +335,7 @@ streets.workshop.register_sign("streets:sign_grasswalk", streets.S("Warning sign
 minetest.register_node("streets:steel_support",{
 	description = streets.S("Steel support"),
 	tiles = {"streets_support.png"},
-	groups = {cracky = 1},
+	groups = {not_in_creative_inventory = 1, cracky = 1},
 	drawtype = "glasslike_framed",
 	climbable = true,
 	sunlight_propagates = true,
@@ -348,7 +348,7 @@ minetest.register_node(":streets:streetlamp_basic_bottom",{
 	description = streets.S("Street lamp"),
 	tiles = {"streets_lamps_basic_bottom.png"},
 	inventory_image = "streets_lamps_basic_inv.png",
-	groups = {cracky = 1},
+	groups = {not_in_creative_inventory = 1, cracky = 1},
 	paramtype = "light",
 	drawtype = "nodebox",
 	node_box = {
@@ -368,7 +368,7 @@ minetest.register_node(":streets:streetlamp_basic_bottom",{
 minetest.register_node("streets:streetlamp_basic_middle",{
 	drop = "",
 	description = streets.S("You cheater!"),
-	groups = {cracky = 1, not_in_creative_inventory = 1},
+	groups = {not_in_creative_inventory = 1, cracky = 1, not_in_creative_inventory = 1},
 	tiles = {"streets_lamps_basic_middle.png"},
 	paramtype = "light",
 	drawtype = "nodebox",
@@ -384,7 +384,7 @@ minetest.register_node("streets:streetlamp_basic_middle",{
 minetest.register_node(":streets:streetlamp_basic_top_on",{
 	drop = "streets:streetlamp_basic_bottom",
 	description = streets.S("You cheater!"),
-	groups = {cracky = 1, not_in_creative_inventory = 1},
+	groups = {not_in_creative_inventory = 1, cracky = 1, not_in_creative_inventory = 1},
 	tiles = {"streets_lamps_basic_top_top.png","streets_lamps_basic_top_top.png","streets_lamps_basic_top.png","streets_lamps_basic_top.png","streets_lamps_basic_top.png","streets_lamps_basic_top.png"},
 	paramtype = "light",
 	drawtype = "nodebox",
@@ -417,7 +417,7 @@ minetest.register_node("streets:rw_asphalt_solid",{
 	drawtype = "raillike",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_solid_line.png",
@@ -434,7 +434,7 @@ minetest.register_node("streets:rw_asphalt_dashed",{
 	drawtype = "raillike",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_dashed_line.png",
@@ -451,7 +451,7 @@ minetest.register_node("streets:rw_cross",{
 	drawtype = "signlike",
 	paramtype = "light",
 	paramtype2 = "wallmounted",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_cross.png",
@@ -467,7 +467,7 @@ minetest.register_node("streets:rw_outer_edge",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_outer_edge.png",
@@ -488,7 +488,7 @@ minetest.register_node("streets:rw_parking",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_parking.png",
@@ -509,7 +509,7 @@ minetest.register_node("streets:rw_alldirs",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_arrow_alldirs.png",
@@ -530,7 +530,7 @@ minetest.register_node("streets:rw_left",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_arrow_left.png",
@@ -551,7 +551,7 @@ minetest.register_node("streets:rw_right",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_arrow_right.png",
@@ -572,7 +572,7 @@ minetest.register_node("streets:rw_straight_right",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_arrow_straight_right.png",
@@ -593,7 +593,7 @@ minetest.register_node("streets:rw_straight_left",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_arrow_straight_left.png",
@@ -614,7 +614,7 @@ minetest.register_node("streets:rw_straight",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_arrow_straight.png",
@@ -635,7 +635,7 @@ minetest.register_node("streets:rw_sideline",{
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3,attached_node = 1,oddly_breakable_by_hand = 1},
 	sunlight_propagates = true,
 	walkable = false,
 	inventory_image = "streets_rw_asphalt_side.png",
@@ -654,83 +654,83 @@ minetest.register_node("streets:rw_sideline",{
 minetest.register_node("streets:asphalt",{
 	description = streets.S("Asphalt"),
 	tiles	= {"streets_asphalt.png"},
-	groups	= {cracky=1,level=2}
+	groups = {not_in_creative_inventory = 1,cracky=1,level=2}
 })
 
 -- Asphalt
 minetest.register_node("streets:asphalt_sideline",{
 	description = streets.S("Asphalt with sideline"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_asphalt_side.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_solid_line",{
 	description = streets.S("Asphalt with solid line"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_asphalt_solid_line.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_dashed_line",{
 	description = streets.S("Asphalt with dashed line"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_asphalt_dashed_line.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_outer_edge",{
 	description = streets.S("Asphalt with outer edge"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_asphalt_outer_edge.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_straight",{
 	description = streets.S("Asphalt with arrow (straight)"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_straight.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_parking",{
 	description = streets.S("Asphalt with parking label"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_parking.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_left",{
 	description = streets.S("Asphalt with arrow (left)"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_left.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_right",{
 	description = streets.S("Asphalt with arrow (right)"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_right.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_straight_left",{
 	description = streets.S("Asphalt with arrow (straight left)"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_straight_left.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node(":streets:asphalt_arrow_straight_right",{
 	description = streets.S("Asphalt with arrow (straight right)"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_straight_right.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_alldirs",{
 	description = streets.S("Asphalt with arrow (all directions)"),
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_alldirs.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
@@ -739,21 +739,21 @@ minetest.register_node("streets:asphalt_arrow_alldirs",{
 stairsplus:register_all("streets", "asphalt", "streets:asphalt", {
 	description = "Asphalt",
 	tiles = {"streets_asphalt.png"},
-	groups = {cracky=1,level=2,not_in_craft_guide=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	sunlight_propagates = true,
 })
 
 stairsplus:register_all("streets", "asphalt_solid_line", "streets:asphalt_solid_line", {
 	description = "Asphalt with solid line",
 	tiles = {"streets_asphalt.png^streets_asphalt_solid_line.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_solid_line.png"},
-	groups = {cracky=1,level=2,not_in_craft_guide=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	sunlight_propagates = true,
 })
 
 stairsplus:register_all("streets", "asphalt_dashed_line", "streets:asphalt_dashed_line", {
 	description = "Asphalt with dashed line",
 	tiles = {"streets_asphalt.png^streets_asphalt_dashed_line.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_dashed_line.png"},
-	groups = {cracky=1,level=2,not_in_craft_guide=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	sunlight_propagates = true,
 })
 
@@ -761,7 +761,7 @@ stairsplus:register_all("streets", "asphalt_dashed_line", "streets:asphalt_dashe
 minetest.register_node("streets:asphalt_side_stair_l",{
 	description = streets.S("Asphalt stair"),
 	tiles = {"streets_asphalt.png^streets_asphalt_side.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_side.png"},
-	groups = {cracky=1,level=2,not_in_craft_guide=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
@@ -777,7 +777,7 @@ minetest.register_node("streets:asphalt_side_stair_l",{
 minetest.register_node("streets:asphalt_side_slab_l",{
 	description = streets.S(streets.S("Asphalt slab")),
 	tiles = {"streets_asphalt.png^streets_asphalt_side.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_side.png"},
-	groups = {cracky=1,level=2,not_in_craft_guide=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
@@ -792,7 +792,7 @@ minetest.register_node("streets:asphalt_side_slab_l",{
 minetest.register_node("streets:asphalt_side_slab_r",{
 	description = streets.S(streets.S("Asphalt slab")),
 	tiles = {"streets_asphalt.png^streets_asphalt_side_r.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_side_r.png"},
-	groups = {cracky=1,level=2,not_in_craft_guide=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
@@ -806,7 +806,7 @@ minetest.register_node("streets:asphalt_side_slab_r",{
 minetest.register_node("streets:asphalt_side_stair_r",{
 	description = streets.S(streets.S("Asphalt stair")),
 	tiles = {"streets_asphalt.png^streets_asphalt_side_r.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_side_r.png"},
-	groups = {cracky=1,level=2,not_in_craft_guide=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
@@ -824,13 +824,13 @@ minetest.register_node("streets:asphalt_side_stair_r",{
 minetest.register_node("streets:concrete",{
 	description = streets.S("Concrete"),
 	tiles = {"streets_concrete.png"},
-	groups = {cracky=1,level=2}
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2}
 })
 
 minetest.register_node("streets:concrete_wall",{
 	description = streets.S("Concrete wall"),
 	tiles = {"streets_concrete.png"},
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -846,7 +846,7 @@ minetest.register_node("streets:concrete_wall",{
 minetest.register_node("streets:concrete_wall_flat",{
 	description = streets.S("Concrete wall"),
 	tiles = {"streets_concrete.png"},
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -861,6 +861,6 @@ minetest.register_node("streets:concrete_wall_flat",{
 stairsplus:register_all("streets", "concrete", "streets:concrete", {
 	description = "Concrete",
 	tiles = {"streets_concrete.png"},
-	groups = {cracky=1,level=2,not_in_craft_guide=1},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	sunlight_propagates = true,
 })

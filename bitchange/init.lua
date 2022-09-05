@@ -7,7 +7,7 @@ minetest.register_node("bitchange:shop", {
 			 "bitchange_shop_side.png", "bitchange_shop_side.png",
 			 "bitchange_shop_side.png", "bitchange_shop_front.png"},
 	paramtype2 = "facedir",
-	groups = {choppy=2,oddly_breakable_by_hand=2},
+	groups = {not_in_creative_inventory = 1, choppy=2,oddly_breakable_by_hand=2},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -17,7 +17,7 @@ minetest.register_node("bitchange:donationbox", {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {choppy=2, oddly_breakable_by_hand=2},
+	groups = {not_in_creative_inventory = 1, choppy=2, oddly_breakable_by_hand=2},
 	sounds = default.node_sound_wood_defaults(),
 	node_box = {
 		type = "fixed",
@@ -42,6 +42,6 @@ minetest.register_node("bitchange:donationbox", {
 minetest.register_node("bitchange:bitcoin_block", {
 	description = "BitBlock",
 	tiles = {"bitchange_bitcoin_block.png"},
-	groups = {cracky=2},
+	groups = {not_in_creative_inventory = 1, cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 })

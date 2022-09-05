@@ -12,7 +12,7 @@ minetest.register_node("vessels:shelf", {
 		"default_wood.png", "vessels_shelf.png", "vessels_shelf.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
-	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
+	groups = {not_in_creative_inventory = 1, choppy = 3, oddly_breakable_by_hand = 2, flammable = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -29,7 +29,7 @@ minetest.register_node("vessels:glass_bottle", {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
 	},
-	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {not_in_creative_inventory = 1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 
@@ -46,7 +46,7 @@ minetest.register_node("vessels:drinking_glass", {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
 	},
-	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {not_in_creative_inventory = 1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_glass_defaults(),
 })
 
@@ -63,6 +63,6 @@ minetest.register_node("vessels:steel_bottle", {
 		type = "fixed",
 		fixed = {-0.25, -0.5, -0.25, 0.25, 0.3, 0.25}
 	},
-	groups = {vessel = 1, dig_immediate = 3, attached_node = 1},
+	groups = {not_in_creative_inventory = 1, vessel = 1, dig_immediate = 3, attached_node = 1},
 	sounds = default.node_sound_defaults(),
 })

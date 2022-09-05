@@ -8,7 +8,7 @@ local function building_blocks_stairs(nodename, def)
 		local mod, name = nodename:match("(.*):(.*)")
 		minetest.register_alias(mod .. ":slab_" .. name, "stairs:slab_" .. name)
 		minetest.register_alias(mod .. ":stair_" .. name, "stairs:stair_" .. name)
-		local stairs_groups = {}
+		local stairs_groups = {not_in_creative_inventory = 1, }
 		for _, groupname in ipairs(stairs_groups_names) do
 			stairs_groups[groupname] = def.groups[groupname]
 		end
@@ -48,7 +48,7 @@ building_blocks_stairs("building_blocks:grate", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = true,
-	groups = {cracky=1},
+	groups = {not_in_creative_inventory = 1, cracky=1},
 	sounds = default.node_sound_metal_defaults(),
 })
 building_blocks_stairs("building_blocks:smoothglass", {
@@ -60,7 +60,7 @@ building_blocks_stairs("building_blocks:smoothglass", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = true,
-	groups = {snappy=3,cracky=3,oddly_breakable_by_hand=3},
+	groups = {not_in_creative_inventory = 1, snappy=3,cracky=3,oddly_breakable_by_hand=3},
 	sounds = default.node_sound_glass_defaults(),
 })
 building_blocks_stairs("building_blocks:woodglass", {
@@ -72,7 +72,7 @@ building_blocks_stairs("building_blocks:woodglass", {
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = true,
-	groups = {snappy=3,cracky=3,oddly_breakable_by_hand=3},
+	groups = {not_in_creative_inventory = 1, snappy=3,cracky=3,oddly_breakable_by_hand=3},
 	sounds = default.node_sound_glass_defaults(),
 })
 
@@ -82,7 +82,7 @@ building_blocks_stairs("building_blocks:Adobe", {
 	stair_desc = S("Adobe Stair"),
 	slab_desc = S("Adobe Slab"),
 	is_ground_content = true,
-	groups = {crumbly=3},
+	groups = {not_in_creative_inventory = 1, crumbly=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 building_blocks_stairs("building_blocks:fakegrass", {
@@ -91,7 +91,7 @@ building_blocks_stairs("building_blocks:fakegrass", {
 	stair_desc = S("Fake Grass Stair"),
 	slab_desc = S("Fake Grass Slab"),
 	is_ground_content = true,
-	groups = {crumbly=3},
+	groups = {not_in_creative_inventory = 1, crumbly=3},
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name="default_grass_footstep", gain=0.4},
 	}),
@@ -102,7 +102,7 @@ building_blocks_stairs("building_blocks:hardwood", {
 	description = S("Hardwood"),
 	stair_desc = S("Hardwood Stair"),
 	slab_desc = S("Hardwood Slab"),
-	groups = {choppy=1,flammable=1},
+	groups = {not_in_creative_inventory = 1, choppy=1,flammable=1},
 	sounds = default.node_sound_wood_defaults(),
 })
 building_blocks_stairs("building_blocks:Roofing", {
@@ -111,7 +111,7 @@ building_blocks_stairs("building_blocks:Roofing", {
 	description = S("Roof block"),
 	stair_desc = S("Roof block Stair"),
 	slab_desc = S("Roof block Slab"),
-	groups = {snappy=3},
+	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 building_blocks_stairs("building_blocks:Tar", {
@@ -120,7 +120,7 @@ building_blocks_stairs("building_blocks:Tar", {
 	slab_desc = S("Tar Slab"),
 	tiles = {"building_blocks_tar.png"},
 	is_ground_content = true,
-	groups = {crumbly=1, tar_block = 1},
+	groups = {not_in_creative_inventory = 1, crumbly=1, tar_block = 1},
 	sounds = default.node_sound_stone_defaults(),
 })
 building_blocks_stairs("building_blocks:Marble", {
@@ -129,7 +129,7 @@ building_blocks_stairs("building_blocks:Marble", {
 	slab_desc = S("Marble Slab"),
 	tiles = {"building_blocks_marble.png"},
 	is_ground_content = true,
-	groups = {cracky=3, marble = 1},
+	groups = {not_in_creative_inventory = 1, cracky=3, marble = 1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -149,7 +149,7 @@ minetest.register_node("building_blocks:brobble_spread", {
 	},
 	sunlight_propagates = true,
 	is_ground_content = true,
-	groups = {crumbly=3},
+	groups = {not_in_creative_inventory = 1, crumbly=3},
 })
 
 if not minetest.get_modpath("moreblocks") or not minetest.get_modpath("gloopblocks") then
@@ -167,7 +167,7 @@ if not minetest.get_modpath("moreblocks") or not minetest.get_modpath("gloopbloc
 		},
 		sunlight_propagates = true,
 		is_ground_content = true,
-		groups = {crumbly=2},
+		groups = {not_in_creative_inventory = 1, crumbly=2},
 		sounds = default.node_sound_dirt_defaults({
 			footstep = {name="default_gravel_footstep", gain=0.5},
 			dug = {name="default_gravel_footstep", gain=1.0},
@@ -189,7 +189,7 @@ minetest.register_node("building_blocks:Tarmac_spread", {
 	},
 	sunlight_propagates = true,
 	is_ground_content = true,
-	groups = {cracky=3},
+	groups = {not_in_creative_inventory = 1, cracky=3},
 	sounds = default.node_sound_dirt_defaults(),
 })
 minetest.register_node("building_blocks:terrycloth_towel", {
@@ -206,7 +206,7 @@ minetest.register_node("building_blocks:terrycloth_towel", {
 	},
 	sunlight_propagates = true,
 	is_ground_content = true,
-	groups = {crumbly=3},
+	groups = {not_in_creative_inventory = 1, crumbly=3},
 })
 
 minetest.register_node("building_blocks:BWtile", {
@@ -229,7 +229,7 @@ minetest.register_node("building_blocks:BWtile", {
 	},
 	sunlight_propagates = true,
 	is_ground_content = true,
-	groups = {crumbly=3},
+	groups = {not_in_creative_inventory = 1, crumbly=3},
 })
 
 minetest.register_node("building_blocks:Fireplace", {
@@ -245,6 +245,6 @@ minetest.register_node("building_blocks:Fireplace", {
 	light_source = default.LIGHT_MAX,
 	sunlight_propagates = true,
 	is_ground_content = true,
-	groups = {cracky=2},
+	groups = {not_in_creative_inventory = 1, cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 })

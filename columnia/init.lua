@@ -21,7 +21,7 @@ minetest.register_node("columnia:bracket",	{
 			        {-0.125, -0.375, -0.125, 0.125, -0.25, 0.125},
 		        },
 			},
-			groups = {choppy=2, oddly_breakable_by_hand=2,},
+			groups = {not_in_creative_inventory = 1, choppy=2, oddly_breakable_by_hand=2,},
 			sounds = default.node_sound_stone_defaults(),
 })
 
@@ -39,7 +39,7 @@ minetest.register_node("columnia:lamp_ceiling", {
 	sunlight_propagates = true,
 	light_source = 13,
 	walkable = false,
-	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
+	groups = {not_in_creative_inventory = 1, snappy=2,cracky=3,oddly_breakable_by_hand=3},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -56,7 +56,7 @@ minetest.register_node("columnia:rusty_block", {
 	description = "Rusty Block",
 	tiles = {"columnia_rusty_block.png"},
 	is_ground_content = true,
-	groups = {cracky=1,level=2},
+	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -383,7 +383,7 @@ function columnia.register_column_ia(subname, recipeitem, groups, images, desc_c
 end
 
 columnia.register_column_ia("rusty_block", "columnia:rusty_block",
-		{cracky=3},
+		{not_in_creative_inventory=1,cracky=3},
 		{"columnia_rusty_block.png"},
 		"Rusty Column",
 		"Rusty Column Top",
@@ -395,7 +395,7 @@ columnia.register_column_ia("rusty_block", "columnia:rusty_block",
         )
 
 columnia.register_column_ia("stone", "default:stone",
-		{cracky=3},
+		{not_in_creative_inventory=1,cracky=3},
 		{"default_stone.png"},
 		"Stone Column",
 		"Stone Column Top",
@@ -407,7 +407,7 @@ columnia.register_column_ia("stone", "default:stone",
         )
 		
 columnia.register_column_ia("stonebrick", "default:stonebrick",
-		{cracky=3},
+		{not_in_creative_inventory=1,cracky=3},
 		{"default_stone_brick.png"},
 		"Stone Brick Column",
 		"Stone Brick Column Top",
@@ -419,7 +419,7 @@ columnia.register_column_ia("stonebrick", "default:stonebrick",
         )
 
 columnia.register_column_ia("desert_stonebrick", "default:desert_stonebrick",
-		{cracky=3},
+		{not_in_creative_inventory=1,cracky=3},
 		{"default_desert_stone_brick.png"},
 		"Desert Stone Brick Column",
 		"Desert Stone Brick Column Top",
@@ -431,7 +431,7 @@ columnia.register_column_ia("desert_stonebrick", "default:desert_stonebrick",
         )	
 
 columnia.register_column_ia("desert_stone", "default:desert_stone",
-		{cracky=3},
+		{not_in_creative_inventory=1,cracky=3},
 		{"default_desert_stone.png"},
 		"Desert Stone Column",
 		"Desert Stone Column Top",
@@ -443,7 +443,7 @@ columnia.register_column_ia("desert_stone", "default:desert_stone",
         )		
 		
 columnia.register_column_ia("cobble", "default:cobble",
-		{cracky=3},
+		{not_in_creative_inventory=1,cracky=3},
 		{"default_cobble.png"},
 		"Cobble Column",
 		"Cobble Column Top",
@@ -455,7 +455,7 @@ columnia.register_column_ia("cobble", "default:cobble",
         )
 
 columnia.register_column_ia("brick", "default:brick",
-		{cracky=3},
+		{not_in_creative_inventory=1,cracky=3},
 		{"default_brick.png"},
 		"Brick Column",
 		"Brick Column Top",
@@ -467,7 +467,7 @@ columnia.register_column_ia("brick", "default:brick",
         )	
 			
 columnia.register_column_ia("sandstone", "default:sandstone",
-		{crumbly=2,cracky=2},
+		{not_in_creative_inventory=1,crumbly=2,cracky=2},
 		{"default_sandstone.png"},
 		"Sandstone Column",
 		"Sandstone Column Top",
@@ -479,7 +479,7 @@ columnia.register_column_ia("sandstone", "default:sandstone",
         )
 		
 columnia.register_column_ia("sandstonebrick", "default:sandstonebrick",
-		{crumbly=2,cracky=2},
+		{not_in_creative_inventory=1,crumbly=2,cracky=2},
 		{"default_sandstone_brick.png"},
 		"Sandstone Brick Column",
 		"Sandstone Brick Column Top",
@@ -491,7 +491,7 @@ columnia.register_column_ia("sandstonebrick", "default:sandstonebrick",
         )
 		
 columnia.register_column_ia("wood", "default:wood",
-		{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
+		{not_in_creative_inventory=1,snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
 		{"default_wood.png"},
 		"Wooden Column",
 		"Wooden Column Top",
@@ -502,7 +502,7 @@ columnia.register_column_ia("wood", "default:wood",
 		default.node_sound_wood_defaults())
 
 columnia.register_column_ia("junglewood", "default:junglewood",
-		{snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
+		{not_in_creative_inventory=1,snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
 		{"default_junglewood.png"},
 		"Junglewood Column",
 		"Junglewood Column Top",
@@ -513,7 +513,7 @@ columnia.register_column_ia("junglewood", "default:junglewood",
 		default.node_sound_wood_defaults())
 
 columnia.register_column_ia("pinewood", "default:pine_wood",
-        {snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
+        {not_in_creative_inventory=1,snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
         {"default_pine_wood.png"},
         "Pinewood Column",
         "Pineewood Column Top",
@@ -533,7 +533,7 @@ if core.get_modpath('moreblocks') then
                         tiles = {
 				'columnia_rusty_block.png'
 			},
-                        groups = {cracky=3},
+                        groups = {not_in_creative_inventory = 1, cracky=3},
                         sounds = default.node_sound_stone_defaults(),
                 }
         )

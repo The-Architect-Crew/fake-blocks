@@ -29,7 +29,7 @@ minetest.register_node("currency:barter", {
 			{0.250000,-0.500000,0.250000,0.437500,0.500000,0.447500},
 		},
 	},
-	groups = {choppy=2,oddly_breakable_by_hand=2},
+	groups = {not_in_creative_inventory = 1, choppy=2,oddly_breakable_by_hand=2},
 	sounds = currency.node_sound_wood_defaults(),
 })
 
@@ -43,7 +43,7 @@ minetest.register_node("currency:shop", {
 			"shop_side.png",
 			"shop_front.png"},
 	inventory_image = "shop_front.png",
-	groups = {choppy=2,oddly_breakable_by_hand=2,tubedevice=1,tubedevice_receiver=1},
+	groups = {not_in_creative_inventory = 1, choppy=2,oddly_breakable_by_hand=2,tubedevice=1,tubedevice_receiver=1},
 	sounds = currency.node_sound_wood_defaults(),
 })
 
@@ -57,6 +57,6 @@ minetest.register_node("currency:shop_empty", {
 			"shop_side_empty.png",
 			"shop_front_empty.png"},
 	drop = "currency:shop",
-	groups = {choppy=2,oddly_breakable_by_hand=2,tubedevice=1,tubedevice_receiver=1,not_in_creative_inventory=1},
+	groups = {not_in_creative_inventory = 1, choppy=2,oddly_breakable_by_hand=2,tubedevice=1,tubedevice_receiver=1,not_in_creative_inventory=1},
 	sounds = currency.node_sound_wood_defaults(),
 })

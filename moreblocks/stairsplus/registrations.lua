@@ -120,7 +120,7 @@ if minetest.get_modpath("basic_materials") then
 	stairsplus:register_all("technic","concrete","basic_materials:concrete_block",{
 		description = "Concrete",
 		tiles = {"basic_materials_concrete_block.png",},
-		groups = {cracky=1, level=2, concrete=1},
+		groups = {cracky=1, level=2, concrete=1, not_in_creative_inventory=1},
 		sounds = default.node_sound_stone_defaults(),
 	})
 

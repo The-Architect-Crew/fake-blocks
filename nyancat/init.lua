@@ -5,7 +5,7 @@ minetest.register_node("nyancat:nyancat", {
 	paramtype = "light",
 	light_source = default.LIGHT_MAX,
 	paramtype2 = "facedir",
-	groups = {cracky = 2},
+	groups = {not_in_creative_inventory = 1, cracky = 2},
 	is_ground_content = false,
 	legacy_facedir_simple = true,
 	sounds = default.node_sound_defaults(),
@@ -21,7 +21,7 @@ minetest.register_node("nyancat:nyancat_rainbow", {
 	paramtype = "light",
 	light_source = default.LIGHT_MAX,
 	paramtype2 = "facedir",
-	groups = {cracky = 2},
+	groups = {not_in_creative_inventory = 1, cracky = 2},
 	is_ground_content = false,
 	sounds = default.node_sound_defaults(),
 })

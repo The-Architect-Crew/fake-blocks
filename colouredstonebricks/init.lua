@@ -40,14 +40,14 @@ for number = 1, 15 do
 	minetest.register_node("colouredstonebricks:"..colour2, {
 		description = colour.." Stone Brick",
 		tiles = {"colouredstonebricks_"..colour2..".png"},
-		groups = {cracky=3},
+		groups = {not_in_creative_inventory = 1, cracky=3},
         sounds = default.node_sound_defaults(),
 	})
     -- Support for stairsplus mod
     stairsplus:register_all("colouredstonebricks", colour2, "colouredstonebricks:"..colour2, {
         description = colour.." Stone Brick",
 		tiles = {"colouredstonebricks_"..colour2..".png"},
-		groups = {cracky=3,not_in_craft_guide=1},
+		groups = {not_in_creative_inventory = 1, cracky=3,not_in_craft_guide=1},
 		sounds = default.node_sound_defaults(),
         sunlight_propagates = true,
     })

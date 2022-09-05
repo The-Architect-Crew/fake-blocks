@@ -19,7 +19,7 @@ minetest.register_node("locked_sign:sign_wall_locked", {
 		wall_bottom = {-0.4375, -0.5, -0.3125, 0.4375, -0.4375, 0.3125},
 		wall_side   = {-0.5, -0.3125, -0.4375, -0.4375, 0.3125, 0.4375},
 	},
-	groups = {choppy=2,dig_immediate=2},
+	groups = {not_in_creative_inventory = 1, choppy=2,dig_immediate=2},
 	legacy_wallmounted = true,
 	sounds = default.node_sound_defaults(),
 })

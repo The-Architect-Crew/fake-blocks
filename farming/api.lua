@@ -39,7 +39,7 @@ farming.register_plant = function(name, def)
 
 	-- Register seed
 	local lbm_nodes = {mname .. ":seed_" .. pname}
-	local g = {seed = 1, snappy = 3, attached_node = 1, flammable = 2}
+	local g = {not_in_creative_inventory = 1, seed = 1, snappy = 3, attached_node = 1, flammable = 2}
 	for k, v in pairs(def.fertility) do
 		g[v] = 1
 	end
