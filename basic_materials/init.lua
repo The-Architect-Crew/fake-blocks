@@ -11,7 +11,7 @@ basic_materials = {}
 basic_materials.mod = { author = "Vanessa Dannenberg" }
 
 minetest.register_node("basic_materials:cement_block", {
-	description = S("Cement"),
+	description = S("Cement (Deprecated)"),
 	tiles = {"basic_materials_cement_block.png"},
 	is_ground_content = true,
 	groups = {not_in_creative_inventory = 1, cracky=2},
@@ -19,7 +19,7 @@ minetest.register_node("basic_materials:cement_block", {
 })
 
 minetest.register_node("basic_materials:concrete_block", {
-	description = S("Concrete Block"),
+	description = S("Concrete Block (Deprecated)"),
 	tiles = {"basic_materials_concrete_block.png",},
 	groups = {not_in_creative_inventory = 1, cracky=1, level=2, concrete=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -31,7 +31,7 @@ local chains_sbox = {
 }
 
 minetest.register_node("basic_materials:chain_steel", {
-	description = S("Chain (steel, hanging)"),
+	description = S("Chain (steel, hanging) (Deprecated)"),
 	drawtype = "mesh",
 	mesh = "basic_materials_chains.obj",
 	tiles = {"basic_materials_chain_steel.png"},
@@ -45,7 +45,7 @@ minetest.register_node("basic_materials:chain_steel", {
 })
 
 minetest.register_node("basic_materials:chain_brass", {
-	description = S("Chain (brass, hanging)"),
+	description = S("Chain (brass, hanging) (Deprecated)"),
 	drawtype = "mesh",
 	mesh = "basic_materials_chains.obj",
 	tiles = {"basic_materials_chain_brass.png"},
@@ -59,7 +59,7 @@ minetest.register_node("basic_materials:chain_brass", {
 })
 
 minetest.register_node("basic_materials:brass_block", {
-	description = S("Brass Block"),
+	description = S("Brass Block (Deprecated)"),
 	tiles = { "basic_materials_brass_block.png" },
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky=1, level=2},

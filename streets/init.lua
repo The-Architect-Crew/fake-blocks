@@ -29,7 +29,7 @@ else
 end
 
 minetest.register_node("streets:delineator", {
-	description = streets.S("Delineator"),
+	description = streets.S("Delineator (Deprecated)"),
 	tiles = {"streets_delineator_top.png","streets_delineator.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -45,7 +45,7 @@ minetest.register_node("streets:delineator", {
 })
 
 minetest.register_node(":streets:constructionfence_bottom",{
-	description = streets.S("Construction fence"),
+	description = streets.S("Construction fence (Deprecated)"),
 	tiles = {"streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_bottom.png","streets_fence_bottom.png"},
 	groups = {not_in_creative_inventory = 1, cracky = 2},
 	paramtype = "light",
@@ -81,7 +81,7 @@ minetest.register_node(":streets:constructionfence_bottom",{
 })
 
 minetest.register_node(":streets:constructionfence_top",{
-	description = streets.S("Construction fence"),
+	description = streets.S("Construction fence (Deprecated)"),
 	tiles = {"streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_fromtop.png","streets_fence_top.png","streets_fence_top.png"},
 	groups = {not_in_creative_inventory = 1, cracky = 2, not_in_creative_inventory = 1},
 	paramtype = "light",
@@ -107,13 +107,13 @@ minetest.register_node(":streets:constructionfence_top",{
 })
 
 minetest.register_node("streets:manhole",{
-	description = streets.S("Simple manhole"),
+	description = streets.S("Simple manhole (Deprecated)"),
 	tiles = {"streets_asphalt.png^streets_manhole.png","streets_asphalt.png"},
 	groups = {not_in_creative_inventory = 1,cracky=1,level=2}
 })
 
 minetest.register_node("streets:manhole_adv_closed",{
-	description = streets.S("Advanced manhole"),
+	description = streets.S("Advanced manhole (Deprecated)"),
 	tiles = {"streets_asphalt.png^streets_manhole_advanced.png","streets_asphalt.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	drawtype = "nodebox",
@@ -142,7 +142,7 @@ minetest.register_node("streets:manhole_adv_closed",{
 })
 
 minetest.register_node("streets:manhole_adv_open",{
-	description = streets.S("Advanced manhole"),
+	description = streets.S("Advanced manhole (Deprecated)"),
 	tiles = {"streets_asphalt.png^streets_manhole_advanced.png","streets_asphalt.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_creative_inventory=1},
 	drawtype = "nodebox",
@@ -195,7 +195,7 @@ minetest.register_node("streets:pole_top",{
 })
 
 minetest.register_node("streets:pole_bottom",{
-	description = streets.S("Pole"),
+	description = streets.S("Pole (Deprecated)"),
 	tiles = {"streets_pole.png"},
 	groups = {not_in_creative_inventory = 1, cracky=2},
 	inventory_image = "streets_pole_inv.png",
@@ -236,7 +236,7 @@ minetest.register_node("streets:pole_bottom",{
 
 -- Big pole
 minetest.register_node("streets:bigpole", {
-	description = "Pole",
+	description = "Pole (Deprecated)",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	drawtype = "nodebox",
@@ -253,7 +253,7 @@ minetest.register_node("streets:bigpole", {
 })
 
 minetest.register_node(":streets:bigpole_edge", {
-	description = "Pole",
+	description = "Pole (Deprecated)",
 	drop = "streets:bigpole",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -271,7 +271,7 @@ minetest.register_node(":streets:bigpole_edge", {
 })
 
 minetest.register_node("streets:bigpole_tjunction", {
-	description = "Pole",
+	description = "Pole (Deprecated)",
 	drop = "streets:bigpole",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -316,24 +316,24 @@ streets.workshop.register_sign  = function(nodename, desc, img)
 end
 
 minetest.register_node("streets:signworkshop",{
-	description = streets.S("Sign workshop"),
+	description = streets.S("Sign workshop (Deprecated)"),
 	tiles = {"streets_signworkshop_top.png","streets_signworkshop_bottom.png","streets_signworkshop_side.png","streets_signworkshop_side.png","streets_signworkshop_side.png","streets_signworkshop_front.png"},
 	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
 	paramtype2 = "facedir",
 })
 
-streets.workshop.register_sign("streets:sign_blank", streets.S("Empty sign"), "streets_sign_back.png", {"default:steel_ingot","","",""}, 3)
-streets.workshop.register_sign("streets:sign_lava", streets.S("Warning sign (lava)"), "streets_sign_lava.png", {"streets:sign_blank","bucket:bucket_lava","",""}, 5)
-streets.workshop.register_sign("streets:sign_water", streets.S("Warning sign (water)"), "streets_sign_water.png", {"streets:sign_blank","bucket:bucket_water","",""}, 5)
-streets.workshop.register_sign("streets:sign_construction", streets.S("Warning sign (Construction area)"), "streets_sign_construction.png", {"streets:sign_blank","default:dirt","",""}, 5)
-streets.workshop.register_sign("streets:sign_mine", streets.S("Notice sign (Public Mine Ahead)"), "streets_sign_mine.png", {"streets:sign_blank","default:dirt","",""}, 5)
-streets.workshop.register_sign("streets:sign_shop", streets.S("Notice sign (Shop/Mall Ahead)"), "streets_sign_construction.png", {"streets:sign_blank","default:dirt","",""}, 5)
-streets.workshop.register_sign("streets:sign_workshop", streets.S("Notice sign (Public Workshop Ahead)"), "streets_sign_workshop.png", {"streets:sign_blank","default:dirt","",""}, 5)
-streets.workshop.register_sign("streets:sign_grasswalk", streets.S("Warning sign (No walking on the grass)"), "streets_sign_grasswalk.png", {"streets:sign_blank","default:dirt","",""}, 5)
+streets.workshop.register_sign("streets:sign_blank", streets.S("Empty sign (Deprecated)"), "streets_sign_back.png", {"default:steel_ingot","","",""}, 3)
+streets.workshop.register_sign("streets:sign_lava", streets.S("Warning sign (lava) (Deprecated)"), "streets_sign_lava.png", {"streets:sign_blank","bucket:bucket_lava","",""}, 5)
+streets.workshop.register_sign("streets:sign_water", streets.S("Warning sign (water) (Deprecated)"), "streets_sign_water.png", {"streets:sign_blank","bucket:bucket_water","",""}, 5)
+streets.workshop.register_sign("streets:sign_construction", streets.S("Warning sign (Construction area) (Deprecated)"), "streets_sign_construction.png", {"streets:sign_blank","default:dirt","",""}, 5)
+streets.workshop.register_sign("streets:sign_mine", streets.S("Notice sign (Public Mine Ahead) (Deprecated)"), "streets_sign_mine.png", {"streets:sign_blank","default:dirt","",""}, 5)
+streets.workshop.register_sign("streets:sign_shop", streets.S("Notice sign (Shop/Mall Ahead) (Deprecated)"), "streets_sign_construction.png", {"streets:sign_blank","default:dirt","",""}, 5)
+streets.workshop.register_sign("streets:sign_workshop", streets.S("Notice sign (Public Workshop Ahead) (Deprecated)"), "streets_sign_workshop.png", {"streets:sign_blank","default:dirt","",""}, 5)
+streets.workshop.register_sign("streets:sign_grasswalk", streets.S("Warning sign (No walking on the grass) (Deprecated)"), "streets_sign_grasswalk.png", {"streets:sign_blank","default:dirt","",""}, 5)
 
 -- steel support
 minetest.register_node("streets:steel_support",{
-	description = streets.S("Steel support"),
+	description = streets.S("Steel support (Deprecated)"),
 	tiles = {"streets_support.png"},
 	groups = {not_in_creative_inventory = 1, cracky = 1},
 	drawtype = "glasslike_framed",
@@ -345,7 +345,7 @@ minetest.register_node("streets:steel_support",{
 -- streetlamp
 minetest.register_node(":streets:streetlamp_basic_bottom",{
 	drop = "",
-	description = streets.S("Street lamp"),
+	description = streets.S("Street lamp (Deprecated)"),
 	tiles = {"streets_lamps_basic_bottom.png"},
 	inventory_image = "streets_lamps_basic_inv.png",
 	groups = {not_in_creative_inventory = 1, cracky = 1},
@@ -382,7 +382,7 @@ minetest.register_node("streets:streetlamp_basic_middle",{
 })
 
 minetest.register_node(":streets:streetlamp_basic_top_on",{
-	drop = "streets:streetlamp_basic_bottom",
+	drop = "streets:streetlamp_basic_bottom (Deprecated)",
 	description = streets.S("You cheater!"),
 	groups = {not_in_creative_inventory = 1, cracky = 1, not_in_creative_inventory = 1},
 	tiles = {"streets_lamps_basic_top_top.png","streets_lamps_basic_top_top.png","streets_lamps_basic_top.png","streets_lamps_basic_top.png","streets_lamps_basic_top.png","streets_lamps_basic_top.png"},
@@ -412,7 +412,7 @@ minetest.register_node(":streets:streetlamp_basic_top_on",{
 local box	= {-0.5,-0.5,-0.5,0.5,-0.45,0.5}
 
 minetest.register_node("streets:rw_asphalt_solid",{
-	description = streets.S("Solid line (yellow)"),
+	description = streets.S("Solid line (yellow) (Deprecated)"),
 	tiles = {"streets_rw_solid_line.png","streets_rw_solid_line_curve.png","streets_rw_solid_line_tjunction.png","streets_rw_solid_line_crossing.png"},
 	drawtype = "raillike",
 	paramtype = "light",
@@ -429,7 +429,7 @@ minetest.register_node("streets:rw_asphalt_solid",{
 })
 
 minetest.register_node("streets:rw_asphalt_dashed",{
-	description = streets.S("Dashed line (yellow)"),
+	description = streets.S("Dashed line (yellow) (Deprecated)"),
 	tiles = {"streets_rw_dashed_line.png","streets_rw_dashed_line_curve.png","streets_rw_dashed_line_tjunction.png","streets_rw_dashed_line_crossing.png"},
 	drawtype = "raillike",
 	paramtype = "light",
@@ -446,7 +446,7 @@ minetest.register_node("streets:rw_asphalt_dashed",{
 })
 
 minetest.register_node("streets:rw_cross",{
-	description = streets.S("Cross (yellow)"),
+	description = streets.S("Cross (yellow) (Deprecated)"),
 	tiles = {"streets_rw_cross.png"},
 	drawtype = "signlike",
 	paramtype = "light",
@@ -462,7 +462,7 @@ minetest.register_node("streets:rw_cross",{
 })
 
 minetest.register_node("streets:rw_outer_edge",{
-	description = streets.S("Outer edge (yellow)"),
+	description = streets.S("Outer edge (yellow) (Deprecated)"),
 	tiles = {"streets_rw_outer_edge.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -483,7 +483,7 @@ minetest.register_node("streets:rw_outer_edge",{
 })
 
 minetest.register_node("streets:rw_parking",{
-	description = streets.S("Parking (yellow)"),
+	description = streets.S("Parking (yellow) (Deprecated)"),
 	tiles = {"streets_rw_parking.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -504,7 +504,7 @@ minetest.register_node("streets:rw_parking",{
 })
 
 minetest.register_node("streets:rw_alldirs",{
-	description = streets.S("Arrow (yellow)"),
+	description = streets.S("Arrow (yellow) (Deprecated)"),
 	tiles = {"streets_rw_arrow_alldirs.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -525,7 +525,7 @@ minetest.register_node("streets:rw_alldirs",{
 })
 
 minetest.register_node("streets:rw_left",{
-	description = streets.S("Arrow (yellow)"),
+	description = streets.S("Arrow (yellow) (Deprecated)"),
 	tiles = {"streets_rw_arrow_left.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -546,7 +546,7 @@ minetest.register_node("streets:rw_left",{
 })
 
 minetest.register_node("streets:rw_right",{
-	description = streets.S("Arrow (yellow)"),
+	description = streets.S("Arrow (yellow) (Deprecated)"),
 	tiles = {"streets_rw_arrow_right.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -567,7 +567,7 @@ minetest.register_node("streets:rw_right",{
 })
 
 minetest.register_node("streets:rw_straight_right",{
-	description = streets.S("Arrow (yellow)"),
+	description = streets.S("Arrow (yellow) (Deprecated)"),
 	tiles = {"streets_rw_arrow_straight_right.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -588,7 +588,7 @@ minetest.register_node("streets:rw_straight_right",{
 })
 
 minetest.register_node("streets:rw_straight_left",{
-	description = streets.S("Arrow (yellow)"),
+	description = streets.S("Arrow (yellow) (Deprecated)"),
 	tiles = {"streets_rw_arrow_straight_left.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -609,7 +609,7 @@ minetest.register_node("streets:rw_straight_left",{
 })
 
 minetest.register_node("streets:rw_straight",{
-	description = streets.S("Arrow (yellow)"),
+	description = streets.S("Arrow (yellow) (Deprecated)"),
 	tiles = {"streets_rw_arrow_straight.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -630,7 +630,7 @@ minetest.register_node("streets:rw_straight",{
 })
 
 minetest.register_node("streets:rw_sideline",{
-	description = streets.S("Sideline (yellow)"),
+	description = streets.S("Sideline (yellow) (Deprecated)"),
 	tiles = {"streets_rw_asphalt_side.png","streets_rw_transparent.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -652,84 +652,84 @@ minetest.register_node("streets:rw_sideline",{
 
 -- Normal Asphalt
 minetest.register_node("streets:asphalt",{
-	description = streets.S("Asphalt"),
+	description = streets.S("Asphalt (Deprecated)"),
 	tiles	= {"streets_asphalt.png"},
 	groups = {not_in_creative_inventory = 1,cracky=1,level=2}
 })
 
 -- Asphalt
 minetest.register_node("streets:asphalt_sideline",{
-	description = streets.S("Asphalt with sideline"),
+	description = streets.S("Asphalt with sideline (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_asphalt_side.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_solid_line",{
-	description = streets.S("Asphalt with solid line"),
+	description = streets.S("Asphalt with solid line (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_asphalt_solid_line.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_dashed_line",{
-	description = streets.S("Asphalt with dashed line"),
+	description = streets.S("Asphalt with dashed line (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_asphalt_dashed_line.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_outer_edge",{
-	description = streets.S("Asphalt with outer edge"),
+	description = streets.S("Asphalt with outer edge (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_asphalt_outer_edge.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_straight",{
-	description = streets.S("Asphalt with arrow (straight)"),
+	description = streets.S("Asphalt with arrow (straight) (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_straight.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_parking",{
-	description = streets.S("Asphalt with parking label"),
+	description = streets.S("Asphalt with parking label (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_parking.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_left",{
-	description = streets.S("Asphalt with arrow (left)"),
+	description = streets.S("Asphalt with arrow (left) (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_left.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_right",{
-	description = streets.S("Asphalt with arrow (right)"),
+	description = streets.S("Asphalt with arrow (right) (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_right.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_straight_left",{
-	description = streets.S("Asphalt with arrow (straight left)"),
+	description = streets.S("Asphalt with arrow (straight left) (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_straight_left.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node(":streets:asphalt_arrow_straight_right",{
-	description = streets.S("Asphalt with arrow (straight right)"),
+	description = streets.S("Asphalt with arrow (straight right) (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_straight_right.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
 })
 
 minetest.register_node("streets:asphalt_arrow_alldirs",{
-	description = streets.S("Asphalt with arrow (all directions)"),
+	description = streets.S("Asphalt with arrow (all directions) (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	tiles = {"streets_asphalt.png^streets_arrow_alldirs.png","streets_asphalt.png"},
 	paramtype2 = "facedir"
@@ -737,21 +737,21 @@ minetest.register_node("streets:asphalt_arrow_alldirs",{
 
 -- Stairsplus
 stairsplus:register_all("streets", "asphalt", "streets:asphalt", {
-	description = "Asphalt",
+	description = "Asphalt (Deprecated)",
 	tiles = {"streets_asphalt.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	sunlight_propagates = true,
 })
 
 stairsplus:register_all("streets", "asphalt_solid_line", "streets:asphalt_solid_line", {
-	description = "Asphalt with solid line",
+	description = "Asphalt with solid line (Deprecated)",
 	tiles = {"streets_asphalt.png^streets_asphalt_solid_line.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_solid_line.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	sunlight_propagates = true,
 })
 
 stairsplus:register_all("streets", "asphalt_dashed_line", "streets:asphalt_dashed_line", {
-	description = "Asphalt with dashed line",
+	description = "Asphalt with dashed line (Deprecated)",
 	tiles = {"streets_asphalt.png^streets_asphalt_dashed_line.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_dashed_line.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	sunlight_propagates = true,
@@ -759,7 +759,7 @@ stairsplus:register_all("streets", "asphalt_dashed_line", "streets:asphalt_dashe
 
 -- Sideline stairs/slabs
 minetest.register_node("streets:asphalt_side_stair_l",{
-	description = streets.S("Asphalt stair"),
+	description = streets.S("Asphalt stair (Deprecated)"),
 	tiles = {"streets_asphalt.png^streets_asphalt_side.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_side.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	paramtype = "light",
@@ -775,7 +775,7 @@ minetest.register_node("streets:asphalt_side_stair_l",{
 })
 
 minetest.register_node("streets:asphalt_side_slab_l",{
-	description = streets.S(streets.S("Asphalt slab")),
+	description = streets.S(streets.S("Asphalt slab (Deprecated)")),
 	tiles = {"streets_asphalt.png^streets_asphalt_side.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_side.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	paramtype = "light",
@@ -790,7 +790,7 @@ minetest.register_node("streets:asphalt_side_slab_l",{
 })
 
 minetest.register_node("streets:asphalt_side_slab_r",{
-	description = streets.S(streets.S("Asphalt slab")),
+	description = streets.S(streets.S("Asphalt slab (Deprecated)")),
 	tiles = {"streets_asphalt.png^streets_asphalt_side_r.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_side_r.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	paramtype = "light",
@@ -804,7 +804,7 @@ minetest.register_node("streets:asphalt_side_slab_r",{
 	}
 })
 minetest.register_node("streets:asphalt_side_stair_r",{
-	description = streets.S(streets.S("Asphalt stair")),
+	description = streets.S(streets.S("Asphalt stair (Deprecated)")),
 	tiles = {"streets_asphalt.png^streets_asphalt_side_r.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png","streets_asphalt.png^streets_asphalt_side_r.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	paramtype = "light",
@@ -822,13 +822,13 @@ minetest.register_node("streets:asphalt_side_stair_r",{
 
 -- CONCRETE
 minetest.register_node("streets:concrete",{
-	description = streets.S("Concrete"),
+	description = streets.S("Concrete (Deprecated)"),
 	tiles = {"streets_concrete.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2}
 })
 
 minetest.register_node("streets:concrete_wall",{
-	description = streets.S("Concrete wall"),
+	description = streets.S("Concrete wall (Deprecated)"),
 	tiles = {"streets_concrete.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	drawtype = "nodebox",
@@ -844,7 +844,7 @@ minetest.register_node("streets:concrete_wall",{
 })
 
 minetest.register_node("streets:concrete_wall_flat",{
-	description = streets.S("Concrete wall"),
+	description = streets.S("Concrete wall (Deprecated)"),
 	tiles = {"streets_concrete.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
 	drawtype = "nodebox",
@@ -859,7 +859,7 @@ minetest.register_node("streets:concrete_wall_flat",{
 })
 
 stairsplus:register_all("streets", "concrete", "streets:concrete", {
-	description = "Concrete",
+	description = "Concrete (Deprecated)",
 	tiles = {"streets_concrete.png"},
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2,not_in_craft_guide=1},
 	sunlight_propagates = true,

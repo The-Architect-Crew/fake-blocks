@@ -1,5 +1,5 @@
 minetest.register_node("nyancat:nyancat", {
-	description = "Nyan Cat",
+	description = "Nyan Cat (Deprecated)",
 	tiles = {"nyancat_side.png", "nyancat_side.png", "nyancat_side.png",
 		"nyancat_side.png", "nyancat_back.png", "nyancat_front.png"},
 	paramtype = "light",
@@ -12,7 +12,7 @@ minetest.register_node("nyancat:nyancat", {
 })
 
 minetest.register_node("nyancat:nyancat_rainbow", {
-	description = "Nyan Cat Rainbow",
+	description = "Nyan Cat Rainbow (Deprecated)",
 	tiles = {
 		"nyancat_rainbow.png^[transformR90",
 		"nyancat_rainbow.png^[transformR90",

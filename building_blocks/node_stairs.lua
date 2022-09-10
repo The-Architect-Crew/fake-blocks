@@ -41,9 +41,9 @@ end
 
 building_blocks_stairs("building_blocks:grate", {
 	drawtype = "glasslike",
-	description = S("Grate"),
-	stair_desc = S("Grate Stair"),
-	slab = S("Grate Slab"),
+	description = S("Grate (Deprecated)"),
+	stair_desc = S("Grate Stair (Deprecated)"),
+	slab = S("Grate Slab (Deprecated)"),
 	tiles = {"building_blocks_grate.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -65,9 +65,9 @@ building_blocks_stairs("building_blocks:smoothglass", {
 })
 building_blocks_stairs("building_blocks:woodglass", {
 	drawtype = "glasslike",
-	description = S("Wood Framed Glass"),
-	stair_desc = S("Wood Framed Glass Stair"),
-	slab_desc = S("Wood Framed Glass Slab"),
+	description = S("Wood Framed Glass (Deprecated)"),
+	stair_desc = S("Wood Framed Glass Stair (Deprecated)"),
+	slab_desc = S("Wood Framed Glass Slab (Deprecated)"),
 	tiles = {"building_blocks_wglass.png"},
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -78,18 +78,18 @@ building_blocks_stairs("building_blocks:woodglass", {
 
 building_blocks_stairs("building_blocks:Adobe", {
 	tiles = {"building_blocks_Adobe.png"},
-	description = S("Adobe"),
-	stair_desc = S("Adobe Stair"),
-	slab_desc = S("Adobe Slab"),
+	description = S("Adobe (Deprecated)"),
+	stair_desc = S("Adobe Stair (Deprecated)"),
+	slab_desc = S("Adobe Slab (Deprecated)"),
 	is_ground_content = true,
 	groups = {not_in_creative_inventory = 1, crumbly=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 building_blocks_stairs("building_blocks:fakegrass", {
 	tiles = {"default_grass.png", "default_dirt.png", "default_dirt.png^default_grass_side.png"},
-	description = S("Fake Grass"),
-	stair_desc = S("Fake Grass Stair"),
-	slab_desc = S("Fake Grass Slab"),
+	description = S("Fake Grass (Deprecated)"),
+	stair_desc = S("Fake Grass Stair (Deprecated)"),
+	slab_desc = S("Fake Grass Slab (Deprecated)"),
 	is_ground_content = true,
 	groups = {not_in_creative_inventory = 1, crumbly=3},
 	sounds = default.node_sound_dirt_defaults({
@@ -99,34 +99,34 @@ building_blocks_stairs("building_blocks:fakegrass", {
 building_blocks_stairs("building_blocks:hardwood", {
 	tiles = {"building_blocks_hardwood.png"},
 	is_ground_content = true,
-	description = S("Hardwood"),
-	stair_desc = S("Hardwood Stair"),
-	slab_desc = S("Hardwood Slab"),
+	description = S("Hardwood (Deprecated)"),
+	stair_desc = S("Hardwood Stair (Deprecated)"),
+	slab_desc = S("Hardwood Slab (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, choppy=1,flammable=1},
 	sounds = default.node_sound_wood_defaults(),
 })
 building_blocks_stairs("building_blocks:Roofing", {
 	tiles = {"building_blocks_Roofing.png"},
 	is_ground_content = true,
-	description = S("Roof block"),
-	stair_desc = S("Roof block Stair"),
-	slab_desc = S("Roof block Slab"),
+	description = S("Roof block (Deprecated)"),
+	stair_desc = S("Roof block Stair (Deprecated)"),
+	slab_desc = S("Roof block Slab (Deprecated)"),
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_stone_defaults(),
 })
 building_blocks_stairs("building_blocks:Tar", {
-	description = S("Tar"),
-	stair_desc = S("Tar Stair"),
-	slab_desc = S("Tar Slab"),
+	description = S("Tar (Deprecated)"),
+	stair_desc = S("Tar Stair (Deprecated)"),
+	slab_desc = S("Tar Slab (Deprecated)"),
 	tiles = {"building_blocks_tar.png"},
 	is_ground_content = true,
 	groups = {not_in_creative_inventory = 1, crumbly=1, tar_block = 1},
 	sounds = default.node_sound_stone_defaults(),
 })
 building_blocks_stairs("building_blocks:Marble", {
-	description = S("Marble"),
-	stair_desc = S("Marble Stair"),
-	slab_desc = S("Marble Slab"),
+	description = S("Marble (Deprecated)"),
+	stair_desc = S("Marble Stair (Deprecated)"),
+	slab_desc = S("Marble Slab (Deprecated)"),
 	tiles = {"building_blocks_marble.png"},
 	is_ground_content = true,
 	groups = {not_in_creative_inventory = 1, cracky=3, marble = 1},
@@ -137,7 +137,7 @@ minetest.register_node("building_blocks:brobble_spread", {
 	drawtype = "raillike",
 	-- Translators: "Brobble" is a portmanteau of "Brick" and "Cobble".
 	-- Translate however you see fit.
-	description = S("Brobble Spread"),
+	description = S("Brobble Spread (Deprecated)"),
 	tiles = {"building_blocks_brobble.png"},
 	inventory_image = "building_blocks_brobble_spread_inv.png",
 	paramtype = "light",
@@ -155,7 +155,7 @@ minetest.register_node("building_blocks:brobble_spread", {
 if not minetest.get_modpath("moreblocks") or not minetest.get_modpath("gloopblocks") then
 	minetest.register_node("building_blocks:gravel_spread", {
 		drawtype = "raillike",
-		description = S("Gravel Spread"),
+		description = S("Gravel Spread (Deprecated)"),
 		tiles = {"default_gravel.png"},
 		inventory_image = "building_blocks_gravel_spread_inv.png",
 		paramtype = "light",
@@ -177,7 +177,7 @@ end
 
 minetest.register_node("building_blocks:Tarmac_spread", {
 	drawtype = "raillike",
-	description = S("Tarmac Spread"),
+	description = S("Tarmac Spread (Deprecated)"),
 	tiles = {"building_blocks_tar.png"},
 	inventory_image = "building_blocks_tar_spread_inv.png",
 	paramtype = "light",
@@ -194,7 +194,7 @@ minetest.register_node("building_blocks:Tarmac_spread", {
 })
 minetest.register_node("building_blocks:terrycloth_towel", {
 	drawtype = "raillike",
-	description = S("Terrycloth towel"),
+	description = S("Terrycloth towel (Deprecated)"),
 	tiles = {"building_blocks_towel.png"},
 	inventory_image = "building_blocks_towel_inv.png",
 	paramtype = "light",
@@ -211,7 +211,7 @@ minetest.register_node("building_blocks:terrycloth_towel", {
 
 minetest.register_node("building_blocks:BWtile", {
 	drawtype = "nodebox",
-	description = S("Chess board tiling"),
+	description = S("Chess board tiling (Deprecated)"),
 	tiles = {
 		"building_blocks_BWtile.png",
 		"building_blocks_BWtile.png^[transformR90",
@@ -233,7 +233,7 @@ minetest.register_node("building_blocks:BWtile", {
 })
 
 minetest.register_node("building_blocks:Fireplace", {
-	description = S("Fireplace"),
+	description = S("Fireplace (Deprecated)"),
 	tiles = {
 		"building_blocks_cast_iron.png",
 		"building_blocks_cast_iron.png",

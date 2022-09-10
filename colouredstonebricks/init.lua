@@ -38,7 +38,7 @@ for number = 1, 15 do
 	local colour = COLOURS[number]
 	local colour2 = COLOURS2[number]
 	minetest.register_node("colouredstonebricks:"..colour2, {
-		description = colour.." Stone Brick",
+		description = colour.." Stone Brick (Deprecated)",
 		tiles = {"colouredstonebricks_"..colour2..".png"},
 		groups = {not_in_creative_inventory = 1, cracky=3},
         sounds = default.node_sound_defaults(),

@@ -2,7 +2,7 @@
 -- Players will get money every day by digging or placing blocks
 
 minetest.register_node("bitchange:shop", {
-	description = "Shop",
+	description = "Shop (Deprecated)",
 	tiles = {"bitchange_shop_top.png", "bitchange_shop_top.png",
 			 "bitchange_shop_side.png", "bitchange_shop_side.png",
 			 "bitchange_shop_side.png", "bitchange_shop_front.png"},
@@ -12,7 +12,7 @@ minetest.register_node("bitchange:shop", {
 })
 
 minetest.register_node("bitchange:donationbox", {
-	description = "Donation box",
+	description = "Donation box (Deprecated)",
 	tiles = {"default_wood.png"},
 	drawtype = "nodebox",
 	paramtype = "light",
@@ -40,7 +40,7 @@ minetest.register_node("bitchange:donationbox", {
 
 -- Bitcoin Block
 minetest.register_node("bitchange:bitcoin_block", {
-	description = "BitBlock",
+	description = "BitBlock (Deprecated)",
 	tiles = {"bitchange_bitcoin_block.png"},
 	groups = {not_in_creative_inventory = 1, cracky=2},
 	sounds = default.node_sound_stone_defaults(),

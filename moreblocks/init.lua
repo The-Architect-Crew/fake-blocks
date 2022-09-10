@@ -21,7 +21,7 @@ dofile(modpath .. "/stairsplus/init.lua")
 dofile(modpath .. "/aliases.lua")
 
 minetest.register_node("moreblocks:circular_saw",  {
-	description = S("Circular Saw"),
+	description = S("Circular Saw (Deprecated)"),
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed",
@@ -80,7 +80,7 @@ end
 local deprecated = (" (%s)"):format(S('Deprecated'))
 local nodes = {
 	["wood_tile"] = {
-		description = S("Wooden Tile"),
+		description = S("Wooden Tile (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, wood = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		is_ground_content = false,
 		paramtype2 = "facedir",
@@ -106,21 +106,21 @@ local nodes = {
 		on_place = wood_tile_replace
 	},
 	["wood_tile_center"] = {
-		description = S("Centered Wooden Tile"),
+		description = S("Centered Wooden Tile (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, wood = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		is_ground_content = false,
 		tiles = {"default_wood.png^moreblocks_wood_tile_center.png"},
 		sounds = sound_wood,
 	},
 	["wood_tile_full"] = {
-		description = S("Full Wooden Tile"),
+		description = S("Full Wooden Tile (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, wood = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		is_ground_content = false,
 		tiles = tile_tiles("wood_tile_full"),
 		sounds = sound_wood,
 	},
 	["wood_tile_offset"] = {
-		description = S("Offset Wooden Tile"),
+		description = S("Offset Wooden Tile (Deprecated)"),
 		paramtype2 = "facedir",
 		place_param2 = 0,
 		groups = {not_in_creative_inventory = 1, wood = 1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
@@ -151,13 +151,13 @@ local nodes = {
 		on_place = wood_tile_replace
 	},
 	["circle_stone_bricks"] = {
-		description = S("Circle Stone Bricks"),
+		description = S("Circle Stone Bricks (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, stone = 1, cracky = 3},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["grey_bricks"] = {
-		description = S("Stone Bricks"),
+		description = S("Stone Bricks (Deprecated)"),
 		paramtype2 = "facedir",
 		place_param2 = 0,
 		groups = {not_in_creative_inventory = 1, cracky = 3},
@@ -165,7 +165,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["coal_stone_bricks"] = {
-		description = S("Coal Stone Bricks"),
+		description = S("Coal Stone Bricks (Deprecated)"),
 		paramtype2 = "facedir",
 		place_param2 = 0,
 		groups = {not_in_creative_inventory = 1, stone = 1, cracky = 3},
@@ -173,7 +173,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["iron_stone_bricks"] = {
-		description = S("Iron Stone Bricks"),
+		description = S("Iron Stone Bricks (Deprecated)"),
 		paramtype2 = "facedir",
 		place_param2 = 0,
 		groups = {not_in_creative_inventory = 1, stone = 1, cracky = 3},
@@ -181,13 +181,13 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["stone_tile"] = {
-		description = S("Stone Tile"),
+		description = S("Stone Tile (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, stone = 1, cracky = 3},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["split_stone_tile"] = {
-		description = S("Split Stone Tile"),
+		description = S("Split Stone Tile (Deprecated)"),
 		paramtype2 = "facedir",
 		place_param2 = 0,
 		tiles = {"moreblocks_split_stone_tile_top.png",
@@ -197,37 +197,37 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["checker_stone_tile"] = {
-		description = S("Checker Stone Tile"),
+		description = S("Checker Stone Tile (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, stone = 1, cracky = 3},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["tar"] = {
-		description = S("Tar"),
+		description = S("Tar (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, cracky=2, tar_block=1},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["dirt_compressed"] = {
-		description = S("Compressed Dirt"),
+		description = S("Compressed Dirt (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, crumbly=2},
 		is_ground_content = false,
 		sounds = sound_dirt,
 	},
 	["cobble_compressed"] = {
-		description = S("Compressed Cobblestone"),
+		description = S("Compressed Cobblestone (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, cracky = 1},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["desert_cobble_compressed"] = {
-		description = S("Compressed Desert Cobblestone"),
+		description = S("Compressed Desert Cobblestone (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, cracky = 1},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["plankstone"] = {
-		description = S("Plankstone"),
+		description = S("Plankstone (Deprecated)"),
 		paramtype2 = "facedir",
 		place_param2 = 0,
 		groups = {not_in_creative_inventory = 1, cracky = 3},
@@ -236,7 +236,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["iron_glass"] = {
-		description = S("Iron Glass"),
+		description = S("Iron Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"default_glass.png^[colorize:#DEDEDE", "default_glass_detail.png^[colorize:#DEDEDE"},
 		use_texture_alpha = true,
@@ -247,7 +247,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["coal_glass"] = {
-		description = S("Coal Glass"),
+		description = S("Coal Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"default_glass.png^[colorize:#828282", "default_glass_detail.png^[colorize:#828282"},
 		use_texture_alpha = true,
@@ -258,7 +258,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["clean_glass"] = {
-		description = S("Clean Glass"),
+		description = S("Clean Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"moreblocks_clean_glass.png", "moreblocks_clean_glass_detail.png"},
 		use_texture_alpha = true,
@@ -269,7 +269,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["cactus_brick"] = {
-		description = S("Cactus Brick"),
+		description = S("Cactus Brick (Deprecated)"),
 		paramtype2 = "facedir",
 		place_param2 = 0,
 		groups = {not_in_creative_inventory = 1, cracky = 3},
@@ -277,7 +277,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["cactus_checker"] = {
-		description = S("Cactus Checker"),
+		description = S("Cactus Checker (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, stone = 1, cracky = 3},
 		is_ground_content = false,
 		tiles = {"default_stone.png^moreblocks_cactus_checker.png",
@@ -289,7 +289,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["empty_shelf"] = {
-		description = S("Empty Shelf"),
+		description = S("Empty Shelf (Deprecated)"),
 		paramtype2 = "facedir",
 		tiles = {"default_wood.png", "default_wood.png", "default_wood.png",
 		"default_wood.png", "moreblocks_empty_shelf.png", "moreblocks_empty_shelf.png"},
@@ -300,19 +300,19 @@ local nodes = {
 		no_stairs = true,
 	},
 	["coal_stone"] = {
-		description = S("Coal Stone"),
+		description = S("Coal Stone (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, stone = 1, cracky = 3},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["iron_stone"] = {
-		description = S("Iron Stone"),
+		description = S("Iron Stone (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, stone = 1, cracky = 3},
 		is_ground_content = false,
 		sounds = sound_stone,
 	},
 	["coal_checker"] = {
-		description = S("Coal Checker"),
+		description = S("Coal Checker (Deprecated)"),
 		tiles = {"default_stone.png^moreblocks_coal_checker.png",
 		"default_stone.png^moreblocks_coal_checker.png",
 		"default_stone.png^moreblocks_coal_checker.png",
@@ -324,7 +324,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["iron_checker"] = {
-		description = S("Iron Checker"),
+		description = S("Iron Checker (Deprecated)"),
 		tiles = {"default_stone.png^moreblocks_iron_checker.png",
 		"default_stone.png^moreblocks_iron_checker.png",
 		"default_stone.png^moreblocks_iron_checker.png",
@@ -336,7 +336,7 @@ local nodes = {
 		sounds = sound_stone,
 	},
 	["trap_stone"] = {
-		description = S("Trap Stone"),
+		description = S("Trap Stone (Deprecated)"),
 		drawtype = "glasslike_framed",
 		tiles = {"default_stone.png^moreblocks_trap_box.png"},
 		walkable = false,
@@ -347,7 +347,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["trap_desert_stone"] = {
-		description = S("Trap Desert Stone"),
+		description = S("Trap Desert Stone (Deprecated)"),
 		drawtype = "glasslike_framed",
 		tiles = {"default_desert_stone.png^moreblocks_trap_box.png"},
 		walkable = false,
@@ -358,7 +358,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["trap_glass"] = {
-		description = S("Trap Glass"),
+		description = S("Trap Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"default_glass.png^moreblocks_trap_box_glass.png", "default_glass_detail.png"},
 		use_texture_alpha = true,
@@ -371,7 +371,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["trap_obsidian_glass"] = {
-		description = S("Trap Obsidian Glass"),
+		description = S("Trap Obsidian Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"default_obsidian_glass.png^moreblocks_trap_box_glass.png", "default_obsidian_glass_detail.png"},
 		use_texture_alpha = true,
@@ -384,7 +384,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["trap_obsidian"] = {
-		description = S("Trap Obsidian"),
+		description = S("Trap Obsidian (Deprecated)"),
 		drawtype = "glasslike_framed",
 		tiles = {"default_obsidian.png^moreblocks_trap_box.png"},
 		walkable = false,
@@ -395,7 +395,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["trap_clean_glass"] = {
-		description = S("Trap Clean Glass"),
+		description = S("Trap Clean Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"moreblocks_clean_glass.png^moreblocks_trap_box_glass.png", "moreblocks_clean_glass_detail.png"},
 		use_texture_alpha = true,
@@ -408,7 +408,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["trap_sandstone"] = {
-		description = S("Trap Sandstone"),
+		description = S("Trap Sandstone (Deprecated)"),
 		drawtype = "glasslike_framed",
 		tiles = {"default_sandstone.png^moreblocks_trap_box.png"},
 		walkable = false,
@@ -419,42 +419,42 @@ local nodes = {
 		no_stairs = true,
 	},
 	["all_faces_tree"] = {
-		description = S("All-faces Tree"),
+		description = S("All-faces Tree (Deprecated)"),
 		tiles = {"default_tree_top.png"},
 		groups = {not_in_creative_inventory = 1, tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 		sounds = sound_wood,
 		furnace_burntime = 30,
 	},
 	["all_faces_jungle_tree"] = {
-		description = S("All-faces Jungle Tree"),
+		description = S("All-faces Jungle Tree (Deprecated)"),
 		tiles = {"default_jungletree_top.png"},
 		groups = {not_in_creative_inventory = 1, tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 		sounds = sound_wood,
 		furnace_burntime = 38,
 	},
 	["all_faces_pine_tree"] = {
-		description = S("All-faces Pine Tree"),
+		description = S("All-faces Pine Tree (Deprecated)"),
 		tiles = {"default_pine_tree_top.png"},
 		groups = {not_in_creative_inventory = 1, tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
 		sounds = sound_wood,
 		furnace_burntime = 26,
 	},
 	["all_faces_acacia_tree"] = {
-		description = S("All-faces Acacia Tree"),
+		description = S("All-faces Acacia Tree (Deprecated)"),
 		tiles = {"default_acacia_tree_top.png"},
 		groups = {not_in_creative_inventory = 1, tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 		sounds = sound_wood,
 		furnace_burntime = 34,
 	},
 	["all_faces_aspen_tree"] = {
-		description = S("All-faces Aspen Tree"),
+		description = S("All-faces Aspen Tree (Deprecated)"),
 		tiles = {"default_aspen_tree_top.png"},
 		groups = {not_in_creative_inventory = 1, tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 3},
 		sounds = sound_wood,
 		furnace_burntime = 22,
 	},
 	["glow_glass"] = {
-		description = S("Glow Glass"),
+		description = S("Glow Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"default_glass.png^[colorize:#E9CD61", "default_glass_detail.png^[colorize:#E9CD61"},
 		use_texture_alpha = true,
@@ -466,7 +466,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["clean_glow_glass"] = {
-		description = S("Clean Glow Glass"),
+		description = S("Clean Glow Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"moreblocks_clean_glass.png^[colorize:#E9CD61", "moreblocks_clean_glass_detail.png^[colorize:#E9CD61"},
 		use_texture_alpha = true,
@@ -478,7 +478,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["trap_glow_glass"] = {
-		description = S("Trap Glow Glass"),
+		description = S("Trap Glow Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"default_glass.png^[colorize:#E9CD61^moreblocks_trap_box_glass.png", "default_glass_detail.png^[colorize:#E9CD61"},
 		use_texture_alpha = true,
@@ -492,7 +492,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["trap_clean_glow_glass"] = {
-		description = S("Trap Clean Glow Glass"),
+		description = S("Trap Clean Glow Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"moreblocks_clean_glass.png^[colorize:#E9CD61^moreblocks_trap_box_glass.png", "moreblocks_clean_glass_detail.png^[colorize:#E9CD61"},
 		use_texture_alpha = true,
@@ -506,7 +506,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["super_glow_glass"] = {
-		description = S("Super Glow Glass"),
+		description = S("Super Glow Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"default_glass.png^[colorize:#FFFF78", "default_glass_detail.png^[colorize:#FFFF78"},
 		use_texture_alpha = true,
@@ -518,7 +518,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["clean_super_glow_glass"] = {
-		description = S("Clean Super Glow Glass"),
+		description = S("Clean Super Glow Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"moreblocks_clean_glass.png^[colorize:#FFFF78", "moreblocks_clean_glass_detail.png^[colorize:#FFFF78"},
 		use_texture_alpha = true,
@@ -530,7 +530,7 @@ local nodes = {
 		sounds = sound_glass,
 	},
 	["trap_super_glow_glass"] = {
-		description = S("Trap Super Glow Glass"),
+		description = S("Trap Super Glow Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"default_glass.png^[colorize:#FFFF78^moreblocks_trap_box_glass.png", "default_glass_detail.png^[colorize:#FFFF78"},
 		use_texture_alpha = true,
@@ -544,7 +544,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["trap_clean_super_glow_glass"] = {
-		description = S("Trap Clean Super Glow Glass"),
+		description = S("Trap Clean Super Glow Glass (Deprecated)"),
 		drawtype = "glasslike_framed_optional",
 		tiles = {"moreblocks_clean_glass.png^[colorize:#FFFF78^moreblocks_trap_box_glass.png", "moreblocks_clean_glass_detail.png^[colorize:#FFFF78"},
 		use_texture_alpha = true,
@@ -558,7 +558,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["rope"] = {
-		description = S("Rope"),
+		description = S("Rope (Deprecated)"),
 		drawtype = "signlike",
 		inventory_image = "moreblocks_rope.png",
 		wield_image = "moreblocks_rope.png",
@@ -574,7 +574,7 @@ local nodes = {
 		no_stairs = true,
 	},
 	["copperpatina"] = {
-		description = S("Copper Patina Block"),
+		description = S("Copper Patina Block (Deprecated)"),
 		groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
 		is_ground_content = false,
 		sounds = sound_metal,

@@ -16,7 +16,7 @@ dofile(farming.path .. "/api.lua")
 -- Wheat
 
 farming.register_plant("farming:wheat", {
-	description = S("Wheat Seed"),
+	description = S("Wheat Seed (Deprecated)"),
 	harvest_description = S("Wheat"),
 	paramtype2 = "meshoptions",
 	inventory_image = "farming_wheat_seed.png",
@@ -31,7 +31,7 @@ farming.register_plant("farming:wheat", {
 -- Cotton
 
 farming.register_plant("farming:cotton", {
-	description = S("Cotton Seed"),
+	description = S("Cotton Seed (Deprecated)"),
 	harvest_description = S("Cotton"),
 	inventory_image = "farming_cotton_seed.png",
 	steps = 8,
@@ -47,7 +47,7 @@ farming.register_plant("farming:cotton", {
 local S = farming.get_translator
 
 minetest.register_node("farming:soil", {
-	description = S("Soil"),
+	description = S("Soil (Deprecated)"),
 	tiles = {"default_dirt.png^farming_soil.png", "default_dirt.png"},
 	drop = "default:dirt",
 	groups = {crumbly=3, not_in_creative_inventory=1, soil=2, grassland = 1, field = 1},
@@ -55,7 +55,7 @@ minetest.register_node("farming:soil", {
 })
 
 minetest.register_node("farming:soil_wet", {
-	description = S("Wet Soil"),
+	description = S("Wet Soil (Deprecated)"),
 	tiles = {"default_dirt.png^farming_soil_wet.png", "default_dirt.png^farming_soil_wet_side.png"},
 	drop = "default:dirt",
 	groups = {crumbly=3, not_in_creative_inventory=1, soil=3, wet = 1, grassland = 1, field = 1},
@@ -63,7 +63,7 @@ minetest.register_node("farming:soil_wet", {
 })
 
 minetest.register_node("farming:dry_soil", {
-	description = S("Savanna Soil"),
+	description = S("Savanna Soil (Deprecated)"),
 	tiles = {"default_dry_dirt.png^farming_soil.png", "default_dry_dirt.png"},
 	drop = "default:dry_dirt",
 	groups = {crumbly=3, not_in_creative_inventory=1, soil=2, grassland = 1, field = 1},
@@ -71,7 +71,7 @@ minetest.register_node("farming:dry_soil", {
 })
 
 minetest.register_node("farming:dry_soil_wet", {
-	description = S("Wet Savanna Soil"),
+	description = S("Wet Savanna Soil (Deprecated)"),
 	tiles = {"default_dry_dirt.png^farming_soil_wet.png", "default_dry_dirt.png^farming_soil_wet_side.png"},
 	drop = "default:dry_dirt",
 	groups = {crumbly=3, not_in_creative_inventory=1, soil=3, wet = 1, grassland = 1, field = 1},
@@ -79,7 +79,7 @@ minetest.register_node("farming:dry_soil_wet", {
 })
 
 minetest.register_node("farming:desert_sand_soil", {
-	description = S("Desert Sand Soil"),
+	description = S("Desert Sand Soil (Deprecated)"),
 	drop = "default:desert_sand",
 	tiles = {"farming_desert_sand_soil.png", "default_desert_sand.png"},
 	groups = {crumbly=3, not_in_creative_inventory = 1, falling_node=1, sand=1, soil = 2, desert = 1, field = 1},
@@ -87,7 +87,7 @@ minetest.register_node("farming:desert_sand_soil", {
 })
 
 minetest.register_node("farming:desert_sand_soil_wet", {
-	description = S("Wet Desert Sand Soil"),
+	description = S("Wet Desert Sand Soil (Deprecated)"),
 	drop = "default:desert_sand",
 	tiles = {"farming_desert_sand_soil_wet.png", "farming_desert_sand_soil_wet_side.png"},
 	groups = {crumbly=3, falling_node=1, sand=1, not_in_creative_inventory=1, soil=3, wet = 1, desert = 1, field = 1},
@@ -95,7 +95,7 @@ minetest.register_node("farming:desert_sand_soil_wet", {
 })
 
 minetest.register_node("farming:straw", {
-	description = S("Straw"),
+	description = S("Straw (Deprecated)"),
 	tiles = {"farming_straw.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, snappy=3, flammable=4, fall_damage_add_percent=-30},
@@ -121,7 +121,7 @@ end
 -- Wild cotton as a source of cotton seed
 
 minetest.register_node("farming:cotton_wild", {
-	description = S("Wild Cotton"),
+	description = S("Wild Cotton (Deprecated)"),
 	drawtype = "plantlike",
 	waving = 1,
 	tiles = {"farming_cotton_wild.png"},

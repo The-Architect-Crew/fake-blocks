@@ -12,7 +12,7 @@ end
 
 minetest.register_node("currency:barter", {
 	drawtype = "nodebox",
-	description = S("Barter Table"),
+	description = S("Barter Table (Deprecated)"),
 	paramtype = "light",
 	paramtype2 = "facedir",
 	tiles = {"barter_top.png",
@@ -34,7 +34,7 @@ minetest.register_node("currency:barter", {
 })
 
 minetest.register_node("currency:shop", {
-	description = S("Shop"),
+	description = S("Shop (Deprecated)"),
 	paramtype2 = "facedir",
 	tiles = {"shop_top.png",
 			"shop_top.png",
@@ -48,7 +48,7 @@ minetest.register_node("currency:shop", {
 })
 
 minetest.register_node("currency:shop_empty", {
-	description = S("Shop") .. " (" .. S("out of stock") .. ")",
+	description = S("Shop") .. " (" .. S("out of stock") .. ") (Deprecated)",
 	paramtype2 = "facedir",
 	tiles = {"shop_top.png",
 			"shop_top.png",

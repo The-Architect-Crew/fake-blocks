@@ -2,7 +2,7 @@ local S = minetest.get_translator("fake_fire")
 
 minetest.register_node("fake_fire:ice_fire", {
 	inventory_image = "ice_fire_inv.png",
-	description = S("Ice fire"),
+	description = S("Ice fire (Deprecated)"),
 	drawtype = "plantlike",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -28,7 +28,7 @@ local sbox = {
 
 minetest.register_node("fake_fire:fancy_fire", {
 	inventory_image = "fancy_fire_inv.png",
-	description = S("Fancy Fire"),
+	description = S("Fancy Fire (Deprecated)"),
 	drawtype = "mesh",
 	mesh = "fancy_fire.obj",
 	paramtype = "light",
@@ -58,7 +58,7 @@ minetest.register_node("fake_fire:fancy_fire", {
 
 -- EMBERS
 minetest.register_node("fake_fire:embers", {
-    description = S("Glowing Embers"),
+    description = S("Glowing Embers (Deprecated)"),
 	tiles = {
 		{name="embers_animated.png", animation={type="vertical_frames",
 		aspect_w=16, aspect_h=16, length=2}},
@@ -71,8 +71,8 @@ minetest.register_node("fake_fire:embers", {
 
 -- CHIMNEYS
 local materials = {
-	{ "stone",     S("Stone chimney top") },
-	{ "sandstone", S("Sandstone chimney top") },
+	{ "stone",     S("Stone chimney top (Deprecated)") },
+	{ "sandstone", S("Sandstone chimney top (Deprecated)") },
 }
 
 for _, mat in ipairs(materials) do

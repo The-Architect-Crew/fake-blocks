@@ -1,29 +1,7 @@
 local S = minetest.get_translator("itemframes")
-minetest.register_node("itemframes:frame",{
-	description = S("Item frame"),
-	drawtype = "nodebox",
-	node_box = {
-		type = "fixed",
-		fixed = {-0.5, -0.5, 7/16, 0.5, 0.5, 0.5}
-	},
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.5, -0.5, 7/16, 0.5, 0.5, 0.5}
-	},
-	tiles = {"itemframes_frame.png"},
-	inventory_image = "itemframes_frame.png",
-	wield_image = "itemframes_frame.png",
-	paramtype = "light",
-	paramtype2 = "facedir",
-	sunlight_propagates = true,
-	groups = {not_in_creative_inventory = 1, choppy = 2, dig_immediate = 2},
-	legacy_wallmounted = true,
-	sounds = default.node_sound_wood_defaults(),
-})
-
 
 minetest.register_node("itemframes:pedestal",{
-	description = S("Pedestal"),
+	description = S("Pedestal (Deprecated)"),
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed", fixed = {

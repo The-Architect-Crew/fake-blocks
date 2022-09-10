@@ -9,7 +9,6 @@ craftguide
 craig_server
 creative
 debug
-doors - similar version exists
 dye
 email
 fancy_vend
@@ -61,4 +60,5 @@ colouredstonebricks
 columnia
 farming
 darkage
+doors - fully functionable because im too lazy to siphon out the code
 other homedecor mods

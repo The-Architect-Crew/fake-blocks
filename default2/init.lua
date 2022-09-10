@@ -833,51 +833,12 @@ end
 -- Corals
 --
 minetest.register_node(":default:coral_skeleton", {
-	description = S("Coral Skeleton  (Deprecated)"),
+	description = S("Coral Skeleton (Deprecated)"),
 	tiles = {"default_coral_skeleton.png"},
 	groups = {not_in_creative_inventory = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
---
--- Tools / "Advanced" crafting / Non-"natural"
---
-
---[[
-local function register_sign(material, desc, def)
-	minetest.register_node(":default:sign_wall_" .. material, {
-		description = desc,
-		drawtype = "nodebox",
-		tiles = {"default_sign_wall_" .. material .. ".png"},
-		inventory_image = "default_sign_" .. material .. ".png",
-		wield_image = "default_sign_" .. material .. ".png",
-		paramtype = "light",
-		paramtype2 = "wallmounted",
-		sunlight_propagates = true,
-		is_ground_content = false,
-		walkable = false,
-		node_box = {
-			type = "wallmounted",
-			wall_top    = {-0.4375, 0.4375, -0.3125, 0.4375, 0.5, 0.3125},
-			wall_bottom = {-0.4375, -0.5, -0.3125, 0.4375, -0.4375, 0.3125},
-			wall_side   = {-0.5, -0.3125, -0.4375, -0.4375, 0.3125, 0.4375},
-		},
-		groups = def.groups,
-		legacy_wallmounted = true,
-		sounds = def.sounds,
-	})
-end
-
-register_sign("wood", S("Wooden Sign"), {
-	sounds = default.node_sound_wood_defaults(),
-	groups = {not_in_creative_inventory = 1, choppy = 2, attached_node = 1, flammable = 2, oddly_breakable_by_hand = 3}
-})
-
-register_sign("steel", S("Steel Sign"), {
-	sounds = default.node_sound_metal_defaults(),
-	groups = {not_in_creative_inventory = 1, cracky = 2, attached_node = 1}
-})
-]]
 --
 -- Fence registration helper
 --
@@ -993,7 +954,7 @@ function default.register_fence_rail(name, def)
 end
 
 default.register_fence(":default:fence_wood", {
-	description = S("Apple Wood Fence"),
+	description = S("Apple Wood Fence (Deprecated)"),
 	texture = "default_fence_wood.png",
 	inventory_image = "default_fence_overlay.png^default_wood.png^" ..
 				"default_fence_overlay.png^[makealpha:255,126,126",
@@ -1005,7 +966,7 @@ default.register_fence(":default:fence_wood", {
 })
 
 default.register_fence(":default:fence_acacia_wood", {
-	description = S("Acacia Wood Fence"),
+	description = S("Acacia Wood Fence (Deprecated)"),
 	texture = "default_fence_acacia_wood.png",
 	inventory_image = "default_fence_overlay.png^default_acacia_wood.png^" ..
 				"default_fence_overlay.png^[makealpha:255,126,126",
@@ -1017,7 +978,7 @@ default.register_fence(":default:fence_acacia_wood", {
 })
 
 default.register_fence(":default:fence_junglewood", {
-	description = S("Jungle Wood Fence"),
+	description = S("Jungle Wood Fence (Deprecated)"),
 	texture = "default_fence_junglewood.png",
 	inventory_image = "default_fence_overlay.png^default_junglewood.png^" ..
 				"default_fence_overlay.png^[makealpha:255,126,126",
@@ -1029,7 +990,7 @@ default.register_fence(":default:fence_junglewood", {
 })
 
 default.register_fence(":default:fence_pine_wood", {
-	description = S("Pine Wood Fence"),
+	description = S("Pine Wood Fence (Deprecated)"),
 	texture = "default_fence_pine_wood.png",
 	inventory_image = "default_fence_overlay.png^default_pine_wood.png^" ..
 				"default_fence_overlay.png^[makealpha:255,126,126",
@@ -1041,7 +1002,7 @@ default.register_fence(":default:fence_pine_wood", {
 })
 
 default.register_fence(":default:fence_aspen_wood", {
-	description = S("Aspen Wood Fence"),
+	description = S("Aspen Wood Fence (Deprecated)"),
 	texture = "default_fence_aspen_wood.png",
 	inventory_image = "default_fence_overlay.png^default_aspen_wood.png^" ..
 				"default_fence_overlay.png^[makealpha:255,126,126",
@@ -1053,7 +1014,7 @@ default.register_fence(":default:fence_aspen_wood", {
 })
 
 default.register_fence_rail(":default:fence_rail_wood", {
-	description = S("Apple Wood Fence Rail"),
+	description = S("Apple Wood Fence Rail (Deprecated)"),
 	texture = "default_fence_rail_wood.png",
 	inventory_image = "default_fence_rail_overlay.png^default_wood.png^" ..
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -1065,7 +1026,7 @@ default.register_fence_rail(":default:fence_rail_wood", {
 })
 
 default.register_fence_rail(":default:fence_rail_acacia_wood", {
-	description = S("Acacia Wood Fence Rail"),
+	description = S("Acacia Wood Fence Rail (Deprecated)"),
 	texture = "default_fence_rail_acacia_wood.png",
 	inventory_image = "default_fence_rail_overlay.png^default_acacia_wood.png^" ..
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -1077,7 +1038,7 @@ default.register_fence_rail(":default:fence_rail_acacia_wood", {
 })
 
 default.register_fence_rail(":default:fence_rail_junglewood", {
-	description = S("Jungle Wood Fence Rail"),
+	description = S("Jungle Wood Fence Rail (Deprecated)"),
 	texture = "default_fence_rail_junglewood.png",
 	inventory_image = "default_fence_rail_overlay.png^default_junglewood.png^" ..
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -1089,7 +1050,7 @@ default.register_fence_rail(":default:fence_rail_junglewood", {
 })
 
 default.register_fence_rail(":default:fence_rail_pine_wood", {
-	description = S("Pine Wood Fence Rail"),
+	description = S("Pine Wood Fence Rail (Deprecated)"),
 	texture = "default_fence_rail_pine_wood.png",
 	inventory_image = "default_fence_rail_overlay.png^default_pine_wood.png^" ..
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -1101,7 +1062,7 @@ default.register_fence_rail(":default:fence_rail_pine_wood", {
 })
 
 default.register_fence_rail(":default:fence_rail_aspen_wood", {
-	description = S("Aspen Wood Fence Rail"),
+	description = S("Aspen Wood Fence Rail (Deprecated)"),
 	texture = "default_fence_rail_aspen_wood.png",
 	inventory_image = "default_fence_rail_overlay.png^default_aspen_wood.png^" ..
 				"default_fence_rail_overlay.png^[makealpha:255,126,126",
@@ -1113,7 +1074,7 @@ default.register_fence_rail(":default:fence_rail_aspen_wood", {
 })
 
 minetest.register_node(":default:glass", {
-	description = S("Glass"),
+	description = S("Glass (Deprecated)"),
 	drawtype = "glasslike_framed_optional",
 	tiles = {"default_glass.png", "default_glass_detail.png"},
 	paramtype = "light",
@@ -1125,7 +1086,7 @@ minetest.register_node(":default:glass", {
 })
 
 minetest.register_node(":default:obsidian_glass", {
-	description = S("Obsidian Glass"),
+	description = S("Obsidian Glass (Deprecated)"),
 	drawtype = "glasslike_framed_optional",
 	tiles = {"default_obsidian_glass.png", "default_obsidian_glass_detail.png"},
 	paramtype = "light",
@@ -1138,7 +1099,7 @@ minetest.register_node(":default:obsidian_glass", {
 
 
 minetest.register_node(":default:brick", {
-	description = S("Brick Block"),
+	description = S("Brick Block (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {
@@ -1152,7 +1113,7 @@ minetest.register_node(":default:brick", {
 
 
 minetest.register_node(":default:meselamp", {
-	description = S("Mese Lamp"),
+	description = S("Mese Lamp (Deprecated)"),
 	drawtype = "glasslike",
 	tiles = {"default_meselamp.png"},
 	paramtype = "light",
@@ -1168,7 +1129,7 @@ minetest.register_node(":default:meselamp", {
 --
 
 default.register_fence(":default:fence_cobble", {
- 	description = "Cobbblestone Fence",
+ 	description = "Cobbblestone Fence (Deprecated)",
  	texture = "default_cobble.png",
  	material = "default:cobble",
  	groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
@@ -1176,7 +1137,7 @@ default.register_fence(":default:fence_cobble", {
 })
 
 default.register_fence(":default:fence_desert_cobble", {
-	description = "Desert Cobbblestone Fence",
+	description = "Desert Cobbblestone Fence (Deprecated)",
  	texture = "default_desert_cobble.png",
  	material = "default:desert_cobble",
  	groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
@@ -1184,7 +1145,7 @@ default.register_fence(":default:fence_desert_cobble", {
 })
 
 default.register_fence(":default:fence_sandstone", {
- 	description = "Sandstone Fence",
+ 	description = "Sandstone Fence (Deprecated)",
  	texture = "default_sandstone.png",
  	material = "default:sandstone",
  	groups = {not_in_creative_inventory = 1, cracky=3, crumbly=2},
@@ -1192,7 +1153,7 @@ default.register_fence(":default:fence_sandstone", {
 })
 
 default.register_fence(":default:fence_stone_brick", {
- 	description = "Stone Brick Fence",
+ 	description = "Stone Brick Fence (Deprecated)",
  	texture = "default_stone_brick.png",
  	material = "default:stonebrick",
  	groups = {not_in_creative_inventory = 1, cracky=2, stone=1},
@@ -1200,7 +1161,7 @@ default.register_fence(":default:fence_stone_brick", {
 })
 
 default.register_fence(":default:fence_sandstone_brick", {
- 	description = "Sandstone Brick Fence",
+ 	description = "Sandstone Brick Fence (Deprecated)",
  	texture = "default_sandstone_brick.png",
  	material = "default:sandstonebrick",
  	groups = {not_in_creative_inventory = 1, cracky=2},
@@ -1208,7 +1169,7 @@ default.register_fence(":default:fence_sandstone_brick", {
 })
 
 default.register_fence(":default:fence_desert_stone_brick", {
- 	description = "Desert Stone Brick Fence",
+ 	description = "Desert Stone Brick Fence (Deprecated)",
  	texture = "default_desert_stone_brick.png",
  	material = "default:desert_stonebrick",
  	groups = {not_in_creative_inventory = 1, cracky=2, stone=1},

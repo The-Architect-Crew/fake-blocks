@@ -4,7 +4,7 @@
 columnia = {}
 -- Bracket 
 minetest.register_node("columnia:bracket",	{ 
-            description = 'Bracket (Column)',
+            description = 'Bracket (Column) (Deprecated)',
 			tiles = {"columnia_rusty.png",},
 			drawtype = "nodebox",
 			sunlight_propagates = true,
@@ -27,7 +27,7 @@ minetest.register_node("columnia:bracket",	{
 
 -- Lamp
 minetest.register_node("columnia:lamp_ceiling", {
-    description = "Ceiling Lamp (Column)",
+    description = "Ceiling Lamp (Column) (Deprecated)",
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
@@ -53,7 +53,7 @@ minetest.register_node("columnia:lamp_ceiling", {
 -- Rusty_Block
 
 minetest.register_node("columnia:rusty_block", {
-	description = "Rusty Block",
+	description = "Rusty Block (Deprecated)",
 	tiles = {"columnia_rusty_block.png"},
 	is_ground_content = true,
 	groups = {not_in_creative_inventory = 1, cracky=1,level=2},
@@ -385,142 +385,142 @@ end
 columnia.register_column_ia("rusty_block", "columnia:rusty_block",
 		{not_in_creative_inventory=1,cracky=3},
 		{"columnia_rusty_block.png"},
-		"Rusty Column",
-		"Rusty Column Top",
-		"Rusty Column Bottom",
-		"Rusty Column Crosslink",
-		"Rusty Column Link",
-		"Rusty Column Linkdown",
+		"Rusty Column (Deprecated)",
+		"Rusty Column Top (Deprecated)",
+		"Rusty Column Bottom (Deprecated)",
+		"Rusty Column Crosslink (Deprecated)",
+		"Rusty Column Link (Deprecated)",
+		"Rusty Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )
 
 columnia.register_column_ia("stone", "default:stone",
 		{not_in_creative_inventory=1,cracky=3},
 		{"default_stone.png"},
-		"Stone Column",
-		"Stone Column Top",
-		"Stone Column Bottom",
-		"Stone Column Crosslink",
-		"Stone Column Link",
-		"Stone Column Linkdown",
+		"Stone Column (Deprecated)",
+		"Stone Column Top (Deprecated)",
+		"Stone Column Bottom (Deprecated)",
+		"Stone Column Crosslink (Deprecated)",
+		"Stone Column Link (Deprecated)",
+		"Stone Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )
 		
 columnia.register_column_ia("stonebrick", "default:stonebrick",
 		{not_in_creative_inventory=1,cracky=3},
 		{"default_stone_brick.png"},
-		"Stone Brick Column",
-		"Stone Brick Column Top",
-		"Stone Brick Column Bottom",
-		"Stone Brick Column Crosslink",
-		"Stone Brick Column Link",
-		"Stone Brick Column Linkdown",
+		"Stone Brick Column (Deprecated)",
+		"Stone Brick Column Top (Deprecated)",
+		"Stone Brick Column Bottom (Deprecated)",
+		"Stone Brick Column Crosslink (Deprecated)",
+		"Stone Brick Column Link (Deprecated)",
+		"Stone Brick Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )
 
 columnia.register_column_ia("desert_stonebrick", "default:desert_stonebrick",
 		{not_in_creative_inventory=1,cracky=3},
 		{"default_desert_stone_brick.png"},
-		"Desert Stone Brick Column",
-		"Desert Stone Brick Column Top",
-		"Desert Stone Brick Column Bottom",
-		"Desert Stone Brick Column Crosslink",
-		"Desert Stone Brick Column Link",
-		"Desert Stone Brick Column Linkdown",
+		"Desert Stone Brick Column (Deprecated)",
+		"Desert Stone Brick Column Top (Deprecated)",
+		"Desert Stone Brick Column Bottom (Deprecated)",
+		"Desert Stone Brick Column Crosslink (Deprecated)",
+		"Desert Stone Brick Column Link (Deprecated)",
+		"Desert Stone Brick Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )	
 
 columnia.register_column_ia("desert_stone", "default:desert_stone",
 		{not_in_creative_inventory=1,cracky=3},
 		{"default_desert_stone.png"},
-		"Desert Stone Column",
-		"Desert Stone Column Top",
-		"Desert Stone Column Bottom",
-		"Desert Stone Column Crosslink",
-		"Desert Stone Column Link",
-		"Desert Stone Column Linkdown",
+		"Desert Stone Column (Deprecated)",
+		"Desert Stone Column Top (Deprecated)",
+		"Desert Stone Column Bottom (Deprecated)",
+		"Desert Stone Column Crosslink (Deprecated)",
+		"Desert Stone Column Link (Deprecated)",
+		"Desert Stone Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )		
 		
 columnia.register_column_ia("cobble", "default:cobble",
 		{not_in_creative_inventory=1,cracky=3},
 		{"default_cobble.png"},
-		"Cobble Column",
-		"Cobble Column Top",
-		"Cobble Column Bottom",
-		"Cobble Column Crosslink",
-		"Cobble Column Link",
-		"Cobble Column Linkdown",
+		"Cobble Column (Deprecated)",
+		"Cobble Column Top (Deprecated)",
+		"Cobble Column Bottom (Deprecated)",
+		"Cobble Column Crosslink (Deprecated)",
+		"Cobble Column Link (Deprecated)",
+		"Cobble Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )
 
 columnia.register_column_ia("brick", "default:brick",
 		{not_in_creative_inventory=1,cracky=3},
 		{"default_brick.png"},
-		"Brick Column",
-		"Brick Column Top",
-		"Brick Column Bottom",
-		"Brick Column Crosslink",
-		"Brick Column Link",
-		"Brick Column Linkdown",
+		"Brick Column (Deprecated)",
+		"Brick Column Top (Deprecated)",
+		"Brick Column Bottom (Deprecated)",
+		"Brick Column Crosslink (Deprecated)",
+		"Brick Column Link (Deprecated)",
+		"Brick Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )	
 			
 columnia.register_column_ia("sandstone", "default:sandstone",
 		{not_in_creative_inventory=1,crumbly=2,cracky=2},
 		{"default_sandstone.png"},
-		"Sandstone Column",
-		"Sandstone Column Top",
-		"Sandstone Column Bottom",
-		"Sandstone Column Crosslink",
-		"Sandstone Column Link",
-		"Sandstone Column Linkdown",
+		"Sandstone Column (Deprecated)",
+		"Sandstone Column Top (Deprecated)",
+		"Sandstone Column Bottom (Deprecated)",
+		"Sandstone Column Crosslink (Deprecated)",
+		"Sandstone Column Link (Deprecated)",
+		"Sandstone Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )
 		
 columnia.register_column_ia("sandstonebrick", "default:sandstonebrick",
 		{not_in_creative_inventory=1,crumbly=2,cracky=2},
 		{"default_sandstone_brick.png"},
-		"Sandstone Brick Column",
-		"Sandstone Brick Column Top",
-		"Sandstone Brick Column Bottom",
-		"Sandstone Brick Column Crosslink",
-		"Sandstone Brick Column Link",
-		"Sandstone Brick Column Linkdown",
+		"Sandstone Brick Column (Deprecated)",
+		"Sandstone Brick Column Top (Deprecated)",
+		"Sandstone Brick Column Bottom (Deprecated)",
+		"Sandstone Brick Column Crosslink (Deprecated)",
+		"Sandstone Brick Column Link (Deprecated)",
+		"Sandstone Brick Column Linkdown (Deprecated)",
 		default.node_sound_stone_defaults()
         )
 		
 columnia.register_column_ia("wood", "default:wood",
 		{not_in_creative_inventory=1,snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
 		{"default_wood.png"},
-		"Wooden Column",
-		"Wooden Column Top",
-		"Wooden Column Bottom",
-		"Wooden Column Crosslink",
-		"Wooden Column Link",
-		"Wooden Column Linkdown",
+		"Wooden Column (Deprecated)",
+		"Wooden Column Top (Deprecated)",
+		"Wooden Column Bottom (Deprecated)",
+		"Wooden Column Crosslink (Deprecated)",
+		"Wooden Column Link (Deprecated)",
+		"Wooden Column Linkdown (Deprecated)",
 		default.node_sound_wood_defaults())
 
 columnia.register_column_ia("junglewood", "default:junglewood",
 		{not_in_creative_inventory=1,snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
 		{"default_junglewood.png"},
-		"Junglewood Column",
-		"Junglewood Column Top",
-		"Junglewood Column Bottom",
-		"Junglewood Column Crosslink",
-		"Junglewood Column Link",
-		"Junglewood Column Linkdown",
+		"Junglewood Column (Deprecated)",
+		"Junglewood Column Top (Deprecated)",
+		"Junglewood Column Bottom (Deprecated)",
+		"Junglewood Column Crosslink (Deprecated)",
+		"Junglewood Column Link (Deprecated)",
+		"Junglewood Column Linkdown (Deprecated)",
 		default.node_sound_wood_defaults())
 
 columnia.register_column_ia("pinewood", "default:pine_wood",
         {not_in_creative_inventory=1,snappy=2,choppy=2,oddly_breakable_by_hand=2,flammable=3},
         {"default_pine_wood.png"},
-        "Pinewood Column",
-        "Pineewood Column Top",
-        "Pineewood Column Bottom",
-        "Pineewood Column Crosslink",
-        "Pineewood Column Link",
-        "Pineewood Column Linkdown",
+        "Pinewood Column (Deprecated)",
+        "Pineewood Column Top (Deprecated)",
+        "Pineewood Column Bottom (Deprecated)",
+        "Pineewood Column Crosslink (Deprecated)",
+        "Pineewood Column Link (Deprecated)",
+        "Pineewood Column Linkdown (Deprecated)",
         default.node_sound_wood_defaults())
 
 if core.get_modpath('moreblocks') then
@@ -529,7 +529,7 @@ if core.get_modpath('moreblocks') then
                 'rusty_block',
                 'columnia:rusty_block',
                 {
-                        description = 'Rusty Block',
+                        description = 'Rusty Block (Deprecated)',
                         tiles = {
 				'columnia_rusty_block.png'
 			},

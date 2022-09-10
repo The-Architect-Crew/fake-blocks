@@ -170,7 +170,7 @@ end
 -- Fancy shaped bed
 
 beds.register_bed("beds:fancy_bed", {
-	description = S("Fancy Bed"),
+	description = S("Fancy Bed (Deprecated)"),
 	inventory_image = "beds_bed_fancy.png",
 	wield_image = "beds_bed_fancy.png",
 	tiles = {
@@ -216,7 +216,7 @@ beds.register_bed("beds:fancy_bed", {
 -- Simple shaped bed
 
 beds.register_bed("beds:bed", {
-	description = S("Simple Bed"),
+	description = S("Simple Bed (Deprecated)"),
 	inventory_image = "beds_bed.png",
 	wield_image = "beds_bed.png",
 	tiles = {
