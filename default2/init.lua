@@ -2,7 +2,7 @@ local S = minetest.get_translator("default")
 dofile(minetest.get_modpath("default2").."/alias.lua")
 
 minetest.register_node(":default:furnace", {
-	description = S("Furnace"),
+	description = S("Furnace (Deprecated)"),
 	tiles = {
 		"default_furnace_top.png", "default_furnace_bottom.png",
 		"default_furnace_side.png", "default_furnace_side.png",
@@ -16,7 +16,7 @@ minetest.register_node(":default:furnace", {
 })
 
 minetest.register_node(":default:furnace_active", {
-	description = S("Furnace"),
+	description = S("Furnace (Deprecated)"),
 	tiles = {
 		"default_furnace_top.png", "default_furnace_bottom.png",
 		"default_furnace_side.png", "default_furnace_side.png",
@@ -77,7 +77,7 @@ function default.chest.register_chest(prefixed_name, d)
 end
 
 default.chest.register_chest(":default:chest", {
-	description = S("Chest"),
+	description = S("Chest (Deprecated)"),
 	tiles = {
 		"default_chest_top.png",
 		"default_chest_top.png",
@@ -91,7 +91,7 @@ default.chest.register_chest(":default:chest", {
 })
 
 default.chest.register_chest(":default:chest_locked", {
-	description = S("Locked Chest"),
+	description = S("Locked Chest (Deprecated)"),
 	tiles = {
 		"default_chest_top.png",
 		"default_chest_top.png",
@@ -413,7 +413,7 @@ local default_nodes = {
 --
 
 minetest.register_node(":default:stone", {
-	description = S("Stone"),
+	description = S("Stone (Deprecated)"),
 	tiles = {"default_stone.png"},
 	groups = {not_in_creative_inventory = 1, cracky = 3, stone = 1},
 	drop = "default:cobble",
@@ -422,7 +422,7 @@ minetest.register_node(":default:stone", {
 })
 
 minetest.register_node(":default:cobble", {
-	description = S("Cobblestone"),
+	description = S("Cobblestone (Deprecated)"),
 	tiles = {"default_cobble.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 3, stone = 2},
@@ -430,7 +430,7 @@ minetest.register_node(":default:cobble", {
 })
 
 minetest.register_node(":default:stonebrick", {
-	description = S("Stone Brick"),
+	description = S("Stone Brick (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_stone_brick.png"},
@@ -440,7 +440,7 @@ minetest.register_node(":default:stonebrick", {
 })
 
 minetest.register_node(":default:stone_block", {
-	description = S("Stone Block"),
+	description = S("Stone Block (Deprecated)"),
 	tiles = {"default_stone_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 2, stone = 1},
@@ -448,7 +448,7 @@ minetest.register_node(":default:stone_block", {
 })
 
 minetest.register_node(":default:mossycobble", {
-	description = S("Mossy Cobblestone"),
+	description = S("Mossy Cobblestone (Deprecated)"),
 	tiles = {"default_mossycobble.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 3, stone = 1},
@@ -457,7 +457,7 @@ minetest.register_node(":default:mossycobble", {
 
 
 minetest.register_node(":default:desert_stone", {
-	description = S("Desert Stone"),
+	description = S("Desert Stone (Deprecated)"),
 	tiles = {"default_desert_stone.png"},
 	groups = {not_in_creative_inventory = 1, cracky = 3, stone = 1},
 	drop = "default:desert_cobble",
@@ -466,7 +466,7 @@ minetest.register_node(":default:desert_stone", {
 })
 
 minetest.register_node(":default:desert_cobble", {
-	description = S("Desert Cobblestone"),
+	description = S("Desert Cobblestone (Deprecated)"),
 	tiles = {"default_desert_cobble.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 3, stone = 2},
@@ -474,7 +474,7 @@ minetest.register_node(":default:desert_cobble", {
 })
 
 minetest.register_node(":default:desert_stonebrick", {
-	description = S("Desert Stone Brick"),
+	description = S("Desert Stone Brick (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_desert_stone_brick.png"},
@@ -484,7 +484,7 @@ minetest.register_node(":default:desert_stonebrick", {
 })
 
 minetest.register_node(":default:desert_stone_block", {
-	description = S("Desert Stone Block"),
+	description = S("Desert Stone Block (Deprecated)"),
 	tiles = {"default_desert_stone_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 2, stone = 1},
@@ -492,14 +492,14 @@ minetest.register_node(":default:desert_stone_block", {
 })
 
 minetest.register_node(":default:sandstone", {
-	description = S("Sandstone"),
+	description = S("Sandstone (Deprecated)"),
 	tiles = {"default_sandstone.png"},
 	groups = {not_in_creative_inventory = 1, crumbly = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node(":default:sandstonebrick", {
-	description = S("Sandstone Brick"),
+	description = S("Sandstone Brick (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_sandstone_brick.png"},
@@ -509,7 +509,7 @@ minetest.register_node(":default:sandstonebrick", {
 })
 
 minetest.register_node(":default:sandstone_block", {
-	description = S("Sandstone Block"),
+	description = S("Sandstone Block (Deprecated)"),
 	tiles = {"default_sandstone_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 2},
@@ -517,14 +517,14 @@ minetest.register_node(":default:sandstone_block", {
 })
 
 minetest.register_node(":default:desert_sandstone", {
-	description = S("Desert Sandstone"),
+	description = S("Desert Sandstone (Deprecated)"),
 	tiles = {"default_desert_sandstone.png"},
 	groups = {not_in_creative_inventory = 1, crumbly = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node(":default:desert_sandstone_brick", {
-	description = S("Desert Sandstone Brick"),
+	description = S("Desert Sandstone Brick (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_desert_sandstone_brick.png"},
@@ -534,7 +534,7 @@ minetest.register_node(":default:desert_sandstone_brick", {
 })
 
 minetest.register_node(":default:desert_sandstone_block", {
-	description = S("Desert Sandstone Block"),
+	description = S("Desert Sandstone Block (Deprecated)"),
 	tiles = {"default_desert_sandstone_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 2},
@@ -542,14 +542,14 @@ minetest.register_node(":default:desert_sandstone_block", {
 })
 
 minetest.register_node(":default:silver_sandstone", {
-	description = S("Silver Sandstone"),
+	description = S("Silver Sandstone (Deprecated)"),
 	tiles = {"default_silver_sandstone.png"},
 	groups = {not_in_creative_inventory = 1, crumbly = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node(":default:silver_sandstone_brick", {
-	description = S("Silver Sandstone Brick"),
+	description = S("Silver Sandstone Brick (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_silver_sandstone_brick.png"},
@@ -559,7 +559,7 @@ minetest.register_node(":default:silver_sandstone_brick", {
 })
 
 minetest.register_node(":default:silver_sandstone_block", {
-	description = S("Silver Sandstone Block"),
+	description = S("Silver Sandstone Block (Deprecated)"),
 	tiles = {"default_silver_sandstone_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 2},
@@ -567,14 +567,14 @@ minetest.register_node(":default:silver_sandstone_block", {
 })
 
 minetest.register_node(":default:obsidian", {
-	description = S("Obsidian"),
+	description = S("Obsidian (Deprecated)"),
 	tiles = {"default_obsidian.png"},
 	sounds = default.node_sound_stone_defaults(),
 	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
 })
 
 minetest.register_node(":default:obsidianbrick", {
-	description = S("Obsidian Brick"),
+	description = S("Obsidian Brick (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_obsidian_brick.png"},
@@ -584,7 +584,7 @@ minetest.register_node(":default:obsidianbrick", {
 })
 
 minetest.register_node(":default:obsidian_block", {
-	description = S("Obsidian Block"),
+	description = S("Obsidian Block (Deprecated)"),
 	tiles = {"default_obsidian_block.png"},
 	is_ground_content = false,
 	sounds = default.node_sound_stone_defaults(),
@@ -596,7 +596,7 @@ minetest.register_node(":default:obsidian_block", {
 --
 
 minetest.register_node(":default:snowblock", {
-	description = S("Snow Block"),
+	description = S("Snow Block (Deprecated)"),
 	tiles = {"default_snow.png"},
 	groups = {not_in_creative_inventory = 1, crumbly = 3, cools_lava = 1, snowy = 1},
 	sounds = default.node_sound_snow_defaults(),
@@ -611,7 +611,7 @@ minetest.register_node(":default:snowblock", {
 
 -- 'is ground content = false' to avoid tunnels in sea ice or ice rivers
 minetest.register_node(":default:ice", {
-	description = S("Ice"),
+	description = S("Ice (Deprecated)"),
 	tiles = {"default_ice.png"},
 	is_ground_content = false,
 	paramtype = "light",
@@ -624,7 +624,7 @@ minetest.register_node(":default:ice", {
 --
 
 minetest.register_node(":default:tree", {
-	description = S("Apple Tree"),
+	description = S("Apple Tree (Deprecated)"),
 	tiles = {"default_tree_top.png", "default_tree_top.png", "default_tree.png"},
 	paramtype2 = "facedir",
 	is_ground_content = false,
@@ -635,7 +635,7 @@ minetest.register_node(":default:tree", {
 })
 
 minetest.register_node(":default:wood", {
-	description = S("Apple Wood Planks"),
+	description = S("Apple Wood Planks (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_wood.png"},
@@ -645,7 +645,7 @@ minetest.register_node(":default:wood", {
 })
 
 minetest.register_node(":default:jungletree", {
-	description = S("Jungle Tree"),
+	description = S("Jungle Tree (Deprecated)"),
 	tiles = {"default_jungletree_top.png", "default_jungletree_top.png",
 		"default_jungletree.png"},
 	paramtype2 = "facedir",
@@ -656,7 +656,7 @@ minetest.register_node(":default:jungletree", {
 })
 
 minetest.register_node(":default:junglewood", {
-	description = S("Jungle Wood Planks"),
+	description = S("Jungle Wood Planks (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_junglewood.png"},
@@ -666,7 +666,7 @@ minetest.register_node(":default:junglewood", {
 })
 
 minetest.register_node(":default:pine_tree", {
-	description = S("Pine Tree"),
+	description = S("Pine Tree (Deprecated)"),
 	tiles = {"default_pine_tree_top.png", "default_pine_tree_top.png",
 		"default_pine_tree.png"},
 	paramtype2 = "facedir",
@@ -676,7 +676,7 @@ minetest.register_node(":default:pine_tree", {
 })
 
 minetest.register_node(":default:pine_wood", {
-	description = S("Pine Wood Planks"),
+	description = S("Pine Wood Planks (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_pine_wood.png"},
@@ -686,7 +686,7 @@ minetest.register_node(":default:pine_wood", {
 })
 
 minetest.register_node(":default:acacia_tree", {
-	description = S("Acacia Tree"),
+	description = S("Acacia Tree (Deprecated)"),
 	tiles = {"default_acacia_tree_top.png", "default_acacia_tree_top.png",
 		"default_acacia_tree.png"},
 	paramtype2 = "facedir",
@@ -696,7 +696,7 @@ minetest.register_node(":default:acacia_tree", {
 })
 
 minetest.register_node(":default:acacia_wood", {
-	description = S("Acacia Wood Planks"),
+	description = S("Acacia Wood Planks (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_acacia_wood.png"},
@@ -706,7 +706,7 @@ minetest.register_node(":default:acacia_wood", {
 })
 
 minetest.register_node(":default:aspen_tree", {
-	description = S("Aspen Tree"),
+	description = S("Aspen Tree (Deprecated)"),
 	tiles = {"default_aspen_tree_top.png", "default_aspen_tree_top.png",
 		"default_aspen_tree.png"},
 	paramtype2 = "facedir",
@@ -716,7 +716,7 @@ minetest.register_node(":default:aspen_tree", {
 })
 
 minetest.register_node(":default:aspen_wood", {
-	description = S("Aspen Wood Planks"),
+	description = S("Aspen Wood Planks (Deprecated)"),
 	paramtype2 = "facedir",
 	place_param2 = 0,
 	tiles = {"default_aspen_wood.png"},
@@ -729,7 +729,7 @@ minetest.register_node(":default:aspen_wood", {
 -- Ores
 --
 minetest.register_node(":default:steelblock", {
-	description = S("Steel Block"),
+	description = S("Steel Block (Deprecated)"),
 	tiles = {"default_steel_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
@@ -737,7 +737,7 @@ minetest.register_node(":default:steelblock", {
 })
 
 minetest.register_node(":default:copperblock", {
-	description = S("Copper Block"),
+	description = S("Copper Block (Deprecated)"),
 	tiles = {"default_copper_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
@@ -745,7 +745,7 @@ minetest.register_node(":default:copperblock", {
 })
 
 minetest.register_node(":default:tinblock", {
-	description = S("Tin Block"),
+	description = S("Tin Block (Deprecated)"),
 	tiles = {"default_tin_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
@@ -753,7 +753,7 @@ minetest.register_node(":default:tinblock", {
 })
 
 minetest.register_node(":default:bronzeblock", {
-	description = S("Bronze Block"),
+	description = S("Bronze Block (Deprecated)"),
 	tiles = {"default_bronze_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
@@ -761,7 +761,7 @@ minetest.register_node(":default:bronzeblock", {
 })
 
 minetest.register_node(":default:mese", {
-	description = S("Mese Block"),
+	description = S("Mese Block (Deprecated)"),
 	tiles = {"default_mese_block.png"},
 	paramtype = "light",
 	groups = {not_in_creative_inventory = 1, cracky = 1, level = 2},
@@ -770,7 +770,7 @@ minetest.register_node(":default:mese", {
 })
 
 minetest.register_node(":default:goldblock", {
-	description = S("Gold Block"),
+	description = S("Gold Block (Deprecated)"),
 	tiles = {"default_gold_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 1},
@@ -778,7 +778,7 @@ minetest.register_node(":default:goldblock", {
 })
 
 minetest.register_node(":default:diamondblock", {
-	description = S("Diamond Block"),
+	description = S("Diamond Block (Deprecated)"),
 	tiles = {"default_diamond_block.png"},
 	is_ground_content = false,
 	groups = {not_in_creative_inventory = 1, cracky = 1, level = 3},
@@ -789,7 +789,7 @@ minetest.register_node(":default:diamondblock", {
 -- Plantlife (non-cubic)
 --
 minetest.register_node(":default:marram_grass_1", {
-	description = S("Marram Grass"),
+	description = S("Marram Grass (Deprecated)"),
 	drawtype = "plantlike",
 	waving = 1,
 	tiles = {"default_marram_grass_1.png"},
@@ -809,7 +809,7 @@ minetest.register_node(":default:marram_grass_1", {
 
 for i = 2, 3 do
 	minetest.register_node(":default:marram_grass_" .. i, {
-		description = S("Marram Grass"),
+		description = S("Marram Grass (Deprecated)"),
 		drawtype = "plantlike",
 		waving = 1,
 		tiles = {"default_marram_grass_" .. i .. ".png"},
@@ -829,168 +829,11 @@ for i = 2, 3 do
 	})
 end
 
-minetest.register_node(":default:bush_leaves", {
-	description = S("Bush Leaves"),
-	drawtype = "allfaces_optional",
-	waving = 1,
-	tiles = {"default_leaves_simple.png"},
-	paramtype = "light",
-	groups = {not_in_creative_inventory = 1, snappy = 3, flammable = 2, leaves = 1},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_node(":default:bush_sapling", {
-	description = S("Bush Sapling"),
-	drawtype = "plantlike",
-	tiles = {"default_bush_sapling.png"},
-	inventory_image = "default_bush_sapling.png",
-	wield_image = "default_bush_sapling.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 2 / 16, 4 / 16}
-	},
-	groups = {not_in_creative_inventory = 1, snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_node(":default:blueberry_bush_leaves_with_berries", {
-	description = S("Blueberry Bush Leaves with Berries"),
-	drawtype = "allfaces_optional",
-	waving = 1,
-	tiles = {"default_blueberry_bush_leaves.png^default_blueberry_overlay.png"},
-	paramtype = "light",
-	groups = {not_in_creative_inventory = 1, snappy = 3, flammable = 2, leaves = 1, dig_immediate = 3},
-	sounds = default.node_sound_leaves_defaults(),
-	node_dig_prediction = "default:blueberry_bush_leaves",
-})
-
-minetest.register_node(":default:blueberry_bush_leaves", {
-	description = S("Blueberry Bush Leaves"),
-	drawtype = "allfaces_optional",
-	waving = 1,
-	tiles = {"default_blueberry_bush_leaves.png"},
-	paramtype = "light",
-	groups = {not_in_creative_inventory = 1, snappy = 3, flammable = 2, leaves = 1},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_node(":default:blueberry_bush_sapling", {
-	description = S("Blueberry Bush Sapling"),
-	drawtype = "plantlike",
-	tiles = {"default_blueberry_bush_sapling.png"},
-	inventory_image = "default_blueberry_bush_sapling.png",
-	wield_image = "default_blueberry_bush_sapling.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 2 / 16, 4 / 16}
-	},
-	groups = {not_in_creative_inventory = 1, snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_node(":default:acacia_bush_stem", {
-	description = S("Acacia Bush Stem"),
-	drawtype = "plantlike",
-	visual_scale = 1.41,
-	tiles = {"default_acacia_bush_stem.png"},
-	inventory_image = "default_acacia_bush_stem.png",
-	wield_image = "default_acacia_bush_stem.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	groups = {not_in_creative_inventory = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = default.node_sound_wood_defaults(),
-	selection_box = {
-		type = "fixed",
-		fixed = {-7 / 16, -0.5, -7 / 16, 7 / 16, 0.5, 7 / 16},
-	},
-})
-
-minetest.register_node(":default:acacia_bush_leaves", {
-	description = S("Acacia Bush Leaves"),
-	drawtype = "allfaces_optional",
-	waving = 1,
-	tiles = {"default_acacia_leaves_simple.png"},
-	paramtype = "light",
-	groups = {not_in_creative_inventory = 1, snappy = 3, flammable = 2, leaves = 1},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_node(":default:acacia_bush_sapling", {
-	description = S("Acacia Bush Sapling"),
-	drawtype = "plantlike",
-	tiles = {"default_acacia_bush_sapling.png"},
-	inventory_image = "default_acacia_bush_sapling.png",
-	wield_image = "default_acacia_bush_sapling.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {-3 / 16, -0.5, -3 / 16, 3 / 16, 2 / 16, 3 / 16}
-	},
-	groups = {not_in_creative_inventory = 1, snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_node(":default:pine_bush_stem", {
-	description = S("Pine Bush Stem"),
-	drawtype = "plantlike",
-	visual_scale = 1.41,
-	tiles = {"default_pine_bush_stem.png"},
-	inventory_image = "default_pine_bush_stem.png",
-	wield_image = "default_pine_bush_stem.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	groups = {not_in_creative_inventory = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
-	sounds = default.node_sound_wood_defaults(),
-	selection_box = {
-		type = "fixed",
-		fixed = {-7 / 16, -0.5, -7 / 16, 7 / 16, 0.5, 7 / 16},
-	},
-})
-
-minetest.register_node(":default:pine_bush_needles", {
-	description = S("Pine Bush Needles"),
-	drawtype = "allfaces_optional",
-	waving = 1,
-	tiles = {"default_pine_needles.png"},
-	paramtype = "light",
-	groups = {not_in_creative_inventory = 1, snappy = 3, flammable = 2, leaves = 1},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_node(":default:pine_bush_sapling", {
-	description = S("Pine Bush Sapling"),
-	drawtype = "plantlike",
-	tiles = {"default_pine_bush_sapling.png"},
-	inventory_image = "default_pine_bush_sapling.png",
-	wield_image = "default_pine_bush_sapling.png",
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = false,
-	selection_box = {
-		type = "fixed",
-		fixed = {-4 / 16, -0.5, -4 / 16, 4 / 16, 2 / 16, 4 / 16}
-	},
-	groups = {not_in_creative_inventory = 1, snappy = 2, dig_immediate = 3, flammable = 2,
-		attached_node = 1, sapling = 1},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
 --
 -- Corals
 --
 minetest.register_node(":default:coral_skeleton", {
-	description = S("Coral Skeleton"),
+	description = S("Coral Skeleton  (Deprecated)"),
 	tiles = {"default_coral_skeleton.png"},
 	groups = {not_in_creative_inventory = 1, cracky = 3},
 	sounds = default.node_sound_stone_defaults(),
