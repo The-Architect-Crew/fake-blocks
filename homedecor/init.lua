@@ -644,6 +644,7 @@ minetest.register_node(":homedecor:cobweb_corner", {
 	paramtype = "light",
 	paramtype2 = "wallmounted",
 	sunlight_propagates = true,
+	use_texture_alpha = "clip",
 	liquid_viscosity = 8,
 	liquidtype = "source",
 	liquid_alternative_flowing = "homedecor:cobweb_corner",
@@ -664,6 +665,7 @@ minetest.register_node(":homedecor:cobweb_centered", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	sunlight_propagates = true,
+	use_texture_alpha = "clip",
 	liquid_viscosity = 8,
 	liquidtype = "source",
 	liquid_alternative_flowing = "homedecor:cobweb_centered",
@@ -691,6 +693,7 @@ minetest.register_node(":homedecor:cobweb_flat", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	sunlight_propagates = true,
+	use_texture_alpha = "clip",
 	liquid_viscosity = 8,
 	liquidtype = "source",
 	liquid_alternative_flowing = "homedecor:cobweb_flat",
@@ -718,6 +721,7 @@ minetest.register_node(":homedecor:cobweb_plantlike", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	sunlight_propagates = true,
+	use_texture_alpha = "clip",
 	liquid_viscosity = 8,
 	liquidtype = "source",
 	liquid_alternative_flowing = "homedecor:cobweb_plantlike",
@@ -887,12 +891,12 @@ for _, door in ipairs(door_list) do
 
 	if door.alpha then
 		local def = table.copy(minetest.registered_nodes[nn_a])
-			def.use_texture_alpha = true
+			def.use_texture_alpha = "clip"
 			def.mesh = "door_a.obj"                -- leaving this out will break the _a model
 			minetest.register_node(":"..nn_a, def) -- assignment when the override takes place
 
 		def = table.copy(minetest.registered_nodes[nn_b])
-			def.use_texture_alpha = true
+			def.use_texture_alpha = "clip"
 			minetest.register_node(":"..nn_b, def)
 	end
 
@@ -1494,6 +1498,7 @@ for color, color_loc in pairs(homedecor_exterior.shrub_colors) do
 		mesh = "homedecor_cube.obj",
 		tiles = {"homedecor_shrubbery_"..color..".png"},
 		paramtype = "light",
+		use_texture_alpha = "clip",
 		is_ground_content = false,
 		groups = {not_in_creative_inventory = 1, snappy=3, flammable=2},
 		sounds = default.node_sound_leaves_defaults(),
@@ -1509,6 +1514,7 @@ for color, color_loc in pairs(homedecor_exterior.shrub_colors) do
 			"homedecor_shrubbery_roots.png"
 		},
 		paramtype = "light",
+		use_texture_alpha = "clip",
 		is_ground_content = false,
 		groups = {not_in_creative_inventory = 1, snappy=3, flammable=2},
 		sounds = default.node_sound_leaves_defaults(),
@@ -2763,7 +2769,7 @@ for brightness_level = 0, 14 do
 		description = S("Thick Glowlight"),
 		tiles = tiles,
 		overlay_tiles = overlay,
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		drawtype = "nodebox",
 		paramtype = "light",
 		paramtype2 = "colorwallmounted",
@@ -2821,7 +2827,7 @@ for brightness_level = 0, 14 do
 		description = S("Thin Glowlight"),
 		tiles = tiles,
 		overlay_tiles = overlay,
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		drawtype = "nodebox",
 		paramtype = "light",
 		paramtype2 = "colorwallmounted",
@@ -2880,7 +2886,7 @@ for brightness_level = 0, 14 do
 		description = S("Small Glowlight Cube"),
 		tiles = tiles,
 		overlay_tiles = overlay,
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		paramtype = "light",
 		paramtype2 = "colorwallmounted",
 		drawtype = "nodebox",
@@ -2924,7 +2930,7 @@ for brightness_level = 0, 14 do
 			"default_gold_block.png",
 			lighttex
 		},
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		light_source = brightness_level,
 		sunlight_propagates = true,
 		groups = {not_in_creative_inventory = 1, cracky=3, oddly_breakable_by_hand=3},
@@ -2946,7 +2952,7 @@ for brightness_level = 0, 14 do
 		description = S("Ground Lantern/Light"),
 		mesh = "homedecor_ground_lantern.obj",
 		tiles = { gen_ls_tex_yellow, "homedecor_generic_metal_wrought_iron.png" },
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		inventory_image = "homedecor_ground_lantern_inv.png",
 		wield_image = "homedecor_ground_lantern_inv.png",
 		groups = {not_in_creative_inventory = 1, snappy=3},
@@ -2970,7 +2976,7 @@ for brightness_level = 0, 14 do
 		description = S("Hanging Lantern/Light"),
 		mesh = "homedecor_hanging_lantern.obj",
 		tiles = { "homedecor_generic_metal_wrought_iron.png", gen_ls_tex_yellow },
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		inventory_image = "homedecor_hanging_lantern_inv.png",
 		wield_image = "homedecor_hanging_lantern_inv.png",
 		groups = {not_in_creative_inventory = 1, snappy=3},
@@ -2994,7 +3000,7 @@ for brightness_level = 0, 14 do
 		drawtype = "mesh",
 		mesh = "homedecor_ceiling_lantern.obj",
 		tiles = { gen_ls_tex_yellow, "homedecor_generic_metal_wrought_iron.png" },
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		inventory_image = "homedecor_ceiling_lantern_inv.png",
 		description = S("Ceiling Lantern/Light"),
 		groups = {not_in_creative_inventory = 1, snappy=3},
@@ -3053,6 +3059,7 @@ for brightness_level = 0, 14 do
 		},
 		groups = {not_in_creative_inventory = 1,  snappy = 3},
 		light_source = brightness_level,
+		use_texture_alpha = "clip",
 		sounds = default.node_sound_glass_defaults(),
 		on_place = minetest.rotate_node,
 		on_rightclick = homedecor_lighting.toggle_light,
@@ -3222,7 +3229,7 @@ for _, light_brightn_name in ipairs({"off", "on"}) do
 			fixed = { -0.1875, -0.5, -0.1875, 0.1875, 0, 0.1875 }
 		},
 		walkable = false,
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		light_source = onflag and (default.LIGHT_MAX - 5) or nil,
 		sunlight_propagates = true,
 		groups = {not_in_creative_inventory = 1, cracky=3, oddly_breakable_by_hand=3},
@@ -3327,7 +3334,7 @@ for _, light_brightn_name in ipairs({"off", "on"}) do
 			gen_ls_tex_yellow,
 			"homedecor_generic_metal_wrought_iron.png"
 		},
-		use_texture_alpha = true,
+		use_texture_alpha = "clip",
 		inventory_image = "homedecor_wall_lamp_inv.png",
 		groups = {not_in_creative_inventory = 1, snappy=3},
 		light_source = onflag and (default.LIGHT_MAX - 3) or nil,
@@ -3364,6 +3371,7 @@ homedecor.register("candle", {
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	light_source = default.LIGHT_MAX-4,
+	use_texture_alpha = "clip",
 })
 
 local c_cbox = {
@@ -3385,6 +3393,7 @@ homedecor.register("candle_thin", {
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	light_source = default.LIGHT_MAX-4,
+	use_texture_alpha = "clip",
 })
 
 local cs_cbox = {
@@ -3407,6 +3416,7 @@ homedecor.register("candlestick_wrought_iron", {
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	light_source = default.LIGHT_MAX-4,
+	use_texture_alpha = "clip",
 })
 
 homedecor.register("candlestick_brass", {
@@ -3422,6 +3432,7 @@ homedecor.register("candlestick_brass", {
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	light_source = default.LIGHT_MAX-4,
+	use_texture_alpha = "clip",
 })
 
 homedecor.register("wall_sconce", {
@@ -3441,6 +3452,7 @@ homedecor.register("wall_sconce", {
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	light_source = default.LIGHT_MAX-4,
+	use_texture_alpha = "clip",
 })
 
 local ol_cbox = {
@@ -3461,7 +3473,7 @@ homedecor.register("oil_lamp", {
 		{ name = "homedecor_generic_metal.png", color = 0xffa00000 },
 		"homedecor_oil_lamp_glass.png",
 	},
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	inventory_image = "homedecor_oil_lamp_inv.png",
 	selection_box = ol_cbox,
 	walkable = false,
@@ -3542,6 +3554,7 @@ minetest.register_node(":homedecor:chandelier_steel", {
 	mesh = "homedecor_chandelier.obj",
 	groups = {not_in_creative_inventory = 1, cracky=3},
 	sounds =  default.node_sound_stone_defaults(),
+	use_texture_alpha = "clip",
 })
 
 minetest.register_node(":homedecor:chandelier_brass", {
@@ -3568,6 +3581,7 @@ minetest.register_node(":homedecor:chandelier_brass", {
 	mesh = "homedecor_chandelier.obj",
 	groups = {not_in_creative_inventory = 1, cracky=3},
 	sounds =  default.node_sound_stone_defaults(),
+	use_texture_alpha = "clip",
 })
 
 homedecor.register("torch_wall", {
@@ -3702,6 +3716,7 @@ for _, f in ipairs(flowers_list) do
 			"flowers_"..flower..".png"
 		},
 		walkable = false,
+		use_texture_alpha = "clip",
 		groups = {not_in_creative_inventory = 1, snappy = 3},
 		sounds = default.node_sound_glass_defaults(),
 		selection_box = {
@@ -3767,7 +3782,7 @@ homedecor.register("fishtank", {
 		"homedecor_fishtank_water_top.png",
 		"homedecor_fishtank_sides.png",
 	},
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	selection_box = ft_cbox,
 	collision_box = ft_cbox,
 	groups = {not_in_creative_inventory = 1, cracky=3,oddly_breakable_by_hand=3},
@@ -3790,7 +3805,7 @@ homedecor.register("fishtank_lighted", {
 		"homedecor_fishtank_sides_lighted.png",
 	},
 	light_source = default.LIGHT_MAX-4,
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	selection_box = ft_cbox,
 	collision_box = ft_cbox,
 	groups = {not_in_creative_inventory = 1, cracky=3,oddly_breakable_by_hand=3,not_in_creative_inventory=1},
@@ -4402,7 +4417,7 @@ minetest.register_node(":homedecor:skylight_frosted", {
 	tiles = { "homedecor_skylight_frosted.png" },
 	wield_image = "homedecor_skylight_frosted.png",
 	inventory_image = "homedecor_skylight_frosted_inv.png",
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	paramtype = "light",
 	sounds = default.node_sound_glass_defaults(),
@@ -5107,6 +5122,7 @@ homedecor.register("trash_can", {
 })
 
 -- homedecor_wardrobe
+local wd_cbox = {type = "fixed", fixed = {-0.5, -0.5, -0.5, 0.5, 1.5, 0.5}}
 
 local def = {
 	description = S("Wardrobe"),
@@ -5150,7 +5166,7 @@ homedecor.register("window_quartered", {
 		"homedecor_window_quartered.png",
 		"homedecor_window_quartered.png"
 	},
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
@@ -5181,7 +5197,7 @@ homedecor.register("window_plain", {
 		"homedecor_window_frame.png",
 		"homedecor_window_frame.png"
 	},
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {
@@ -5243,7 +5259,7 @@ minetest.register_node(":homedecor:curtain_closed", {
 	tiles = { "homedecor_curtain.png" },
 	inventory_image = "homedecor_curtain.png",
 	drawtype = 'signlike',
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy = 3, ud_param2_colorable = 1, not_in_creative_inventory=1 },
 	sounds = default.node_sound_leaves_defaults(),
@@ -5257,7 +5273,7 @@ minetest.register_node(":homedecor:curtain_open", {
 	tiles = { "homedecor_curtain_open.png" },
 	inventory_image = "homedecor_curtain_open.png",
 	drawtype = 'signlike',
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy = 3, ud_param2_colorable = 1 },
 	sounds = default.node_sound_leaves_defaults(),
@@ -5315,7 +5331,7 @@ homedecor.register("stained_glass", {
 	tiles = {"homedecor_stained_glass.png"},
 	inventory_image = "homedecor_stained_glass.png",
 	groups = {not_in_creative_inventory = 1, snappy=3},
-	use_texture_alpha = true,
+	use_texture_alpha = "clip",
 	light_source = 3,
 	sounds = default.node_sound_glass_defaults(),
 	node_box = {

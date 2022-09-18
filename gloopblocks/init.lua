@@ -140,7 +140,6 @@ minetest.register_node("gloopblocks:scaffolding", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_alias("moreblocks:oerkkiblock", "gloopblocks:oerkki_block")
 minetest.register_alias("gloopblocks:obsidian", "default:obsidian")
 
 -- Nodes imported from Usesdirt ================================================================================
@@ -182,14 +181,6 @@ if not minetest.get_modpath("usesdirt") then
 		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		legacy_wallmounted = true,
 	})
-	minetest.register_craft({
-		output = 'usesdirt:dirt_brick_ladder 3',
-		recipe = {
-			{'usesdirt:dirt_brick', '', 'usesdirt:dirt_brick'},
-			{'usesdirt:dirt_brick', 'usesdirt:dirt_brick','usesdirt:dirt_brick'},
-			{'usesdirt:dirt_brick','','usesdirt:dirt_brick'},
-		}
-	})
 
 	--[[default.register_fence(":usesdirt:dirt_brick_fence", {
 		description = "Dirt Brick Fence",
@@ -201,25 +192,6 @@ if not minetest.get_modpath("usesdirt") then
 		sounds = default.node_sound_stone_defaults(),
 		check_for_pole = true
 	})]]
-
-	if minetest.get_modpath("moreblocks") then
-		minetest.register_craft({
-			output = 'usesdirt:dirt_brick 24',
-			recipe = {
-				{'moreblocks:dirt_compressed', 'moreblocks:dirt_compressed', '' },
-				{'moreblocks:dirt_compressed', 'moreblocks:dirt_compressed', '' }
-			}
-		})
-	else
-		minetest.register_craft({
-			output = 'usesdirt:dirt_brick 6',
-			recipe = {
-				{'default:dirt', 'default:dirt', 'default:dirt'},
-				{'default:dirt', 'default:dirt', 'default:dirt'},
-				{'default:dirt', 'default:dirt', 'default:dirt'},
-			}
-		})
-	end
 
 	minetest.register_node(":usesdirt:dirt_ladder", {
 		description = "Dirt Ladder",
@@ -241,14 +213,6 @@ if not minetest.get_modpath("usesdirt") then
 		groups = {not_in_creative_inventory = 1, snappy=2,choppy=2,oddly_breakable_by_hand=3},
 		legacy_wallmounted = true,
 	})
-	minetest.register_craft({
-		output = 'usesdirt:dirt_ladder 3',
-		recipe = {
-			{'usesdirt:dirt_brick', '', 'usesdirt:dirt_brick'},
-			{'usesdirt:dirt_brick', 'usesdirt:dirt_brick','usesdirt:dirt_brick'},
-			{'usesdirt:dirt_brick','','usesdirt:dirt_brick'},
-		}
-	})
 
 	--[[default.register_fence(":usesdirt:dirt_fence", {
 		description = "Dirt Fence",
@@ -268,14 +232,6 @@ if not minetest.get_modpath("usesdirt") then
 		description = "Dirt Cobble Stone",
 		is_ground_content = true,
 		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
-	})
-	minetest.register_craft({
-		output = '"usesdirt:dirt_cobble_stone" 3',
-		recipe = {
-			{'usesdirt:dirt_brick', 'usesdirt:dirt_brick', 'usesdirt:dirt_brick'},
-			{'usesdirt:dirt_brick', 'usesdirt:dirt_brick', 'usesdirt:dirt_brick'},
-			{'usesdirt:dirt_brick', 'usesdirt:dirt_brick', 'usesdirt:dirt_brick'},
-		}
 	})
 
 	minetest.register_node(":usesdirt:dirt_cobble_stone_ladder", {
@@ -297,14 +253,6 @@ if not minetest.get_modpath("usesdirt") then
 		},
 		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		legacy_wallmounted = true,
-	})
-	minetest.register_craft({
-		output = 'usesdirt:dirt_cobble_stone_ladder 3',
-		recipe = {
-			{'usesdirt:dirt_cobble_stone', '', 'usesdirt:dirt_cobble_stone'},
-			{'usesdirt:dirt_cobble_stone', 'usesdirt:dirt_cobble_stone','usesdirt:dirt_cobble_stone'},
-			{'usesdirt:dirt_cobble_stone','','usesdirt:dirt_cobble_stone'},
-		}
 	})
 
 	--[[default.register_fence(":usesdirt:dirt_cobble_stone_fence", {
@@ -347,15 +295,6 @@ if not minetest.get_modpath("usesdirt") then
 		groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
 		legacy_wallmounted = true,
 	})
-	minetest.register_craft({
-		output = 'usesdirt:dirt_stone_ladder 3',
-		recipe = {
-			{'usesdirt:dirt_stone', '', 'usesdirt:dirt_stone'},
-			{'usesdirt:dirt_stone', 'usesdirt:dirt_stone','usesdirt:dirt_stone'},
-			{'usesdirt:dirt_stone','','usesdirt:dirt_stone'},
-		}
-	})
-
 	--[[default.register_fence(":usesdirt:dirt_stone_fence", {
 		description = "Dirt Stone Fence",
 		texture = dirt_stone_tex,
@@ -499,8 +438,6 @@ if minetest.get_modpath("stairs") then
 	minetest.register_alias("gloopblocks:slab_stone_brick_mossy", "stairs:slab_stone_brick_mossy")
 	minetest.register_alias("gloopblocks:stair_stone_mossy", "stairs:stair_stone_mossy")
 	minetest.register_alias("gloopblocks:slab_stone_mossy", "stairs:slab_stone_mossy")
-	minetest.register_alias("gloopblocks:stair_cement", "stairs:stair_cement")
-	minetest.register_alias("gloopblocks:slab_cement", "stairs:slab_cement")
 	minetest.register_alias("gloopblocks:stair_pavement", "stairs:stair_pavement")
 	minetest.register_alias("gloopblocks:slab_pavement", "stairs:slab_pavement")
 	minetest.register_alias("gloopblocks:stair_pumice", "stairs:stair_pumice")
@@ -605,8 +542,5 @@ if minetest.get_modpath("worldedit") then
 		end
 	})
 end
-
-minetest.register_alias("nyancat:nyancat_rainbow", "gloopblocks:rainbow_block_horizontal")
-minetest.register_alias("default:nyancat_rainbow", "gloopblocks:rainbow_block_horizontal")
 
 print(S("Gloopblocks Loaded!"))

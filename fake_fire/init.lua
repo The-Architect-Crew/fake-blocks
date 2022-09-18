@@ -35,6 +35,7 @@ minetest.register_node("fake_fire:fancy_fire", {
 	paramtype2 = "facedir",
 	groups = {not_in_creative_inventory = 1, oddly_breakable_by_hand=3, flammable=0},
 	sunlight_propagates = true,
+	use_texture_alpha = "clip",
 	light_source = 13,
 	walkable = false,
 	buildable_to = false,

@@ -1081,6 +1081,7 @@ minetest.register_node(":default:glass", {
 	paramtype2 = "glasslikeliquidlevel",
 	sunlight_propagates = true,
 	is_ground_content = false,
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, cracky = 3, oddly_breakable_by_hand = 3},
 	sounds = default.node_sound_glass_defaults(),
 })
@@ -1093,6 +1094,7 @@ minetest.register_node(":default:obsidian_glass", {
 	paramtype2 = "glasslikeliquidlevel",
 	is_ground_content = false,
 	sunlight_propagates = true,
+	use_texture_alpha = "clip",
 	sounds = default.node_sound_glass_defaults(),
 	groups = {not_in_creative_inventory = 1, cracky = 3},
 })

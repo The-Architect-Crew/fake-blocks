@@ -154,7 +154,7 @@
 		description = "Medieval Glow Glass (Deprecated)",
 		tiles = {"darkage_glass.png"},
 		paramtype = "light",
-		light_source = 18,
+		light_source = minetest.LIGHT_MAX,
 		groups = {not_in_creative_inventory = 1, snappy=2,cracky=3,oddly_breakable_by_hand=3,not_in_craft_guide=1},
 		sounds = default.node_sound_stone_defaults(),
 		sunlight_propagates = true,
