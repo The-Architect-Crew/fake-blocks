@@ -1,4 +1,0 @@
-default
-default2
-dye
-moreblocks
