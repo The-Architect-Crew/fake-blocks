@@ -1008,6 +1008,7 @@ for i, g in ipairs(gate_list) do
 		groups = {not_in_creative_inventory = 1, snappy=3},
 		sounds = default.node_sound_wood_defaults(),
 		paramtype2 = "facedir",
+		use_texture_alpha = "clip",
 		selection_box = {
 			type = "fixed",
 			fixed = { -0.5, -0.5, 0.4, 0.5, 0.5, 0.5 }
@@ -1398,6 +1399,7 @@ homedecor.register("lattice_"..name, {
 	description = S("Garden Lattice (@1)", desc),
 	tiles = {"homedecor_lattice"..texture},
 	inventory_image = "homedecor_lattice"..texture,
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1,  snappy=3 },
 	node_box = {
 		type = "fixed",
@@ -1425,6 +1427,7 @@ homedecor.register("swing", {
 		"homedecor_swing_top.png"
 	},
 	inventory_image = "homedecor_swing_inv.png",
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1,  snappy=3, oddly_breakable_by_hand=3 },
 	sounds = default.node_sound_wood_defaults(),
 	walkable = false,
@@ -1558,6 +1561,7 @@ homedecor.register("fence_picket", {
 		"homedecor_fence_picket_backside.png",
 		"homedecor_fence_picket.png"
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.slab_z(-0.1),
@@ -1574,6 +1578,7 @@ homedecor.register("fence_picket_corner", {
 		"homedecor_fence_picket_backside.png",
 		"homedecor_fence_picket.png",
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.corner_xz(0.1, -0.1),
@@ -1590,6 +1595,7 @@ homedecor.register("fence_picket_white", {
 		"homedecor_fence_picket_white_backside.png",
 		"homedecor_fence_picket_white.png"
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.slab_z(-0.1),
@@ -1606,6 +1612,7 @@ homedecor.register("fence_picket_corner_white", {
 		"homedecor_fence_picket_white_backside.png",
 		"homedecor_fence_picket_white.png",
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.corner_xz(0.1, -0.1),
@@ -1675,6 +1682,7 @@ homedecor.register("fence_barbed_wire", {
 	description = S("Barbed Wire Fence"),
 	mesh = "homedecor_fence_barbed_wire.obj",
 	tiles = {"homedecor_fence_barbed_wire.png"},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.slab_z(-0.125),
@@ -1685,6 +1693,7 @@ homedecor.register("fence_barbed_wire_corner", {
 	description = S("Barbed Wire Fence Corner"),
 	mesh = "homedecor_fence_barbed_wire_corner.obj",
 	tiles = { "homedecor_fence_barbed_wire.png" },
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.corner_xz(0.125, -0.125),
@@ -1702,6 +1711,7 @@ homedecor.register("fence_chainlink", {
 		"homedecor_fence_chainlink_fb.png",
 		"homedecor_fence_chainlink_fb.png",
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.slab_z(-0.125),
@@ -1720,6 +1730,7 @@ homedecor.register("fence_chainlink_corner", {
 		"homedecor_fence_chainlink_corner_front.png",
 		"homedecor_fence_chainlink_corner_front.png",
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.corner_xz(0.125, -0.125),
@@ -1736,6 +1747,7 @@ homedecor.register("fence_wrought_iron_2", {
 		"homedecor_fence_wrought_iron_2_fb.png",
 		"homedecor_fence_wrought_iron_2_fb.png"
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.slab_z(-0.08),
@@ -1763,6 +1775,7 @@ homedecor.register("fence_wrought_iron_2_corner", {
 		"homedecor_fence_corner_wrought_iron_2_sides.png^[transformFX",
 		"homedecor_fence_corner_wrought_iron_2_sides.png"
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = homedecor.nodebox.corner_xz(0.08, -0.08),
@@ -2310,6 +2323,7 @@ homedecor.register("toaster", {
 	description = S("Toaster"),
 	tiles = { "homedecor_toaster_sides.png" },
 	inventory_image = "homedecor_toaster_inv.png",
+	use_texture_alpha = "clip",
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy=3 },
 	node_box = {
@@ -2329,6 +2343,7 @@ homedecor.register("toaster_loaf", {
 		"homedecor_toaster_sides.png",
 		"homedecor_toaster_sides.png"
 	},
+	use_texture_alpha = "clip",
 	walkable = false,
 	groups = {not_in_creative_inventory = 1,  snappy=3, not_in_creative_inventory=1 },
 	node_box = {
@@ -2409,6 +2424,7 @@ homedecor.register_furnace("microwave_oven", {
 			type = "fixed",
 			fixed = { -0.5, -0.5, -0.125, 0.5, 0.125, 0.5 },
 		},
+		use_texture_alpha = "clip",
 	},
 })
 
@@ -3602,6 +3618,7 @@ homedecor.register("torch_wall", {
 		"forniture_coal.png",
 	},
 	inventory_image="forniture_torch_inv.png",
+	use_texture_alpha = "clip",
 	walkable = false,
 	light_source = 14,
 	selection_box = {
@@ -3834,6 +3851,7 @@ homedecor.register("cardboard_box", {
 		'homedecor_cardbox_tb.png',
 		'homedecor_cardbox_sides.png',
 	},
+	use_texture_alpha = "clip",
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -3956,6 +3974,7 @@ homedecor.register("skateboard", {
 	mesh = "homedecor_skateboard.obj",
 	tiles = { "homedecor_skateboard.png" },
 	inventory_image = "homedecor_skateboard_inv.png",
+	use_texture_alpha = "clip",
 	description = S("Skateboard"),
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	selection_box = skate_cbox,
@@ -4334,6 +4353,7 @@ homedecor.register("calendar", {
 	inventory_image = "homedecor_calendar_inv.png",
 	wield_image = "homedecor_calendar_inv.png",
 	paramtype2 = "wallmounted",
+	use_texture_alpha = "clip",
 	walkable = false,
 	selection_box = {
 		type = "wallmounted",
@@ -4529,6 +4549,7 @@ homedecor_roofing.register_slope = function(modname, subname, recipeitem, groups
 		tiles = tiles,
 		paramtype = "light",
 		paramtype2 = "facedir",
+		use_texture_alpha = "clip",
 		selection_box = slope_cbox,
 		collision_box = slope_cbox,
 		groups = groups,
@@ -4936,11 +4957,14 @@ local tables_cbox = {
 for i, mat in ipairs(materials) do
 	local m, small_s, small_r, large = unpack(mat)
 	local s
+	local alpha
 
 	if m == "glass" then
 		s = default.node_sound_glass_defaults()
+		alpha = "clip"
 	else
 		s = default.node_sound_wood_defaults()
+		alpha = "opaque"
 	end
 
 -- small square tables
@@ -4951,6 +4975,7 @@ for i, mat in ipairs(materials) do
 		tiles = { 'homedecor_'..m..'_table_small_square.png' },
 		wield_image = 'homedecor_'..m..'_table_small_square_inv.png',
 		inventory_image = 'homedecor_'..m..'_table_small_square_inv.png',
+		use_texture_alpha = alpha,
 		groups = {not_in_creative_inventory = 1,  snappy = 3 },
 		sounds = s,
 		selection_box = tables_cbox,
@@ -4966,6 +4991,7 @@ for i, mat in ipairs(materials) do
 		tiles = { "homedecor_"..m.."_table_small_round.png" },
 		wield_image = 'homedecor_'..m..'_table_small_round_inv.png',
 		inventory_image = 'homedecor_'..m..'_table_small_round_inv.png',
+		use_texture_alpha = alpha,
 		groups = {not_in_creative_inventory = 1,  snappy = 3 },
 		sounds = s,
 		selection_box = tables_cbox,
@@ -4987,6 +5013,7 @@ for i, mat in ipairs(materials) do
 		},
 		wield_image = 'homedecor_'..m..'_table_large_inv.png',
 		inventory_image = 'homedecor_'..m..'_table_large_inv.png',
+		use_texture_alpha = alpha,
 		groups = {not_in_creative_inventory = 1,  snappy = 3 },
 		sounds = s,
 		node_box = {
@@ -5115,6 +5142,7 @@ homedecor.register("trash_can", {
 	mesh = "homedecor_trash_can.obj",
 	tiles = { "homedecor_trash_can.png" },
 	inventory_image = "homedecor_trash_can_inv.png",
+	use_texture_alpha = "clip",
 	description = S("Small Trash Can"),
 	groups = {not_in_creative_inventory = 1, snappy=3},
 	selection_box = trash_cbox,
@@ -5314,6 +5342,7 @@ homedecor.register("window_flowerbox", {
 		"homedecor_flowerbox_sides.png"
 	},
 	inventory_image = "homedecor_flowerbox_inv.png",
+	use_texture_alpha = "clip",
 	sounds = default.node_sound_stone_defaults(),
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	node_box = {
