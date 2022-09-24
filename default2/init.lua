@@ -819,8 +819,7 @@ for i = 2, 3 do
 		sunlight_propagates = true,
 		walkable = false,
 		buildable_to = true,
-		groups = {not_in_creative_inventory = 1, snappy = 3, flammable = 3, attached_node = 1,
-			not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, snappy = 3, flammable = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -1131,49 +1130,49 @@ minetest.register_node(":default:meselamp", {
 --
 
 default.register_fence(":default:fence_cobble", {
- 	description = "Cobbblestone Fence (Deprecated)",
- 	texture = "default_cobble.png",
- 	material = "default:cobble",
- 	groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
- 	sounds = default.node_sound_stone_defaults()
+	description = "Cobbblestone Fence (Deprecated)",
+	texture = "default_cobble.png",
+	material = "default:cobble",
+	groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
+	sounds = default.node_sound_stone_defaults()
 })
 
 default.register_fence(":default:fence_desert_cobble", {
 	description = "Desert Cobbblestone Fence (Deprecated)",
- 	texture = "default_desert_cobble.png",
- 	material = "default:desert_cobble",
- 	groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
- 	sounds = default.node_sound_stone_defaults()
+	texture = "default_desert_cobble.png",
+	material = "default:desert_cobble",
+	groups = {not_in_creative_inventory = 1, cracky=3, stone=2},
+	sounds = default.node_sound_stone_defaults()
 })
 
 default.register_fence(":default:fence_sandstone", {
- 	description = "Sandstone Fence (Deprecated)",
- 	texture = "default_sandstone.png",
- 	material = "default:sandstone",
- 	groups = {not_in_creative_inventory = 1, cracky=3, crumbly=2},
- 	sounds = default.node_sound_stone_defaults()
+	description = "Sandstone Fence (Deprecated)",
+	texture = "default_sandstone.png",
+	material = "default:sandstone",
+	groups = {not_in_creative_inventory = 1, cracky=3, crumbly=2},
+	sounds = default.node_sound_stone_defaults()
 })
 
 default.register_fence(":default:fence_stone_brick", {
- 	description = "Stone Brick Fence (Deprecated)",
- 	texture = "default_stone_brick.png",
- 	material = "default:stonebrick",
- 	groups = {not_in_creative_inventory = 1, cracky=2, stone=1},
- 	sounds = default.node_sound_stone_defaults()
+	description = "Stone Brick Fence (Deprecated)",
+	texture = "default_stone_brick.png",
+	material = "default:stonebrick",
+	groups = {not_in_creative_inventory = 1, cracky=2, stone=1},
+	sounds = default.node_sound_stone_defaults()
 })
 
 default.register_fence(":default:fence_sandstone_brick", {
- 	description = "Sandstone Brick Fence (Deprecated)",
- 	texture = "default_sandstone_brick.png",
- 	material = "default:sandstonebrick",
- 	groups = {not_in_creative_inventory = 1, cracky=2},
- 	sounds = default.node_sound_stone_defaults()
+	description = "Sandstone Brick Fence (Deprecated)",
+	texture = "default_sandstone_brick.png",
+	material = "default:sandstonebrick",
+	groups = {not_in_creative_inventory = 1, cracky=2},
+	sounds = default.node_sound_stone_defaults()
 })
 
 default.register_fence(":default:fence_desert_stone_brick", {
- 	description = "Desert Stone Brick Fence (Deprecated)",
- 	texture = "default_desert_stone_brick.png",
- 	material = "default:desert_stonebrick",
- 	groups = {not_in_creative_inventory = 1, cracky=2, stone=1},
- 	sounds = default.node_sound_stone_defaults()
+	description = "Desert Stone Brick Fence (Deprecated)",
+	texture = "default_desert_stone_brick.png",
+	material = "default:desert_stonebrick",
+	groups = {not_in_creative_inventory = 1, cracky=2, stone=1},
+	sounds = default.node_sound_stone_defaults()
 })

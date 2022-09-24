@@ -92,7 +92,7 @@ homedecor.register("medicine_cabinet_open", {
 		fixed = {-0.3125, -0.1875, -0.25, 0.3125, 0.5, 0.5}
 	},
 	walkable = false,
-	groups = {not_in_creative_inventory = 1,  snappy = 3, not_in_creative_inventory=1 },
+	groups = {not_in_creative_inventory = 1,  snappy = 3},
 	drop = "homedecor:medicine_cabinet",
 })
 
@@ -135,6 +135,7 @@ homedecor.register("toilet_open", {
 		"default_water.png",
 		{ name = "homedecor_generic_metal.png", color = homedecor.color_med_grey }
 	},
+	use_texture_alpha = "blend",
 	selection_box = toilet_sbox,
 	collision_box = toilet_cbox,
 	drop = "homedecor:toilet",
@@ -189,6 +190,7 @@ homedecor.register("sink", {
 		"building_blocks_marble.png",
 		"default_water.png"
 	},
+	use_texture_alpha = "blend",
 	inventory_image="homedecor_bathroom_sink_inv.png",
 	selection_box = sink_sbox,
 	collision_box = sink_cbox,
@@ -427,7 +429,7 @@ for _, c in ipairs(bookcolors) do
 			{ name = "homedecor_book_edges.png", color = "white" },
 			{ name = "homedecor_book_pages.png", color = "white" }
 		},
-		groups = {not_in_creative_inventory = 1,  snappy=3, oddly_breakable_by_hand=3, not_in_creative_inventory=1 },
+		groups = {not_in_creative_inventory = 1,  snappy=3, oddly_breakable_by_hand=3},
 		drop = "homedecor:book_"..color,
 		walkable = false,
 		selection_box = {
@@ -446,6 +448,7 @@ homedecor.register("air_conditioner", {
 		"homedecor_ac.png",
 		"default_glass.png"
 	},
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = { type="regular" },
@@ -481,6 +484,7 @@ homedecor.register("ceiling_fan", {
 		'homedecor_ceiling_fan_sides.png',
 	},
 	inventory_image = "homedecor_ceiling_fan_inv.png",
+	use_texture_alpha = "clip",
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -625,6 +629,7 @@ homedecor.register("grandfather_clock", {
 		"homedecor_generic_metal_brass.png"
 	},
 	inventory_image = "homedecor_grandfather_clock_inv.png",
+	use_texture_alpha = "clip",
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	selection_box = gf_cbox,
 	collision_box = gf_cbox,
@@ -681,7 +686,7 @@ minetest.register_node(":homedecor:cobweb_centered", {
 		type = "fixed",
 		fixed = { -0.5, -0.5, 0, 0.5, 0.5, 0 }
 	},
-	groups = {not_in_creative_inventory = 1,  snappy = 3, liquid=3, not_in_creative_inventory = 1 },
+	groups = {not_in_creative_inventory = 1,  snappy = 3, liquid=3},
 	drop = "homedecor:cobweb_corner"
 })
 
@@ -709,7 +714,7 @@ minetest.register_node(":homedecor:cobweb_flat", {
 		type = "fixed",
 		fixed = { -0.5, -0.5, 0.495, 0.5, 0.5, 0.495 }
 	},
-	groups = {not_in_creative_inventory = 1,  snappy = 3, liquid=3, not_in_creative_inventory = 1 },
+	groups = {not_in_creative_inventory = 1,  snappy = 3, liquid=3},
 	drop = "homedecor:cobweb_corner"
 })
 
@@ -731,7 +736,7 @@ minetest.register_node(":homedecor:cobweb_plantlike", {
 	walkable = false,
 	selection_box = { type = "regular" },
 	visual_scale = 1.189,
-	groups = {not_in_creative_inventory = 1,  snappy = 3, liquid=3, not_in_creative_inventory = 1 },
+	groups = {not_in_creative_inventory = 1,  snappy = 3, liquid=3},
 	drop = "homedecor:cobweb_corner"
 })
 
@@ -1068,7 +1073,7 @@ homedecor.register("door_japanese_open", {
 		"homedecor_japanese_paper.png"
 	},
 	mesh = "homedecor_door_japanese_open.obj",
-	groups = {not_in_creative_inventory = 1,  snappy = 3, not_in_creative_inventory = 1 },
+	groups = {not_in_creative_inventory = 1,  snappy = 3},
 	sounds = default.node_sound_wood_defaults(),
 	on_rotate = minetest.get_modpath("screwdriver") and screwdriver.disallow or nil,
 	selection_box = {
@@ -1145,7 +1150,7 @@ for _, onoff in ipairs ({"on", "off"}) do
 				{ -0.1875,   -0.25,    0.375,  0.1875,   0.1875, 0.5 },
 			}
 		},
-		groups = {not_in_creative_inventory = 1, 
+		groups = {not_in_creative_inventory = 1,
 			cracky=3, dig_immediate=2, mesecon_needs_receiver=1
 		},
 		walkable = false,
@@ -1194,7 +1199,7 @@ homedecor.register("speaker_open", {
 		"homedecor_speaker_open_front.png",
 		{ name = "homedecor_generic_metal.png", color = homedecor.color_black }
 	},
-	groups = {not_in_creative_inventory = 1,  snappy = 3, not_in_creative_inventory=1 },
+	groups = {not_in_creative_inventory = 1,  snappy = 3},
 	sounds = default.node_sound_wood_defaults(),
 })
 
@@ -1453,7 +1458,7 @@ homedecor.register("swing_rope", {
 	tiles = {
 		"homedecor_swingrope_sides.png"
 	},
-	groups = {not_in_creative_inventory = 1,  not_in_creative_inventory=1 },
+	groups = {not_in_creative_inventory = 1},
 	walkable = false,
 	node_box = {
 		type = "fixed",
@@ -1476,6 +1481,7 @@ homedecor.register("well", {
 		"homedecor_shingles_wood.png"
 	},
 	inventory_image = "homedecor_well_inv.png",
+	use_texture_alpha = "blend",
 	description = S("Water well"),
 	groups = {not_in_creative_inventory = 1,  snappy = 3 },
 	selection_box = homedecor.nodebox.slab_y(2),
@@ -2345,7 +2351,7 @@ homedecor.register("toaster_loaf", {
 	},
 	use_texture_alpha = "clip",
 	walkable = false,
-	groups = {not_in_creative_inventory = 1,  snappy=3, not_in_creative_inventory=1 },
+	groups = {not_in_creative_inventory = 1,  snappy=3},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -3825,7 +3831,7 @@ homedecor.register("fishtank_lighted", {
 	use_texture_alpha = "clip",
 	selection_box = ft_cbox,
 	collision_box = ft_cbox,
-	groups = {not_in_creative_inventory = 1, cracky=3,oddly_breakable_by_hand=3,not_in_creative_inventory=1},
+	groups = {not_in_creative_inventory = 1, cracky=3,oddly_breakable_by_hand=3},
 	sounds = default.node_sound_glass_defaults(),
 	on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
 		minetest.set_node(pos, {name = "homedecor:fishtank", param2 = node.param2})
@@ -5126,7 +5132,7 @@ homedecor.register("trash_can_green_open", {
 	drawtype = "mesh",
 	mesh = "homedecor_trash_can_green_open.obj",
 	tiles = { { name = "homedecor_generic_plastic.png", color = trashcan_green } },
-	groups = {not_in_creative_inventory = 1, snappy=3, not_in_creative_inventory=1},
+	groups = {not_in_creative_inventory = 1, snappy=3},
 	selection_box = tg_cbox,
 	collision_box = tg_cbox,
 	drop = "homedecor:trash_can_green",
@@ -5289,7 +5295,7 @@ minetest.register_node(":homedecor:curtain_closed", {
 	drawtype = 'signlike',
 	use_texture_alpha = "clip",
 	walkable = false,
-	groups = {not_in_creative_inventory = 1,  snappy = 3, ud_param2_colorable = 1, not_in_creative_inventory=1 },
+	groups = {not_in_creative_inventory = 1,  snappy = 3, ud_param2_colorable = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	paramtype = "light",
 	paramtype2 = "colorwallmounted",
@@ -5416,7 +5422,7 @@ homedecor.register("shutter_colored", {
 	inventory_image = "homedecor_window_shutter_inv.png",
 	wield_image = "homedecor_window_shutter_inv.png",
 	paramtype2 = "colorwallmounted",
-	groups = {not_in_creative_inventory = 1,  snappy = 3 , not_in_creative_inventory = 1, ud_param2_colorable = 1},
+	groups = {not_in_creative_inventory = 1, snappy = 3, ud_param2_colorable = 1},
 	sounds = default.node_sound_wood_defaults(),
 	selection_box = shutter_cbox,
 	node_box = shutter_cbox,

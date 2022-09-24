@@ -309,7 +309,7 @@ end
 
 -- Stairs/slabs defs, conversion of normal -> mossy items
 
-if minetest.setting_getbool("gloopblocks_mossy_conversion") ~= false then
+if minetest.settings:get_bool("gloopblocks_mossy_conversion") ~= false then
 
 	function gloopblocks_register_mossy_conversion(mossyobjects)
 		for i in ipairs(mossyobjects) do
@@ -341,13 +341,14 @@ if minetest.get_modpath("stairs") then
 		S("Mossy Stone Slab (Deprecated)"),
 		default.node_sound_stone_defaults())
 
-	-- stairs:xxxx_mossycobble
+	--[[ stairs:xxxx_mossycobble
 	stairs.register_stair_and_slab("mossycobble", "default:mossycobble",
 		{cracky=3},
 		{"default_mossycobble.png"},
 		S("Mossy Cobble Stair (Deprecated)"),
 		S("Mossy Cobble Slab (Deprecated)"),
 		default.node_sound_stone_defaults())
+	]]
 
 	-- stairs:xxxx_stone_brick_mossy
 	stairs.register_stair_and_slab("stone_brick_mossy", "gloopblocks:stone_brick_mossy",
@@ -410,7 +411,7 @@ if minetest.get_modpath("stairs") then
 		S("Rainbow Block Slab (Deprecated)"),
 		default.node_sound_defaults())
 
-	if minetest.setting_getbool("gloopblocks_mossy_conversion") ~= false then
+	if minetest.settings:get_bool("gloopblocks_mossy_conversion") ~= false then
 
 		gloopblocks_register_mossy_conversion({
 			{ "default:cobble", 					"default:mossycobble" },
@@ -451,13 +452,13 @@ end
 -- define lava-cooling-based nodes and hook into the default lavacooling
 -- functions to generate basalt, pumice, and obsidian
 
-if minetest.setting_getbool("gloopblocks_lavacooling") ~= false then
+if minetest.settings:get_bool("gloopblocks_lavacooling") ~= false then
 	minetest.register_node("gloopblocks:obsidian_cooled", {
 		description = S("Obsidian (Deprecated)"),
 		tiles = {"default_obsidian.png"},
 		is_ground_content = true,
 		sounds = default.node_sound_stone_defaults(),
-		groups = {not_in_creative_inventory = 1, cracky=1, level=2, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=1, level=2},
 		drop = "default:obsidian",
 		after_place_node = function(pos, placer, itemstack, pointed_thing)
 			minetest.add_node(pos, {name = "default:obsidian"})
@@ -467,7 +468,7 @@ if minetest.setting_getbool("gloopblocks_lavacooling") ~= false then
 	minetest.register_node("gloopblocks:basalt_cooled", {
 		description = S("Basalt (Deprecated)"),
 		tiles = {"gloopblocks_basalt.png"},
-		groups = {not_in_creative_inventory = 1, cracky=2, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=2},
 		sounds = default.node_sound_stone_defaults(),
 		drop = "gloopblocks:basalt",
 		after_place_node = function(pos, placer, itemstack, pointed_thing)
@@ -478,7 +479,7 @@ if minetest.setting_getbool("gloopblocks_lavacooling") ~= false then
 	minetest.register_node("gloopblocks:pumice_cooled", {
 		description = S("Pumice (Deprecated)"),
 		tiles = {"gloopblocks_pumice.png"},
-		groups = {not_in_creative_inventory = 1, cracky=3, not_in_creative_inventory=1},
+		groups = {not_in_creative_inventory = 1, cracky=3},
 		sounds = default.node_sound_stone_defaults(),
 		drop = "gloopblocks:pumice",
 		after_place_node = function(pos, placer, itemstack, pointed_thing)
