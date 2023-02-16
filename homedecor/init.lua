@@ -2724,8 +2724,6 @@ end
 ------------------
 -- Dimmable lights
 
---for light_brightn_name in pairs(word_to_bright) do
-
 for brightness_level = 0, 14 do
 
 	local tiles
@@ -3371,6 +3369,8 @@ for _, light_brightn_name in ipairs({"off", "on"}) do
 	})
 end
 
+
+
 -------------------------------------------------------
 -- Light sources and other items that don't turn on/off
 
@@ -3633,6 +3633,272 @@ homedecor.register("torch_wall", {
 	},
 	groups = {not_in_creative_inventory = 1, cracky=3},
 })
+
+-- table lamps and standing lamps
+
+local lamp_colors = {
+	"white",
+	"blue",
+	"green",
+	"pink",
+	"red",
+	"violet",
+}
+
+-- conversion LBM for param2 coloring
+
+homedecor_lighting.old_static_nodes = {
+	"homedecor:glowlight_quarter_white",
+	"homedecor:glowlight_quarter_yellow",
+	"homedecor:glowlight_half_white",
+	"homedecor:glowlight_half_yellow",
+	"homedecor:glowlight_small_cube_white",
+	"homedecor:glowlight_small_cube_yellow"
+}
+
+local lamp_power = {"off", "low", "med", "hi", "max"}
+
+for _, power in ipairs(lamp_power) do
+	for _, color in ipairs(lamp_colors) do
+		table.insert(homedecor_lighting.old_static_nodes, "homedecor:table_lamp_"..color.."_"..power)
+		table.insert(homedecor_lighting.old_static_nodes, "homedecor:standing_lamp_"..color.."_"..power)
+	end
+end
+
+minetest.register_lbm({
+	name = ":homedecor:convert_lighting",
+	label = "Convert homedecor glowlights, table lamps, and standing lamps to use param2 color",
+	run_at_every_load = false,
+	nodenames = homedecor_lighting.old_static_nodes,
+	action = function(pos, node)
+		local name = node.name
+		local newname
+		local color
+
+		if string.find(name, "small_cube") then
+			newname = "homedecor:glowlight_small_cube"
+		elseif string.find(name, "glowlight_half") then
+			newname = "homedecor:glowlight_half"
+		elseif string.find(name, "glowlight_quarter") then
+			newname = "homedecor:glowlight_quarter"
+		end
+
+		local lampname
+		if string.find(name, "standing_lamp") then
+			lampname = "homedecor:standing_lamp"
+		elseif string.find(name, "table_lamp") then
+			lampname = "homedecor:table_lamp"
+		end
+		if lampname then
+			newname = lampname
+			if string.find(name, "_off") then
+				newname = newname.."_off"
+			elseif string.find(name, "_low") then
+				newname = newname.."_low"
+			elseif string.find(name, "_med") then
+				newname = newname.."_med"
+			elseif string.find(name, "_hi") then
+				newname = newname.."_hi"
+			elseif string.find(name, "_max") then
+				newname = newname.."_max"
+			end
+		end
+
+		if string.find(name, "red") then
+			color = "red"
+		elseif string.find(name, "pink") then
+			color = "pink"
+		elseif string.find(name, "green") then
+			color = "green"
+		elseif string.find(name, "blue") then
+			color = "blue"
+		elseif string.find(name, "yellow") then
+			color = "yellow"
+		elseif string.find(name, "violet") then
+			color = "violet"
+		else
+			color = "white"
+		end
+
+		local paletteidx, _ = unifieddyes.getpaletteidx("unifieddyes:"..color, "extended")
+
+		local old_fdir
+		local new_node = newname
+		local new_fdir = 1
+		local param2
+
+		if string.find(name, "glowlight") then
+			paletteidx, _ = unifieddyes.getpaletteidx("unifieddyes:"..color, "wallmounted")
+
+			old_fdir = math.floor(node.param2 / 4)
+
+			if old_fdir == 5 then
+				new_fdir = 0
+			elseif old_fdir == 1 then
+				new_fdir = 5
+			elseif old_fdir == 2 then
+				new_fdir = 4
+			elseif old_fdir == 3 then
+				new_fdir = 3
+			elseif old_fdir == 4 then
+				new_fdir = 2
+			elseif old_fdir == 0 then
+				new_fdir = 1
+			end
+			param2 = paletteidx + new_fdir
+		else
+			param2 = paletteidx
+		end
+
+		local meta = minetest.get_meta(pos)
+
+		if string.find(name, "table_lamp") or string.find(name, "standing_lamp") then
+			meta:set_string("palette", "ext")
+		end
+
+		minetest.set_node(pos, { name = new_node, param2 = param2 })
+		meta:set_string("dye", "unifieddyes:"..color)
+	end
+})
+
+-- this one's for the small "gooseneck" desk lamps
+
+homedecor_lighting.old_static_desk_lamps = {
+	"homedecor:desk_lamp_red",
+	"homedecor:desk_lamp_blue",
+	"homedecor:desk_lamp_green",
+	"homedecor:desk_lamp_violet",
+}
+
+minetest.register_lbm({
+	name = ":homedecor:convert_desk_lamps",
+	label = "Convert homedecor desk lamps to use param2 color",
+	run_at_every_load = false,
+	nodenames = homedecor_lighting.old_static_desk_lamps,
+	action = function(pos, node)
+		local name = node.name
+		local color = string.sub(name, string.find(name, "_", -8) + 1)
+
+		if color == "green" then
+			color = "medium_green"
+		elseif color == "violet" then
+			color = "magenta"
+		end
+
+		local paletteidx, _ = unifieddyes.getpaletteidx("unifieddyes:"..color, "wallmounted")
+		local old_fdir = math.floor(node.param2 % 32)
+		local new_fdir = 3
+
+		if old_fdir == 0 then
+			new_fdir = 3
+		elseif old_fdir == 1 then
+			new_fdir = 4
+		elseif old_fdir == 2 then
+			new_fdir = 2
+		elseif old_fdir == 3 then
+			new_fdir = 5
+		end
+
+		local param2 = paletteidx + new_fdir
+
+		minetest.set_node(pos, { name = "homedecor:desk_lamp", param2 = param2 })
+		local meta = minetest.get_meta(pos)
+		meta:set_string("dye", "unifieddyes:"..color)
+	end
+})
+
+if minetest.get_modpath("darkage") then
+	minetest.register_alias("homedecor:lattice_lantern_large",        "darkage:lamp")
+	for n = 0, 14 do
+		minetest.register_alias("homedecor:lattice_lantern_large_"..n, "darkage:lamp")
+	end
+	for name, level in pairs(word_to_bright) do
+		minetest.register_alias("homedecor:lattice_lantern_large_"..name, "darkage:lamp")
+	end
+end
+
+-- aliases
+
+minetest.register_alias("chains:chain_top",                    "homedecor:chain_steel_top")
+minetest.register_alias("chains:chain_top_brass",              "homedecor:chain_brass_top")
+
+minetest.register_alias("chains:chandelier",                   "homedecor:chandelier_steel")
+minetest.register_alias("chains:chandelier_steel",             "homedecor:chandelier_steel")
+minetest.register_alias("chains:chandelier_brass",             "homedecor:chandelier_brass")
+
+minetest.register_alias("homedecor:glowlight_half",            "homedecor:glowlight_half_14")
+minetest.register_alias("homedecor:glowlight_half_max",        "homedecor:glowlight_half_14")
+
+minetest.register_alias("homedecor:glowlight_quarter",         "homedecor:glowlight_quarter_14")
+minetest.register_alias("homedecor:glowlight_quarter_max",     "homedecor:glowlight_quarter_14")
+
+minetest.register_alias("homedecor:glowlight_small_cube",      "homedecor:glowlight_small_cube_14")
+minetest.register_alias("homedecor:glowlight_small_cube_max",  "homedecor:glowlight_small_cube_14")
+
+minetest.register_alias("homedecor:plasma_lamp",               "homedecor:plasma_lamp_14")
+minetest.register_alias("homedecor:plasma_lamp_max",           "homedecor:plasma_lamp_14")
+
+minetest.register_alias("homedecor:ground_lantern",            "homedecor:ground_lantern_14")
+minetest.register_alias("homedecor:ground_lantern_max",        "homedecor:ground_lantern_14")
+
+minetest.register_alias("homedecor:hanging_lantern",           "homedecor:hanging_lantern_14")
+minetest.register_alias("homedecor:hanging_lantern_max",       "homedecor:hanging_lantern_14")
+
+minetest.register_alias("homedecor:ceiling_lantern",           "homedecor:ceiling_lantern_14")
+minetest.register_alias("homedecor:ceiling_lantern_max",       "homedecor:ceiling_lantern_14")
+
+minetest.register_alias("homedecor:lattice_lantern_large",     "homedecor:lattice_lantern_large_14")
+minetest.register_alias("homedecor:lattice_lantern_large_max", "homedecor:lattice_lantern_large_14")
+
+minetest.register_alias("homedecor:lattice_lantern_small",     "homedecor:lattice_lantern_small_14")
+minetest.register_alias("homedecor:lattice_lantern_small_max", "homedecor:lattice_lantern_small_14")
+
+minetest.register_alias("homedecor:desk_lamp",                 "homedecor:desk_lamp_14")
+minetest.register_alias("homedecor:desk_lamp_max",             "homedecor:desk_lamp_14")
+
+minetest.register_alias("homedecor:ceiling_lamp",              "homedecor:ceiling_lamp_14")
+minetest.register_alias("homedecor:ceiling_lamp_max",          "homedecor:ceiling_lamp_14")
+
+minetest.register_alias("homedecor:table_lamp",                "homedecor:table_lamp_14")
+minetest.register_alias("homedecor:table_lamp_max",            "homedecor:table_lamp_14")
+
+minetest.register_alias("homedecor:standing_lamp",             "homedecor:standing_lamp_14")
+minetest.register_alias("homedecor:standing_lamp_max",         "homedecor:standing_lamp_14")
+
+minetest.register_alias("3dforniture:table_lamp",              "homedecor:table_lamp_14")
+minetest.register_alias("3dforniture:table_lamp_max",          "homedecor:table_lamp_14")
+
+minetest.register_alias("3dforniture:torch_wall",              "homedecor:torch_wall")
+minetest.register_alias("torch_wall",                          "homedecor:torch_wall")
+
+minetest.register_alias("homedecor:plasma_ball",               "homedecor:plasma_ball_on")
+minetest.register_alias("homedecor:wall_lamp",                 "homedecor:wall_lamp_on")
+
+minetest.register_alias("homedecor:rope_light_on_floor_0",     "homedecor:rope_light_on_floor_off")
+minetest.register_alias("homedecor:rope_light_on_floor_14",    "homedecor:rope_light_on_floor_on")
+
+minetest.register_alias("homedecor:rope_light_on_ceiling_0",   "homedecor:rope_light_on_ceiling_off")
+minetest.register_alias("homedecor:rope_light_on_ceiling_14",  "homedecor:rope_light_on_ceiling_on")
+
+for name, level in pairs(word_to_bright) do
+	minetest.register_alias("homedecor:glowlight_half_"..name,        "homedecor:glowlight_half_"..level)
+	minetest.register_alias("homedecor:glowlight_quarter_"..name,     "homedecor:glowlight_quarter_"..level)
+	minetest.register_alias("homedecor:glowlight_small_cube_"..name,  "homedecor:glowlight_small_cube_"..level)
+	minetest.register_alias("homedecor:rope_light_on_floor_"..name,   "homedecor:rope_light_on_floor_"..level)
+	minetest.register_alias("homedecor:rope_light_on_ceiling_"..name, "homedecor:rope_light_on_ceiling_"..level)
+	minetest.register_alias("homedecor:plasma_lamp_"..name,           "homedecor:plasma_lamp_"..level)
+	minetest.register_alias("homedecor:plasma_ball_"..name,           "homedecor:plasma_ball_"..level)
+	minetest.register_alias("homedecor:ground_lantern_"..name,        "homedecor:ground_lantern_"..level)
+	minetest.register_alias("homedecor:hanging_lantern_"..name,       "homedecor:hanging_lantern_"..level)
+	minetest.register_alias("homedecor:ceiling_lantern_"..name,       "homedecor:ceiling_lantern_"..level)
+	minetest.register_alias("homedecor:lattice_lantern_large_"..name, "homedecor:lattice_lantern_large_"..level)
+	minetest.register_alias("homedecor:lattice_lantern_small_"..name, "homedecor:lattice_lantern_small_"..level)
+	minetest.register_alias("homedecor:desk_lamp_"..name,             "homedecor:desk_lamp_"..level)
+	minetest.register_alias("homedecor:ceiling_lamp_"..name,          "homedecor:ceiling_lamp_"..level)
+	minetest.register_alias("homedecor:table_lamp_"..name,            "homedecor:table_lamp_"..level)
+	minetest.register_alias("homedecor:standing_lamp_"..name,         "homedecor:standing_lamp_"..level)
+	minetest.register_alias("3dforniture:table_lamp_"..name,          "homedecor:table_lamp_"..level)
+end
 
 -- homedecor_misc
 
@@ -5427,3 +5693,4 @@ homedecor.register("shutter_colored", {
 	selection_box = shutter_cbox,
 	node_box = shutter_cbox,
 })
+

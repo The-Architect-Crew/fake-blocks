@@ -1,7 +1,7 @@
 local S = minetest.get_translator("itemframes")
 
 minetest.register_node("itemframes:pedestal",{
-	description = S("Pedestal (Deprecated)"),
+	description = "Pedestal (Deprecated)",
 	drawtype = "nodebox",
 	node_box = {
 		type = "fixed", fixed = {

@@ -309,26 +309,6 @@ end
 
 -- Stairs/slabs defs, conversion of normal -> mossy items
 
-if minetest.settings:get_bool("gloopblocks_mossy_conversion") ~= false then
-
-	function gloopblocks_register_mossy_conversion(mossyobjects)
-		for i in ipairs(mossyobjects) do
-			minetest.register_abm({
-				nodenames = { mossyobjects[i][1] },
-				neighbors = {"default:water_source", "default:water_flowing"},
-				interval = 120,
-				chance = 50,
-				action = function(pos, node)
-					if minetest.find_node_near(pos, 2, "air") then
-						local fdir = node.param2
-						minetest.add_node(pos, {name = mossyobjects[i][2], param2 = fdir})
-					end
-				end,
-			})
-		end
-	end
-end
-
 if minetest.get_modpath("stairs") then
 
 	--stairs.register_stair(subname, recipeitem, groups, images, description, sounds)
@@ -411,24 +391,6 @@ if minetest.get_modpath("stairs") then
 		S("Rainbow Block Slab (Deprecated)"),
 		default.node_sound_defaults())
 
-	if minetest.settings:get_bool("gloopblocks_mossy_conversion") ~= false then
-
-		gloopblocks_register_mossy_conversion({
-			{ "default:cobble", 					"default:mossycobble" },
-			{ "stairs:stair_cobble", 				"stairs:stair_mossycobble" },
-			{ "stairs:slab_cobble", 				"stairs:slab_mossycobble" },
-			{ "gloopblocks:cobble_road", 			"gloopblocks:cobble_road_mossy" },
-			{ "stairs:stair_cobble_road", 			"stairs:stair_cobble_road_mossy" },
-			{ "stairs:slab_cobble_road", 			"stairs:slab_cobble_road_mossy" },
-			{ "default:stonebrick", 				"gloopblocks:stone_brick_mossy" },
-			{ "stairs:stair_stonebrick", 			"stairs:stair_stone_brick_mossy" },
-			{ "stairs:slab_stonebrick", 			"stairs:slab_stone_brick_mossy" },
-			{ "default:stone", 						"gloopblocks:stone_mossy" },
-			{ "stairs:stair_stone", 				"stairs:stair_stone_mossy" },
-			{ "stairs:slab_stone", 					"stairs:slab_stone_mossy" },
-		})
-	end
-
 	minetest.register_alias("default:stair_mossycobble", "stairs:stair_mossycobble")
 	minetest.register_alias("default:slab_mossycobble", "stairs:slab_mossycobble")
 	minetest.register_alias("gloopblocks:stair_cobble_road", "stairs:stair_cobble_road")
@@ -447,45 +409,6 @@ if minetest.get_modpath("stairs") then
 	minetest.register_alias("gloopblocks:slab_basalt", "stairs:slab_basalt")
 	minetest.register_alias("gloopblocks:stair_rainbow_block", "stairs:stair_rainbow_block")
 	minetest.register_alias("gloopblocks:slab_rainbow_block", "stairs:slab_rainbow_block")
-end
-
--- define lava-cooling-based nodes and hook into the default lavacooling
--- functions to generate basalt, pumice, and obsidian
-
-if minetest.settings:get_bool("gloopblocks_lavacooling") ~= false then
-	minetest.register_node("gloopblocks:obsidian_cooled", {
-		description = S("Obsidian (Deprecated)"),
-		tiles = {"default_obsidian.png"},
-		is_ground_content = true,
-		sounds = default.node_sound_stone_defaults(),
-		groups = {not_in_creative_inventory = 1, cracky=1, level=2},
-		drop = "default:obsidian",
-		after_place_node = function(pos, placer, itemstack, pointed_thing)
-			minetest.add_node(pos, {name = "default:obsidian"})
-		end
-	})
-
-	minetest.register_node("gloopblocks:basalt_cooled", {
-		description = S("Basalt (Deprecated)"),
-		tiles = {"gloopblocks_basalt.png"},
-		groups = {not_in_creative_inventory = 1, cracky=2},
-		sounds = default.node_sound_stone_defaults(),
-		drop = "gloopblocks:basalt",
-		after_place_node = function(pos, placer, itemstack, pointed_thing)
-			minetest.add_node(pos, {name = "gloopblocks:basalt"})
-		end
-	})
-
-	minetest.register_node("gloopblocks:pumice_cooled", {
-		description = S("Pumice (Deprecated)"),
-		tiles = {"gloopblocks_pumice.png"},
-		groups = {not_in_creative_inventory = 1, cracky=3},
-		sounds = default.node_sound_stone_defaults(),
-		drop = "gloopblocks:pumice",
-		after_place_node = function(pos, placer, itemstack, pointed_thing)
-			minetest.add_node(pos, {name = "gloopblocks:pumice"})
-		end
-	})
 end
 
 local fence_texture =
@@ -507,41 +430,5 @@ minetest.register_node("gloopblocks:fence_steel", {
 	groups = {not_in_creative_inventory = 1, choppy = 2, oddly_breakable_by_hand = 2 },
 	sounds = default.node_sound_stone_defaults(),
 })
-
-if minetest.get_modpath("worldedit") then
-	function gloopblocks.liquid_ungrief(pos1, pos2, name)
-		local count
-		local p1to2 = minetest.pos_to_string(pos1).." and "..minetest.pos_to_string(pos2)
-		local volume = worldedit.volume(pos1, pos2)
-		minetest.chat_send_player(name, "Cleaning-up lava/water griefing between "..p1to2.."...")
-		if volume > 1000000 then
-			minetest.chat_send_player(name, "This operation could affect up to "..volume.." nodes.  It may take a while.")
-		end
-		minetest.log("action", name.." performs lava/water greifing cleanup between "..p1to2..".")
-		count = worldedit.replace(pos1, pos2, "default:lava_source", "air")
-		count = worldedit.replace(pos1, pos2, "default:lava_flowing", "air")
-		count = worldedit.replace(pos1, pos2, "default:water_source", "air")
-		count = worldedit.replace(pos1, pos2, "default:water_flowing", "air")
-		count = worldedit.replace(pos1, pos2, "default:river_water_source", "air")
-		count = worldedit.replace(pos1, pos2, "default:river_water_flowing", "air")
-		count = worldedit.replace(pos1, pos2, "gloopblocks:pumice_cooled", "air")
-		count = worldedit.replace(pos1, pos2, "gloopblocks:basalt_cooled", "air")
-		count = worldedit.replace(pos1, pos2, "gloopblocks:obsidian_cooled", "air")
-		count = worldedit.fixlight(pos1, pos2)
-		minetest.chat_send_player(name, "Operation completed.")
-	end
-
-	minetest.register_chatcommand("/liquid_ungrief", {
-		params = "[size]",
-		privs = {worldedit = true},
-		description = "Repairs greifing caused by spilling lava and water (and their \"cooling\" results)",
-		func = function(name, params)
-			local pos1 = worldedit.pos1[name]
-			local pos2 = worldedit.pos2[name]
-			if not pos1 or not pos2 then return end
-			gloopblocks.liquid_ungrief(pos1, pos2, name)
-		end
-	})
-end
 
 print(S("Gloopblocks Loaded!"))
