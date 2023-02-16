@@ -27,3 +27,45 @@ minetest.register_alias("fake_fire:smokeless_fire", "blocks:fire")
 minetest.register_alias("fire:permanent_flame", "blocks:fire")
 minetest.register_alias("fake_fire:fancy_fire", "blocks:campfire")
 minetest.register_alias("fake_fire:embers", "blocks:embers")
+
+-- colouredstonebricks
+local COLOURS2 = {
+    "black",
+    "cyan",
+    "brown",
+    "dark_blue",
+    "dark_green",
+    "dark_grey",
+    "dark_pink",
+    "green",
+    "grey",
+    "orange",
+    "pink",
+    "purple",
+    "red",
+    "white",
+    "yellow"
+}
+
+for number = 1, 15 do
+    local colour2 = COLOURS2[number]
+    minetest.register_alias("colouredstonebricks:"..colour2, "variations:stone_"..colour2.."_brick")
+    sc.convert_stairsplus("colouredstonebricks:"..colour2, "variations:stone_"..colour2.."_brick")
+end
+
+-- MTG wool
+local dyes = dye.dyes
+for i = 1, #dyes do
+	local name = unpack(dyes[i])
+	minetest.register_alias("wool:"..name, "blocks:wool_"..name)
+	sc.convert_stairsplus("wool:"..name, "blocks:wool_"..name)
+end
+
+-- streets mod
+minetest.register_alias("streets:asphalt", "blocks:asphalt")
+sc.convert_stairsplus("streets:asphalt", "blocks:asphalt")
+
+minetest.register_alias("streets:concrete", "blocks:concrete")
+sc.convert_stairsplus("streets:concrete", "blocks:concrete")
+
+minetest.register_alias("streets:steel_support", "furniture:scaffolding_steel")

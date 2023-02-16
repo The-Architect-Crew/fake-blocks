@@ -8,14 +8,10 @@ Maintained by VanessaE.
 
 gloopblocks = {}
 
--- Load support for intllib.
-local MP = minetest.get_modpath(minetest.get_current_modname())
-local S, NS = dofile(MP.."/intllib.lua")
-
 -- Nodes
 
 minetest.register_node("gloopblocks:rainbow_block_diagonal", {
-	description = S("Diagonal Rainbow Block (Deprecated)"),
+	description = "Diagonal Rainbow Block (Deprecated)",
 	tiles = {"gloopblocks_rainbow_block.png"},
 	is_ground_content = true,
 	groups = {not_in_creative_inventory = 1, cracky=3},
@@ -24,7 +20,7 @@ minetest.register_node("gloopblocks:rainbow_block_diagonal", {
 minetest.register_alias("gloopblocks:rainbow_block", "gloopblocks:rainbow_block_diagonal")
 
 minetest.register_node("gloopblocks:rainbow_block_horizontal", {
-	description = S("Horizontal Rainbow Block (Deprecated)"),
+	description = "Horizontal Rainbow Block (Deprecated)",
 	tiles = {
 		"gloopblocks_rainbow_horizontal.png^[transformR90",
 		"gloopblocks_rainbow_horizontal.png^[transformR90",
@@ -39,7 +35,7 @@ minetest.register_node("gloopblocks:rainbow_block_horizontal", {
 })
 
 minetest.register_node("gloopblocks:evil_block", {
-	description = S("Evil Block (Deprecated)"),
+	description = "Evil Block (Deprecated)",
 	tiles = {"gloopblocks_evil_block.png"},
 	light_source = 5,
 	is_ground_content = true,
@@ -48,14 +44,14 @@ minetest.register_node("gloopblocks:evil_block", {
 })
 
 minetest.register_node("gloopblocks:basalt", {
-	description = S("Basalt (Deprecated)"),
+	description = "Basalt (Deprecated)",
 	tiles = {"gloopblocks_basalt.png"},
 	groups = {not_in_creative_inventory = 1, cracky=2},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("gloopblocks:pumice", {
-	description = S("Pumice (Deprecated)"),
+	description = "Pumice (Deprecated)",
 	tiles = {"gloopblocks_pumice.png"},
 	groups = {not_in_creative_inventory = 1, cracky=3},
 	sounds = default.node_sound_stone_defaults(),
@@ -63,7 +59,7 @@ minetest.register_node("gloopblocks:pumice", {
 
 
 minetest.register_node("gloopblocks:pavement", {
-	description = S("Pavement (Deprecated)"),
+	description = "Pavement (Deprecated)",
 	tiles = {"gloopblocks_pavement.png"},
 	groups = {not_in_creative_inventory = 1, cracky=3, oddly_breakable_by_hand=3},
 	sounds = default.node_sound_stone_defaults(),
@@ -71,7 +67,7 @@ minetest.register_node("gloopblocks:pavement", {
 
 minetest.register_node("gloopblocks:oerkki_block", {
 	drawtype = "nodebox",
-	description = S("Oerkki Block (Deprecated)"),
+	description = "Oerkki Block (Deprecated)",
 	paramtype = "light",
 	paramtype2 = "facedir",
 	tiles = {
@@ -102,14 +98,14 @@ minetest.register_node("gloopblocks:oerkki_block", {
 })
 
 minetest.register_node("gloopblocks:stone_brick_mossy", {
-	description = S("Mossy Stone Brick (Deprecated)"),
+	description = "Mossy Stone Brick (Deprecated)",
 	tiles = {"gloopblocks_stone_brick_mossy.png"},
 	groups = {not_in_creative_inventory = 1, cracky=3, stone=1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("gloopblocks:stone_mossy", {
-	description = S("Mossy Stone (Deprecated)"),
+	description = "Mossy Stone (Deprecated)",
 	tiles = {"gloopblocks_stone_mossy.png"},
 	groups = {not_in_creative_inventory = 1, cracky=3, stone=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -117,21 +113,21 @@ minetest.register_node("gloopblocks:stone_mossy", {
 })
 
 minetest.register_node("gloopblocks:cobble_road", {
-	description = S("Cobblestone Road Bed (Deprecated)"),
+	description = "Cobblestone Road Bed (Deprecated)",
 	tiles = {"gloopblocks_cobble_road.png"},
 	groups = {not_in_creative_inventory = 1, cracky=3, stone=1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("gloopblocks:cobble_road_mossy", {
-	description = S("Mossy Cobblestone Road Bed (Deprecated)"),
+	description = "Mossy Cobblestone Road Bed (Deprecated)",
 	tiles = {"gloopblocks_cobble_road_mossy.png"},
 	groups = {not_in_creative_inventory = 1, cracky=3, stone=1},
 	sounds = default.node_sound_stone_defaults(),
 })
 
 minetest.register_node("gloopblocks:scaffolding", {
-	description = S("Wooden Scaffold (Deprecated)"),
+	description = "Wooden Scaffold (Deprecated)",
 	drawtype = "allfaces",
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -317,16 +313,16 @@ if minetest.get_modpath("stairs") then
 	stairs.register_stair_and_slab("stone_mossy", "gloopblocks:stone_mossy",
 		{cracky=3},
 		{"gloopblocks_stone_mossy.png"},
-		S("Mossy Stone Stair (Deprecated)"),
-		S("Mossy Stone Slab (Deprecated)"),
+		"Mossy Stone Stair (Deprecated)",
+		"Mossy Stone Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 
 	--[[ stairs:xxxx_mossycobble
 	stairs.register_stair_and_slab("mossycobble", "default:mossycobble",
 		{cracky=3},
 		{"default_mossycobble.png"},
-		S("Mossy Cobble Stair (Deprecated)"),
-		S("Mossy Cobble Slab (Deprecated)"),
+		"Mossy Cobble Stair (Deprecated)",
+		"Mossy Cobble Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 	]]
 
@@ -334,61 +330,61 @@ if minetest.get_modpath("stairs") then
 	stairs.register_stair_and_slab("stone_brick_mossy", "gloopblocks:stone_brick_mossy",
 		{cracky=3},
 		{"gloopblocks_stone_brick_mossy.png"},
-		S("Mossy Stone Brick Stair (Deprecated)"),
-		S("Mossy Stone Brick Slab (Deprecated)"),
+		"Mossy Stone Brick Stair (Deprecated)",
+		"Mossy Stone Brick Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 
 	-- stairs:xxxx_cobble_road
 	stairs.register_stair_and_slab("cobble_road", "gloopblocks:cobble_road",
 		{cracky=3},
 		{"gloopblocks_cobble_road.png"},
-		S("Cobble Roadbed Stair (Deprecated)"),
-		S("Cobble Roadbed Slab (Deprecated)"),
+		"Cobble Roadbed Stair (Deprecated)",
+		"Cobble Roadbed Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 
 	-- stairs:xxxx_cobble_road_mossy
 	stairs.register_stair_and_slab("cobble_road_mossy", "gloopblocks:cobble_road_mossy",
 		{cracky=3},
 		{"gloopblocks_cobble_road_mossy.png"},
-		S("Mossy Cobble Roadbed Stair (Deprecated)"),
-		S("Mossy Cobble Roadbed Slab (Deprecated)"),
+		"Mossy Cobble Roadbed Stair (Deprecated)",
+		"Mossy Cobble Roadbed Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 
 	-- stairs:xxxx_cement
 	stairs.register_stair_and_slab("cement", "gloopblocks:cement",
 		{cracky=2},
 		{"basic_materials_cement_block.png"},
-		S("Cement Stair (Deprecated)"),
-		S("Cement Slab (Deprecated)"),
+		"Cement Stair (Deprecated)",
+		"Cement Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 
 	-- stairs:xxxx_pavement
 	stairs.register_stair_and_slab("pavement", "gloopblocks:pavement",
 		{cracky=3, oddly_breakable_by_hand=3},
 		{"gloopblocks_pavement.png"},
-		S("Pavement Stair (Deprecated)"),
-		S("Pavement Slab (Deprecated)"),
+		"Pavement Stair (Deprecated)",
+		"Pavement Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 
 	stairs.register_stair_and_slab("basalt", "gloopblocks:basalt",
 		{cracky=2},
 		{"gloopblocks_basalt.png"},
-		S("Basalt Stair (Deprecated)"),
-		S("Basalt Slab (Deprecated)"),
+		"Basalt Stair (Deprecated)",
+		"Basalt Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 
 	stairs.register_stair_and_slab("pumice", "gloopblocks:pumice",
 		{cracky=3},
 		{"gloopblocks_pumice.png"},
-		S("Pumice Stair (Deprecated)"),
-		S("Pumice Slab (Deprecated)"),
+		"Pumice Stair (Deprecated)",
+		"Pumice Slab (Deprecated)",
 		default.node_sound_stone_defaults())
 
 	stairs.register_stair_and_slab("rainbow_block", "gloopblocks:rainbow_block",
 		{cracky=3},
 		{"gloopblocks_rainbow_block.png"},
-		S("Rainbow Block Stair (Deprecated)"),
-		S("Rainbow Block Slab (Deprecated)"),
+		"Rainbow Block Stair (Deprecated)",
+		"Rainbow Block Slab (Deprecated)",
 		default.node_sound_defaults())
 
 	minetest.register_alias("default:stair_mossycobble", "stairs:stair_mossycobble")
@@ -415,7 +411,7 @@ local fence_texture =
 	"default_fence_overlay.png^default_steel_block.png^default_fence_overlay.png^[makealpha:255,126,126"
 
 minetest.register_node("gloopblocks:fence_steel", {
-	description = S("Steel Fence (Deprecated)"),
+	description = "Steel Fence (Deprecated)",
 	drawtype = "fencelike",
 	tiles = {"default_steel_block.png"},
 	inventory_image = fence_texture,
@@ -431,4 +427,4 @@ minetest.register_node("gloopblocks:fence_steel", {
 	sounds = default.node_sound_stone_defaults(),
 })
 
-print(S("Gloopblocks Loaded!"))
+print("Gloopblocks Loaded!")

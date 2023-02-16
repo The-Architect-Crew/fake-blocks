@@ -95,24 +95,6 @@ if minetest.get_modpath("farming") then
 	end
 end
 
--- wool registrations
-if minetest.get_modpath("wool") then
-	local dyes = {"white", "grey", "black", "red", "yellow", "green", "cyan",
-	              "blue", "magenta", "orange", "violet", "brown", "pink",
-	              "dark_grey", "dark_green"}
-	for _, name in pairs(dyes) do
-		local mod = "wool"
-		local nodename = mod .. ":" .. name
-		local ndef = table.copy(minetest.registered_nodes[nodename])
-		ndef.sunlight_propagates = true
-
-		-- Prevent dye+cut wool recipy from creating a full wool block.
-		ndef.groups.wool = nil
-
-		stairsplus:register_all(mod, name, nodename, ndef)
-	end
-end
-
 -- basic_materials, keeping the original other-mod-oriented names
 -- for backwards compatibility
 
