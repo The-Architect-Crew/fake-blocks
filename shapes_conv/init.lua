@@ -1,6 +1,6 @@
 sc = {}
 
-sc.convert_list = {
+sc.stairsplus_list = {
 
     -- cubic
     {"slab_", "_1",             "_slab1"},
@@ -39,8 +39,8 @@ sc.convert_list = {
     {"stair_", "_right_half",   "_righthalfstair"},
 
     {"slab_", "_two_sides",     "_slab1"},
-    {"slab_", "_three_sides",   "null"},
-    {"slab_", "_three_sides_u", "null"},
+    {"slab_", "_three_sides",   "block"},
+    {"slab_", "_three_sides_u", "block"},
 
     -- slope
     {"slope_", "",                          "_slope"},
@@ -63,16 +63,37 @@ sc.convert_list = {
 }
 
 function sc.convert_stairsplus(oldname, newname)
-    for i in ipairs(sc.convert_list) do
+    for i in ipairs(sc.stairsplus_list) do
         local old_mname = string.match(oldname, '(.*):')
         local old_nname = string.match(oldname, ':(.*)')
 
         local new_mname = string.match(newname, '(.*):')
         local new_nname = string.match(newname, ':(.*)')
-        if sc.convert_list[i][3] == "null" then
-            minetest.register_alias(old_mname..":"..sc.convert_list[i][1]..""..old_nname..""..sc.convert_list[i][2], newname)
+        if sc.stairsplus_list[i][3] == "block" then
+            minetest.register_alias(old_mname..":"..sc.stairsplus_list[i][1]..""..old_nname..""..sc.stairsplus_list[i][2], newname)
         else
-            minetest.register_alias(old_mname..":"..sc.convert_list[i][1]..""..old_nname..""..sc.convert_list[i][2], new_mname..":shapes_"..new_nname..""..sc.convert_list[i][3])
+            minetest.register_alias(old_mname..":"..sc.stairsplus_list[i][1]..""..old_nname..""..sc.stairsplus_list[i][2], new_mname..":shapes_"..new_nname..""..sc.stairsplus_list[i][3])
+        end
+    end
+end
+
+sc.columnia_list = {
+    {"_mid_",       "_pillar"},
+    {"_top_",       "_pillarcrown"},
+    {"_link_",      "_beam"},
+    {"_bottom_",    "_pillarcrown"},
+    {"_linkdown_",  "_linkdown"},
+    {"_crosslink_", "_crosscrown"},
+}
+
+function sc.convert_columnia(oldname, newname)
+    for i in ipairs(sc.columnia_list) do
+        local new_mname = string.match(newname, '(.*):')
+        local new_nname = string.match(newname, ':(.*)')
+        if sc.columnia_list[i][2] == "block" then
+            minetest.register_alias("columnia:column"..sc.columnia_list[i][1]..""..oldname, newname)
+        else
+            minetest.register_alias("columnia:column"..sc.columnia_list[i][1]..""..oldname, new_mname..":shapes_"..new_nname..""..sc.columnia_list[i][2])
         end
     end
 end
