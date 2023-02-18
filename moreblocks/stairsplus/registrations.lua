@@ -8,11 +8,6 @@ Licensed under the zlib license. See LICENSE.md for more information.
 -- default registrations
 local default_nodes = { -- Default stairs/slabs/panels/microblocks:
 	"meselamp",
-	"tree",
-	"jungletree", 
-	"pine_tree",
-	"acacia_tree",
-	"aspen_tree",
 	"coral_skeleton",
 }
 
