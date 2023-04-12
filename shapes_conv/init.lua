@@ -1,7 +1,6 @@
 sc = {}
 
 sc.stairsplus_list = {
-
     -- cubic
     {"slab_", "_1",             "_slab1"},
     {"slab_", "_2",             "_slab2"},
@@ -11,11 +10,6 @@ sc.stairsplus_list = {
     {"slab_", "_14",            "_slab14"},
     {"slab_", "_15",            "_slab14"},
 
-    {"stair_", "_alt_1",        "_splitstair1"},
-    {"stair_", "_alt_2",        "_splitstair1"},
-    {"stair_", "_alt_4",        "_splitstair4"},
-    {"stair_", "_alt",          "_splitstair"},
-
     {"micro_", "_1",            "_cube1"},
     {"micro_", "_2",            "_cube2"},
     {"micro_", "_4",            "_cube4"},
@@ -24,19 +18,24 @@ sc.stairsplus_list = {
     {"micro_", "_14",           "_cube14"},
     {"micro_", "_15",           "_cube14"},
 
-    {"panel_", "_1",            "_step"},
-    {"panel_", "_2",            "_step"},
-    {"panel_", "_4",            "_step"},
+    {"panel_", "_1",            "_step1"},
+    {"panel_", "_2",            "_step2"},
+    {"panel_", "_4",            "_step4"},
     {"panel_", "",              "_step"},
-    {"panel_", "_12",           "_step"},
-    {"panel_", "_14",           "_step"},
-    {"panel_", "_15",           "_step"},
+    {"panel_", "_12",           "_step12"},
+    {"panel_", "_14",           "_step14"},
+    {"panel_", "_15",           "_step14"},
 
     {"stair_", "_outer",        "_outerstair"},
     {"stair_", "",              "_stair"},
     {"stair_", "_inner",        "_innerstair"},
     {"stair_", "_half",         "_halfstair"},
     {"stair_", "_right_half",   "_righthalfstair"},
+
+    {"stair_", "_alt_1",        "_splitstair1"},
+    {"stair_", "_alt_2",        "_splitstair1"},
+    {"stair_", "_alt_4",        "_splitstair4"},
+    {"stair_", "_alt",          "_splitstair"},
 
     {"slab_", "_two_sides",     "_slab1"},
     {"slab_", "_three_sides",   "block"},
@@ -69,7 +68,7 @@ function sc.convert_stairsplus(oldname, newname)
 
         local new_mname = string.match(newname, '(.*):')
         local new_nname = string.match(newname, ':(.*)')
-        if sc.stairsplus_list[i][3] == "block" then
+        if sc.stairsplus_list[i][3] == "block" then -- convert stairplus to blocks
             minetest.register_alias(old_mname..":"..sc.stairsplus_list[i][1]..""..old_nname..""..sc.stairsplus_list[i][2], newname)
         else
             minetest.register_alias(old_mname..":"..sc.stairsplus_list[i][1]..""..old_nname..""..sc.stairsplus_list[i][2], new_mname..":shapes_"..new_nname..""..sc.stairsplus_list[i][3])
