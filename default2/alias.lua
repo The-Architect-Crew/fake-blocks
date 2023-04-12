@@ -143,7 +143,8 @@ sc.convert_stairsplus("moreblocks:brick", "blocks:brick")
 minetest.register_alias("default:paper", "blocks:paper")
 minetest.register_alias("default:book", "blocks:book")
 minetest.register_alias("default:book_written", "blocks:book_written")
-minetest.register_alias("default:bookshelf", "blocks:bookshelf")
+minetest.register_alias("default:bookshelf", "furniture:shelf_node_small_book_wood")
+minetest.register_alias("blocks:bookshelf", "furniture:shelf_node_small_book_wood")
 
 -- blocks / ladder.lua
 minetest.register_alias("default:ladder_wood", "blocks:ladder_wood")
